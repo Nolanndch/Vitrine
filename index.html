@@ -3,253 +3,212 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nolann — Réalisations</title>
-  <meta name="description" content="Sites web, boutiques Shopify et applications conçus par Nolann.">
-  <meta property="og:title" content="Nolann — Réalisations">
-  <meta property="og:description" content="Sites web, boutiques Shopify et applications conçus par Nolann.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='%23ff7a45'/></svg>">
+  <title>Nolann — Sites web &amp; boutiques Shopify</title>
+  <meta name="description" content="Je crée des boutiques Shopify et des sites web pour des marques indépendantes. Quelques projets : 7venworld, Ambleme, Calciori, InfluLab IA.">
+  <meta property="og:title" content="Nolann — Sites web & boutiques Shopify">
+  <meta property="og:description" content="Boutiques Shopify et sites web pour des marques indépendantes.">
+  <meta property="og:image" content="images/ambleme.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23111'/><text x='50' y='72' font-family='Arial' font-weight='700' font-size='64' fill='%23f6f5f1' text-anchor='middle'>N</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fbf8f3;
-      --surface: #ffffff;
-      --ink: #1d1b18;
-      --muted: #6f6a62;
-      --line: #ece6dc;
-      --accent: #ff7a45;
-      --accent-soft: #ffe9dd;
-      --radius: 18px;
+      --bg: #f6f5f1;
+      --ink: #121212;
+      --muted: #6b6a66;
+      --line: #d9d6cd;
+      --accent: #2438ff;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
     }
-    * { box-sizing: border-box; margin: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background: var(--bg);
       color: var(--ink);
-      font: 16px/1.6 Inter, system-ui, sans-serif;
+      font: 17px/1.55 Archivo, system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    a { color: inherit; text-underline-offset: 3px; }
+    a:hover { color: var(--accent); }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .label { font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: .02em; }
 
-    header { padding: 96px 0 56px; position: relative; overflow: hidden; }
-    header::before {
-      content: ""; position: absolute; inset: -40% -10% auto auto;
-      width: 620px; height: 620px; border-radius: 50%;
-      background: radial-gradient(circle, #ffd9c4 0%, #fff1d6 45%, transparent 70%);
-      z-index: -1;
-    }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 14px; color: var(--muted);
-      background: var(--surface); border: 1px solid var(--line);
-      padding: 6px 14px; border-radius: 99px;
-    }
-    .badge i { width: 8px; height: 8px; border-radius: 50%; background: #3ccf7a; }
-    h1 {
-      font-family: Fraunces, Georgia, serif; font-weight: 600;
-      font-size: clamp(40px, 7vw, 76px); line-height: 1.05;
-      letter-spacing: -0.02em; margin: 24px 0 20px; max-width: 14ch;
-    }
-    h1 em { font-style: italic; color: var(--accent); }
-    .lead { font-size: 19px; color: var(--muted); max-width: 56ch; }
-    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 22px; border-radius: 99px; font-weight: 500;
-      text-decoration: none; border: 1px solid var(--ink);
-      transition: transform .15s, background .15s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn.primary { background: var(--ink); color: var(--bg); }
-    .btn.ghost:hover { background: var(--surface); }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; }
+    nav strong { font-weight: 700; }
+    nav ul { list-style: none; display: flex; gap: 24px; font-size: 15px; }
+    nav a { text-decoration: none; }
 
-    .bar {
-      display: flex; flex-wrap: wrap; align-items: baseline;
-      justify-content: space-between; gap: 16px; margin-bottom: 28px;
+    .intro { padding: 72px 0 88px; border-bottom: 1px solid var(--line); }
+    .intro h1 {
+      font-weight: 500; font-size: clamp(30px, 4.4vw, 54px);
+      line-height: 1.12; letter-spacing: -0.02em; max-width: 22ch;
     }
-    h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 32px; }
-    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
-    .filters button {
-      font: inherit; font-size: 14px; cursor: pointer;
-      padding: 7px 16px; border-radius: 99px;
-      border: 1px solid var(--line); background: var(--surface); color: var(--muted);
+    .intro h1 span { color: var(--muted); }
+    .intro-cols {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+      margin-top: 56px; max-width: 900px;
     }
-    .filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+    .intro-cols p { color: #3a3936; }
+    .intro-cols ul { list-style: none; font-family: var(--mono); font-size: 14px; line-height: 2; }
 
-    .grid {
-      display: grid; gap: 28px;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-      padding-bottom: 96px;
+    section > h2 { font-family: var(--mono); font-weight: 500; font-size: 13px; color: var(--muted); padding: 40px 0 0; }
+
+    .project {
+      display: grid; grid-template-columns: 5fr 8fr; gap: 48px;
+      padding: 48px 0 64px; border-bottom: 1px solid var(--line);
     }
-    .card {
-      background: var(--surface); border: 1px solid var(--line);
-      border-radius: var(--radius); overflow: hidden; text-decoration: none;
-      display: flex; flex-direction: column;
-      transition: transform .2s, box-shadow .2s;
+    .project .num { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+    .project h3 { font-size: 34px; font-weight: 500; letter-spacing: -0.02em; margin: 6px 0 16px; }
+    .project p { color: #3a3936; max-width: 42ch; }
+    .project dl {
+      display: grid; grid-template-columns: auto 1fr; gap: 6px 20px;
+      margin: 24px 0; font-size: 15px;
     }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -18px rgba(60, 40, 20, .25); }
+    .project dt { font-family: var(--mono); font-size: 13px; color: var(--muted); padding-top: 2px; }
+    .visit { font-weight: 500; }
     .shot {
-      aspect-ratio: 16 / 10; position: relative; overflow: hidden;
-      background: linear-gradient(135deg, var(--c1, #ffe0cc), var(--c2, #fff4d6));
-      display: grid; place-items: center;
+      display: block; border: 1px solid var(--line); border-radius: 6px; overflow: hidden;
+      background: #eceae4; aspect-ratio: 16 / 10;
     }
-    .shot span {
-      font-family: Fraunces, Georgia, serif; font-size: 34px; font-weight: 600;
-      color: rgba(29, 27, 24, .55);
-    }
-    .shot img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; object-position: top; opacity: 0; transition: opacity .4s, transform .5s;
-    }
-    .shot img.ok { opacity: 1; }
-    .card:hover .shot img { transform: scale(1.03); }
-    .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-    .tag {
-      align-self: flex-start; font-size: 12px; font-weight: 600; letter-spacing: .04em;
-      text-transform: uppercase; color: var(--accent); background: var(--accent-soft);
-      padding: 3px 10px; border-radius: 99px;
-    }
-    .card h3 { font-size: 20px; font-weight: 600; }
-    .card p { color: var(--muted); font-size: 15px; flex: 1; }
-    .link { font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 6px; margin-top: 6px; }
-    .link::after { content: "→"; transition: transform .2s; }
-    .card:hover .link::after { transform: translateX(4px); }
-    .card.soon { pointer-events: none; }
-    .card.soon .link { color: var(--muted); }
-    .card.soon .link::after { content: ""; }
+    .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .6s ease; }
+    .shot:hover img { transform: scale(1.015); }
 
-    footer { border-top: 1px solid var(--line); padding: 40px 0; color: var(--muted); font-size: 14px; }
-    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    .services {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+      padding: 40px 0 88px; border-bottom: 1px solid var(--line);
+    }
+    .services h3 { font-size: 20px; font-weight: 500; margin-bottom: 10px; }
+    .services p { color: #3a3936; font-size: 16px; }
 
-    @media (max-width: 600px) {
+    .contact { padding: 88px 0 72px; }
+    .contact p { font-size: clamp(28px, 4vw, 48px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; }
+    .contact a { color: var(--accent); }
+    .contact .mail { display: inline-block; margin-top: 20px; font-family: var(--mono); font-size: 16px; letter-spacing: 0; color: var(--ink); }
+
+    footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 24px 0 40px; }
+
+    @media (max-width: 820px) {
       .wrap { padding: 0 16px; }
-      header { padding: 64px 0 40px; }
-      .lead { font-size: 17px; }
+      .intro { padding: 40px 0 56px; }
+      .intro-cols, .project, .services { grid-template-columns: 1fr; gap: 28px; }
+      .project { padding: 36px 0 44px; }
+      .project .shot { order: -1; }
+      .services { gap: 28px; }
+      nav ul { gap: 16px; }
     }
-    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <span class="badge"><i></i>Disponible pour de nouveaux projets</span>
-      <h1>Des sites qui donnent <em>envie</em> de cliquer.</h1>
-      <p class="lead">Je m'appelle Nolann. Je conçois des boutiques Shopify, des sites vitrines et des applications web, du design jusqu'à la mise en ligne. Voici une sélection de ce que j'ai réalisé.</p>
-      <div class="cta">
-        <a class="btn primary" href="#projets">Voir les projets</a>
-        <a class="btn ghost" href="https://github.com/Nolanndch">Me contacter</a>
+  <div class="wrap">
+    <nav>
+      <strong>Nolann</strong>
+      <ul>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="mailto:duchaussoynolann@gmail.com">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header class="intro">
+      <h1>Je crée des boutiques Shopify et des sites web <span>pour des marques qui veulent vendre en ligne.</span></h1>
+      <div class="intro-cols">
+        <p>Je travaille surtout avec des marques de vêtements indépendantes qui sortent leurs collections par drops. Je m'occupe du site de A à Z : maquette, thème, pages produits, configuration de la boutique, puis mise en ligne. Quand un thème ne suffit plus, je code ce qu'il manque.</p>
+        <ul>
+          <li>Shopify · thèmes &amp; Liquid</li>
+          <li>HTML · CSS · JavaScript</li>
+          <li>React · Vite</li>
+          <li>Déploiement Vercel</li>
+        </ul>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="wrap" id="projets">
-    <div class="bar">
-      <h2>Réalisations</h2>
-      <div class="filters" role="group" aria-label="Filtrer les projets"></div>
-    </div>
-    <div class="grid"></div>
-  </main>
+    <section id="projets">
+      <h2>Projets sélectionnés</h2>
 
-  <footer>
-    <div class="wrap">
-      <span>© <span id="year"></span> Nolann</span>
-      <a href="https://github.com/Nolanndch">github.com/Nolanndch</a>
-    </div>
-  </footer>
+      <article class="project">
+        <div>
+          <span class="num">01</span>
+          <h3>7venworld</h3>
+          <p>Boutique d'une marque streetwear, pensée pour les sorties de collection : bandeau défilant pour annoncer les drops et les promos, catalogue filtrable par catégorie (t-shirts, packs, casquettes) et packs d'été mis en avant.</p>
+          <dl>
+            <dt>Type</dt><dd>Boutique Shopify · client</dd>
+            <dt>Rôle</dt><dd>Design, intégration, configuration</dd>
+          </dl>
+          <a class="visit" href="https://7venworld.com/" target="_blank" rel="noopener">7venworld.com ↗</a>
+        </div>
+        <a class="shot" href="https://7venworld.com/" target="_blank" rel="noopener"><img src="images/7venworld.jpg" alt="Page d'accueil de la boutique 7venworld" loading="lazy"></a>
+      </article>
 
-  <script>
-    // ——— Tes projets : ajoute, retire ou modifie les entrées ici ———
-    // type : "Shopify", "Site web" ou "Application" (les filtres se créent tout seuls)
-    // url  : laisse vide ("") pour afficher « Bientôt en ligne »
-    // image: optionnel, chemin vers une capture (ex. "images/ma-boutique.jpg"),
-    //        sinon une capture automatique du site est utilisée.
-    const projects = [
-      {
-        name: "InfluLab IA",
-        type: "Application",
-        description: "Outil d'analyse IA pour créateurs : importe tes stats Instagram, TikTok ou YouTube et reçois des recommandations concrètes.",
-        url: "https://influlabia.fr",
-        colors: ["#ffd6e0", "#e6dcff"]
-      },
-      {
-        name: "Calciori",
-        type: "Site web",
-        description: "Landing page de lancement pour une marque de montres : présentation du modèle Sopra et annonce du premier drop.",
-        url: "",
-        colors: ["#e9e2d4", "#fff4d6"]
-      },
-      {
-        name: "Steam Boosters",
-        type: "Application",
-        description: "Collection de boosters de cartes à ouvrir, inspirée des jeux Steam, avec sauvegarde de la collection.",
-        url: "",
-        colors: ["#d4ecff", "#dff7ea"]
-      },
-      {
-        name: "Ma boutique Shopify",
-        type: "Shopify",
-        description: "Remplace ce texte par une courte description de la boutique : niche, thème, ce que tu as fait.",
-        url: "",
-        colors: ["#dff7ea", "#fff4d6"]
-      }
-    ];
-    // ———————————————————————————————————————————————————————————————
+      <article class="project">
+        <div>
+          <span class="num">02</span>
+          <h3>Ambleme</h3>
+          <p>Boutique d'une marque de vêtements qui en est à son troisième drop. Longsleeves, tatouages temporaires, et une FAQ intégrée à la page pour répondre avant qu'on ne pose la question : livraison, suivi de commande, restocks, entretien.</p>
+          <dl>
+            <dt>Type</dt><dd>Boutique Shopify · client</dd>
+            <dt>Rôle</dt><dd>Design, intégration, configuration</dd>
+          </dl>
+          <a class="visit" href="https://ambleme.fr/" target="_blank" rel="noopener">ambleme.fr ↗</a>
+        </div>
+        <a class="shot" href="https://ambleme.fr/" target="_blank" rel="noopener"><img src="images/ambleme.jpg" alt="Page d'accueil de la boutique Ambleme" loading="lazy"></a>
+      </article>
 
-    const grid = document.querySelector(".grid");
-    const filters = document.querySelector(".filters");
-    const shot = url => `https://s.wordpress.com/mshots/v1/${encodeURIComponent(url)}?w=1200&h=750`;
+      <article class="project">
+        <div>
+          <span class="num">03</span>
+          <h3>Calciori</h3>
+          <p>Page de lancement de la Sopra, premier modèle d'une marque de montres. Tout tient sur une page : photos, fiche technique détaillée (acier 316L brossé, boîtier 41 mm, fond gravé) et annonce du premier drop.</p>
+          <dl>
+            <dt>Type</dt><dd>Landing page sur mesure</dd>
+            <dt>Rôle</dt><dd>Design et code · HTML, CSS, JS · Vercel</dd>
+          </dl>
+          <a class="visit" href="https://calciori.vercel.app/" target="_blank" rel="noopener">calciori.vercel.app ↗</a>
+        </div>
+        <a class="shot" href="https://calciori.vercel.app/" target="_blank" rel="noopener"><img src="images/calciori.jpg" alt="Page de lancement de la montre Calciori Sopra" loading="lazy"></a>
+      </article>
 
-    function render(filter) {
-      grid.innerHTML = "";
-      projects
-        .filter(p => filter === "Tous" || p.type === filter)
-        .forEach(p => {
-          const card = document.createElement(p.url ? "a" : "div");
-          card.className = "card" + (p.url ? "" : " soon");
-          if (p.url) { card.href = p.url; card.target = "_blank"; card.rel = "noopener"; }
-          const [c1, c2] = p.colors || [];
-          card.innerHTML = `
-            <div class="shot" style="--c1:${c1 || ""};--c2:${c2 || ""}">
-              <span></span>
-            </div>
-            <div class="body">
-              <span class="tag"></span>
-              <h3></h3>
-              <p></p>
-              <span class="link"></span>
-            </div>`;
-          card.querySelector(".shot span").textContent = p.name;
-          card.querySelector(".tag").textContent = p.type;
-          card.querySelector("h3").textContent = p.name;
-          card.querySelector("p").textContent = p.description;
-          card.querySelector(".link").textContent = p.url ? new URL(p.url).hostname.replace(/^www\./, "") : "Bientôt en ligne";
-          const src = p.image || (p.url && shot(p.url));
-          if (src) {
-            const img = new Image();
-            img.alt = "Aperçu de " + p.name;
-            img.loading = "lazy";
-            img.onload = () => img.naturalWidth > 400 && img.classList.add("ok");
-            img.src = src;
-            card.querySelector(".shot").appendChild(img);
-          }
-          grid.appendChild(card);
-        });
-    }
+      <article class="project">
+        <div>
+          <span class="num">04</span>
+          <h3>InfluLab IA</h3>
+          <p>Mon propre produit : un outil pour les créateurs de contenu. On importe ses statistiques Instagram, TikTok ou YouTube, et l'IA en tire des recommandations concrètes sur ce qui marche et ce qu'il faut publier ensuite. Avec abonnement et blog de guides.</p>
+          <dl>
+            <dt>Type</dt><dd>Application web · projet perso</dd>
+            <dt>Rôle</dt><dd>Conception et développement · React, API, Vercel</dd>
+          </dl>
+          <a class="visit" href="https://influlabia.fr/" target="_blank" rel="noopener">influlabia.fr ↗</a>
+        </div>
+        <a class="shot" href="https://influlabia.fr/" target="_blank" rel="noopener"><img src="images/influlab.jpg" alt="Page d'accueil d'InfluLab IA" loading="lazy"></a>
+      </article>
+    </section>
 
-    ["Tous", ...new Set(projects.map(p => p.type))].forEach((t, i) => {
-      const b = document.createElement("button");
-      b.textContent = t;
-      b.setAttribute("aria-pressed", i === 0);
-      b.onclick = () => {
-        filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
-        render(t);
-      };
-      filters.appendChild(b);
-    });
+    <section id="services">
+      <h2>Ce que je peux faire pour vous</h2>
+      <div class="services">
+        <div>
+          <h3>Votre boutique Shopify</h3>
+          <p>Création complète ou refonte : choix et personnalisation du thème, collections, fiches produits, paiement, livraison. Vous repartez avec une boutique prête à vendre et vous savez la gérer.</p>
+        </div>
+        <div>
+          <h3>Un site ou une landing page</h3>
+          <p>Pour présenter une marque ou lancer un produit. Codé sur mesure, rapide à charger et fait pour être partagé sur les réseaux.</p>
+        </div>
+        <div>
+          <h3>Améliorer l'existant</h3>
+          <p>Une boutique qui a besoin d'un coup de propre, d'une nouvelle section, d'une page qui convertit mieux ou d'un meilleur référencement.</p>
+        </div>
+      </div>
+    </section>
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-    render("Tous");
-  </script>
+    <section id="contact" class="contact">
+      <span class="label">Contact</span>
+      <p>Un projet de boutique ou de site ?<br><a href="mailto:duchaussoynolann@gmail.com">Écrivez-moi</a>, on en parle.<br><a class="mail" href="mailto:duchaussoynolann@gmail.com">duchaussoynolann@gmail.com</a></p>
+    </section>
+
+    <footer class="label">
+      <span>© 2026 Nolann</span>
+      <a href="https://github.com/Nolanndch">GitHub</a>
+    </footer>
+  </div>
 </body>
 </html>
