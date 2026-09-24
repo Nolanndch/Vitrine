@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nolann — Réalisations</title>
+  <meta name="description" content="Sites web, boutiques Shopify et applications conçus par Nolann.">
+  <meta property="og:title" content="Nolann — Réalisations">
+  <meta property="og:description" content="Sites web, boutiques Shopify et applications conçus par Nolann.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='%23ff7a45'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fbf8f3;
+      --surface: #ffffff;
+      --ink: #1d1b18;
+      --muted: #6f6a62;
+      --line: #ece6dc;
+      --accent: #ff7a45;
+      --accent-soft: #ffe9dd;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font: 16px/1.6 Inter, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    header { padding: 96px 0 56px; position: relative; overflow: hidden; }
+    header::before {
+      content: ""; position: absolute; inset: -40% -10% auto auto;
+      width: 620px; height: 620px; border-radius: 50%;
+      background: radial-gradient(circle, #ffd9c4 0%, #fff1d6 45%, transparent 70%);
+      z-index: -1;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 14px; color: var(--muted);
+      background: var(--surface); border: 1px solid var(--line);
+      padding: 6px 14px; border-radius: 99px;
+    }
+    .badge i { width: 8px; height: 8px; border-radius: 50%; background: #3ccf7a; }
+    h1 {
+      font-family: Fraunces, Georgia, serif; font-weight: 600;
+      font-size: clamp(40px, 7vw, 76px); line-height: 1.05;
+      letter-spacing: -0.02em; margin: 24px 0 20px; max-width: 14ch;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+    .lead { font-size: 19px; color: var(--muted); max-width: 56ch; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px; border-radius: 99px; font-weight: 500;
+      text-decoration: none; border: 1px solid var(--ink);
+      transition: transform .15s, background .15s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn.primary { background: var(--ink); color: var(--bg); }
+    .btn.ghost:hover { background: var(--surface); }
+
+    .bar {
+      display: flex; flex-wrap: wrap; align-items: baseline;
+      justify-content: space-between; gap: 16px; margin-bottom: 28px;
+    }
+    h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 32px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filters button {
+      font: inherit; font-size: 14px; cursor: pointer;
+      padding: 7px 16px; border-radius: 99px;
+      border: 1px solid var(--line); background: var(--surface); color: var(--muted);
+    }
+    .filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+    .grid {
+      display: grid; gap: 28px;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+      padding-bottom: 96px;
+    }
+    .card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); overflow: hidden; text-decoration: none;
+      display: flex; flex-direction: column;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -18px rgba(60, 40, 20, .25); }
+    .shot {
+      aspect-ratio: 16 / 10; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, var(--c1, #ffe0cc), var(--c2, #fff4d6));
+      display: grid; place-items: center;
+    }
+    .shot span {
+      font-family: Fraunces, Georgia, serif; font-size: 34px; font-weight: 600;
+      color: rgba(29, 27, 24, .55);
+    }
+    .shot img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: top; opacity: 0; transition: opacity .4s, transform .5s;
+    }
+    .shot img.ok { opacity: 1; }
+    .card:hover .shot img { transform: scale(1.03); }
+    .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .tag {
+      align-self: flex-start; font-size: 12px; font-weight: 600; letter-spacing: .04em;
+      text-transform: uppercase; color: var(--accent); background: var(--accent-soft);
+      padding: 3px 10px; border-radius: 99px;
+    }
+    .card h3 { font-size: 20px; font-weight: 600; }
+    .card p { color: var(--muted); font-size: 15px; flex: 1; }
+    .link { font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 6px; margin-top: 6px; }
+    .link::after { content: "→"; transition: transform .2s; }
+    .card:hover .link::after { transform: translateX(4px); }
+    .card.soon { pointer-events: none; }
+    .card.soon .link { color: var(--muted); }
+    .card.soon .link::after { content: ""; }
+
+    footer { border-top: 1px solid var(--line); padding: 40px 0; color: var(--muted); font-size: 14px; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+    @media (max-width: 600px) {
+      .wrap { padding: 0 16px; }
+      header { padding: 64px 0 40px; }
+      .lead { font-size: 17px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <span class="badge"><i></i>Disponible pour de nouveaux projets</span>
+      <h1>Des sites qui donnent <em>envie</em> de cliquer.</h1>
+      <p class="lead">Je m'appelle Nolann. Je conçois des boutiques Shopify, des sites vitrines et des applications web, du design jusqu'à la mise en ligne. Voici une sélection de ce que j'ai réalisé.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projets">Voir les projets</a>
+        <a class="btn ghost" href="https://github.com/Nolanndch">Me contacter</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="projets">
+    <div class="bar">
+      <h2>Réalisations</h2>
+      <div class="filters" role="group" aria-label="Filtrer les projets"></div>
+    </div>
+    <div class="grid"></div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Nolann</span>
+      <a href="https://github.com/Nolanndch">github.com/Nolanndch</a>
+    </div>
+  </footer>
+
+  <script>
+    // ——— Tes projets : ajoute, retire ou modifie les entrées ici ———
+    // type : "Shopify", "Site web" ou "Application" (les filtres se créent tout seuls)
+    // url  : laisse vide ("") pour afficher « Bientôt en ligne »
+    // image: optionnel, chemin vers une capture (ex. "images/ma-boutique.jpg"),
+    //        sinon une capture automatique du site est utilisée.
+    const projects = [
+      {
+        name: "InfluLab IA",
+        type: "Application",
+        description: "Outil d'analyse IA pour créateurs : importe tes stats Instagram, TikTok ou YouTube et reçois des recommandations concrètes.",
+        url: "https://influlabia.fr",
+        colors: ["#ffd6e0", "#e6dcff"]
+      },
+      {
+        name: "Calciori",
+        type: "Site web",
+        description: "Landing page de lancement pour une marque de montres : présentation du modèle Sopra et annonce du premier drop.",
+        url: "",
+        colors: ["#e9e2d4", "#fff4d6"]
+      },
+      {
+        name: "Steam Boosters",
+        type: "Application",
+        description: "Collection de boosters de cartes à ouvrir, inspirée des jeux Steam, avec sauvegarde de la collection.",
+        url: "",
+        colors: ["#d4ecff", "#dff7ea"]
+      },
+      {
+        name: "Ma boutique Shopify",
+        type: "Shopify",
+        description: "Remplace ce texte par une courte description de la boutique : niche, thème, ce que tu as fait.",
+        url: "",
+        colors: ["#dff7ea", "#fff4d6"]
+      }
+    ];
+    // ———————————————————————————————————————————————————————————————
+
+    const grid = document.querySelector(".grid");
+    const filters = document.querySelector(".filters");
+    const shot = url => `https://s.wordpress.com/mshots/v1/${encodeURIComponent(url)}?w=1200&h=750`;
+
+    function render(filter) {
+      grid.innerHTML = "";
+      projects
+        .filter(p => filter === "Tous" || p.type === filter)
+        .forEach(p => {
+          const card = document.createElement(p.url ? "a" : "div");
+          card.className = "card" + (p.url ? "" : " soon");
+          if (p.url) { card.href = p.url; card.target = "_blank"; card.rel = "noopener"; }
+          const [c1, c2] = p.colors || [];
+          card.innerHTML = `
+            <div class="shot" style="--c1:${c1 || ""};--c2:${c2 || ""}">
+              <span></span>
+            </div>
+            <div class="body">
+              <span class="tag"></span>
+              <h3></h3>
+              <p></p>
+              <span class="link"></span>
+            </div>`;
+          card.querySelector(".shot span").textContent = p.name;
+          card.querySelector(".tag").textContent = p.type;
+          card.querySelector("h3").textContent = p.name;
+          card.querySelector("p").textContent = p.description;
+          card.querySelector(".link").textContent = p.url ? new URL(p.url).hostname.replace(/^www\./, "") : "Bientôt en ligne";
+          const src = p.image || (p.url && shot(p.url));
+          if (src) {
+            const img = new Image();
+            img.alt = "Aperçu de " + p.name;
+            img.loading = "lazy";
+            img.onload = () => img.naturalWidth > 400 && img.classList.add("ok");
+            img.src = src;
+            card.querySelector(".shot").appendChild(img);
+          }
+          grid.appendChild(card);
+        });
+    }
+
+    ["Tous", ...new Set(projects.map(p => p.type))].forEach((t, i) => {
+      const b = document.createElement("button");
+      b.textContent = t;
+      b.setAttribute("aria-pressed", i === 0);
+      b.onclick = () => {
+        filters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+        render(t);
+      };
+      filters.appendChild(b);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    render("Tous");
+  </script>
+</body>
+</html>
