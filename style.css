@@ -98,7 +98,7 @@ section > h2 { font-family: var(--mono); font-weight: 500; font-size: 13px; colo
 .price dl { display: grid; gap: 4px; font-size: 15px; line-height: 1.5; }
 .price dt { font-family: var(--mono); font-size: 13px; color: var(--muted); }
 .amount { font-size: 34px; font-weight: 500; letter-spacing: -0.02em; text-align: right; line-height: 1.15; white-space: nowrap; }
-.amount.quote { color: var(--muted); }
+.amount .from { display: block; font-family: var(--mono); font-size: 13px; font-weight: 400; letter-spacing: 0; color: var(--muted); margin-bottom: 4px; }
 
 .contact { padding: 88px 0 72px; }
 .contact p { font-size: clamp(28px, 4vw, 48px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; }
