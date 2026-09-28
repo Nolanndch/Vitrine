@@ -20,7 +20,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
 .label { font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: .02em; }
 
-nav { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; }
+nav { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; padding: 28px 0; }
 nav strong { font-weight: 700; }
 nav strong a { text-decoration: none; }
 nav ul { list-style: none; display: flex; gap: 24px; font-size: 15px; }
