@@ -1,75 +1,516 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tarifs — Nolann Duchaussoy</title>
-  <meta name="description" content="Tarifs à partir de : refonte de thème Shopify 150 €, boutique Shopify de zéro 300 €, site web complet 450 €. Livraison en 1 à 2 semaines.">
-  <meta property="og:title" content="Tarifs — Nolann Duchaussoy">
-  <meta property="og:description" content="Refonte de thème Shopify dès 150 €, boutique de zéro dès 300 €, site web dès 450 €. Livraison en 1 à 2 semaines.">
+  <title>Tarifs & Simulateur de Devis — Nolann Duchaussoy · Takuzo</title>
+  <meta name="description" content="Simulateur de tarif et grille officielle de Nolann Duchaussoy (Takuzo). Refonte dès 150 €, boutique Shopify dès 300 €, site sur-mesure dès 450 €.">
+  <meta name="theme-color" content="#f6f5f1">
+
+  <!-- Open Graph / Réseaux sociaux -->
+  <meta property="og:site_name" content="Nolann Duchaussoy · Takuzo">
+  <meta property="og:title" content="Tarifs & Simulateur de Devis — Nolann Duchaussoy · Takuzo">
+  <meta property="og:description" content="Simulez en 2 minutes le coût et les délais de votre boutique Shopify ou de votre site web sur-mesure. Tarifs fixes et sans surprise.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111'/%3E%3Ctext x='50' y='72' font-family='Arial' font-weight='700' font-size='64' fill='%23f6f5f1' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon vectorielle haute définition -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f6f5f1'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%232438ff'/%3E%3C/svg%3E">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    :root {
+      --bg: #f6f5f1;
+      --ink: #121212;
+      --muted: #6b6a66;
+      --line: #dcd8cf;
+      --accent: #2438ff;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: 'Archivo', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-mono-tag {
+      font-family: var(--mono);
+    }
+    ::selection {
+      background-color: #2438ff;
+      color: #ffffff;
+    }
+    .custom-shadow {
+      box-shadow: 0 4px 20px -2px rgba(18, 18, 18, 0.05);
+    }
+  </style>
 </head>
-<body>
-  <div class="wrap">
-    <nav>
-      <strong><a href="index.html">Nolann Duchaussoy</a></strong>
-      <ul>
-        <li><a href="index.html#projets">Projets</a></li>
-        <li><a href="index.html#services">Services</a></li>
-        <li><a href="tarifs.html" aria-current="page">Tarifs</a></li>
-        <li><a href="#contact">Contact</a></li>
+<body class="bg-paper text-ink selection:bg-accent selection:text-white">
+
+  <!-- LIEN D'ÉVITEMENT ACCESSIBILITÉ -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:bg-ink focus:text-paper focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent">
+    Aller au contenu principal
+  </a>
+
+  <!-- BANDEAU DISPONIBILITÉ -->
+  <aside class="border-b border-line bg-softbg/80 py-2 px-4 text-xs font-mono-tag text-muted text-center flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+    <span class="text-ink font-medium">Takuzo est disponible pour de nouveaux projets</span>
+    <span class="text-line">•</span>
+    <span>Livraison en 3j à 2 sem.</span>
+    <span class="text-line hidden sm:inline">•</span>
+    <span class="hidden sm:inline font-semibold text-ink">Devis garanti sans surprise</span>
+  </aside>
+
+  <!-- NAVIGATION PRINCIPALE STICKY -->
+  <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-line/80 transition-all">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+      <nav class="flex justify-between items-center py-4 sm:py-5" aria-label="Navigation principale">
+        <!-- Logo -->
+        <a href="index.html" class="group flex items-center gap-2 font-bold text-xl tracking-tight text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
+          <span>Nolann Duchaussoy</span>
+          <span class="text-muted group-hover:text-accent transition-colors">·</span>
+          <span class="text-accent">Takuzo</span>
+        </a>
+
+        <!-- Liens Desktop -->
+        <ul class="hidden md:flex items-center gap-7 text-sm font-medium">
+          <li>
+            <a href="index.html" class="text-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+              Accueil
+            </a>
+          </li>
+          <li>
+            <a href="projets.html" class="text-muted hover:text-ink transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+              <span>Projets</span>
+              <span class="font-mono-tag text-xs text-accent">04</span>
+            </a>
+          </li>
+          <li>
+            <a href="services.html" class="text-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="tarifs.html" class="text-ink font-semibold flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/5" aria-current="page">
+              <span>Tarifs & Devis</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="px-4 py-2 rounded-md bg-ink text-paper hover:bg-accent hover:text-white transition-colors text-xs sm:text-sm font-medium shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+              Contact
+            </a>
+          </li>
+        </ul>
+
+        <!-- Bouton Menu Mobile (Hamburger) -->
+        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-line bg-white text-ink hover:text-accent hover:border-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Menu principal" aria-expanded="false">
+          <svg id="menu-icon-open" class="w-5 h-5 block" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Tiroir Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-line bg-paper/95 backdrop-blur-md px-6 py-5 transition-all">
+      <ul class="flex flex-col gap-3 font-medium text-base">
+        <li>
+          <a href="index.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
+            <span>Accueil</span>
+          </a>
+        </li>
+        <li>
+          <a href="projets.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
+            <span>Projets & Réalisations</span>
+            <span class="font-mono-tag text-xs text-accent bg-accent/10 px-2 py-0.5 rounded">04</span>
+          </a>
+        </li>
+        <li>
+          <a href="services.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
+            <span>Services & Méthode</span>
+            <span class="font-mono-tag text-xs text-muted">Shopify & Code</span>
+          </a>
+        </li>
+        <li>
+          <a href="tarifs.html" class="flex items-center justify-between p-2.5 rounded-lg bg-black/5 text-ink font-semibold" aria-current="page">
+            <span>Tarifs & Simulateur</span>
+            <span class="w-2 h-2 rounded-full bg-accent"></span>
+          </a>
+        </li>
+        <li class="pt-2 border-t border-line">
+          <a href="contact.html" class="flex items-center justify-center p-3 rounded-lg bg-ink text-paper hover:bg-accent text-center font-medium transition-colors">
+            Prendre contact →
+          </a>
+        </li>
       </ul>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+
+    <!-- FIL D'ARIANE PRO -->
+    <nav aria-label="Fil d'Ariane" class="pt-8 pb-2 text-xs font-mono-tag text-muted flex items-center gap-2">
+      <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
+      <span>/</span>
+      <span class="text-ink font-medium" aria-current="page">Tarifs & Devis</span>
     </nav>
 
-    <header class="intro">
-      <h1>Des tarifs simples, <span>et un site livré en 1 à 2 semaines.</span></h1>
-      <p class="lead">Le délai moyen de livraison est de 1 à 2 semaines, quelle que soit la prestation.</p>
+    <!-- HEADER TARIFS -->
+    <header class="py-12 sm:py-16 border-b border-line">
+      <div class="max-w-3xl">
+        <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Transparence & Estimation directe</div>
+        <h1 class="text-4xl sm:text-6xl font-medium tracking-tight text-ink">
+          Des tarifs simples,<br>
+          <span class="text-muted">et des délais clairs et respectés.</span>
+        </h1>
+        <p class="text-base sm:text-lg text-muted mt-4 leading-relaxed">
+          Petites modifications livrées en 3 jours à 1 semaine. Boutiques Shopify et sites sur mesure livrés en 1 à 2 semaines (2 à 3 semaines en cas d'intégrations de paiement avancées et fonctionnalités complexes).
+        </p>
+      </div>
     </header>
 
-    <section>
-      <h2>Prestations</h2>
-      <ul class="prices">
-        <li class="price">
-          <div>
-            <h3>Refonte de thème Shopify</h3>
-            <p>Votre boutique est déjà en ligne : je remets le thème à neuf, je refais la mise en page et j'ajoute les sections qui manquent.</p>
+    <!-- SIMULATEUR DE DEVIS INTERACTIF -->
+    <section class="py-16 border-b border-line" aria-labelledby="heading-simulateur">
+      <div class="max-w-3xl mx-auto mb-10 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-white border border-line font-mono-tag text-xs text-accent font-semibold mb-3">
+          OUTIL D'ESTIMATION DIRECTE
+        </div>
+        <h2 id="heading-simulateur" class="text-3xl sm:text-4xl font-medium text-ink">
+          Simulateur de devis personnalisé
+        </h2>
+        <p class="text-sm text-muted mt-2">
+          Ajustez vos options : le tarif et le délai s'actualisent en temps réel.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto bg-white rounded-2xl border border-line p-6 sm:p-10 custom-shadow">
+        
+        <!-- Étape 1 : Prestation principale -->
+        <fieldset class="mb-8 border-none p-0 m-0">
+          <legend class="block font-mono-tag text-xs uppercase tracking-wider text-muted mb-3 font-semibold">
+            1. Choisissez le type de projet :
+          </legend>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            
+            <button type="button" onclick="setSimProject('refonte', 150, '3 jours à 1 semaine', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-line hover:border-ink bg-softbg/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="font-semibold text-sm text-ink">Petites retouches / Refonte</div>
+              <div class="text-xs text-muted mt-1">Boutique existante à améliorer</div>
+              <div class="font-mono-tag text-xs font-semibold text-emerald-700 mt-2">Délai : 3j à 1 sem.</div>
+              <div class="font-mono-tag text-sm font-bold text-accent mt-1">Dès 150 €</div>
+            </button>
+
+            <button type="button" onclick="setSimProject('shopify', 300, '1 à 2 semaines', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-accent bg-accent/5 ring-1 ring-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="font-semibold text-sm text-ink">Shopify complet de zéro</div>
+              <div class="text-xs text-muted mt-1">Boutique neuve prête pour drops</div>
+              <div class="font-mono-tag text-xs font-semibold text-emerald-700 mt-2">Délai : 1 à 2 sem.</div>
+              <div class="font-mono-tag text-sm font-bold text-accent mt-1">Dès 300 €</div>
+            </button>
+
+            <button type="button" onclick="setSimProject('site', 450, '1 à 2 semaines', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-line hover:border-ink bg-softbg/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <div class="font-semibold text-sm text-ink">Site complet sur-mesure</div>
+              <div class="text-xs text-muted mt-1">Landing page / Vitrine rapide</div>
+              <div class="font-mono-tag text-xs font-semibold text-emerald-700 mt-2">Délai : 1 à 2 sem.</div>
+              <div class="font-mono-tag text-sm font-bold text-accent mt-1">Dès 450 €</div>
+            </button>
+
           </div>
-          <dl><dt>Délai</dt><dd>1 à 2 semaines</dd></dl>
-          <p class="amount"><span class="from">À partir de</span>150 €</p>
-        </li>
-        <li class="price">
-          <div>
-            <h3>Boutique Shopify de zéro</h3>
-            <p>Création complète : thème, collections, fiches produits, paiement, livraison et mise en ligne. Vous repartez avec une boutique prête à vendre.</p>
+        </fieldset>
+
+        <!-- Étape 2 : Options & Intégrations -->
+        <fieldset class="mb-8 border-none p-0 m-0">
+          <legend class="block font-mono-tag text-xs uppercase tracking-wider text-muted mb-3 font-semibold">
+            2. Options et intégrations techniques :
+          </legend>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            
+            <label class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" id="optPayment" onchange="toggleComplexOption(this, 120, true)" class="w-4 h-4 rounded text-accent focus:ring-accent">
+              <div class="flex-1">
+                <span class="font-medium text-ink">Intégration paiements avancés (Stripe / Apple Pay / Multi-devises)</span>
+                <span class="text-muted block text-[11px]">+120 € · Délai ajusté : 2 à 3 sem.</span>
+              </div>
+            </label>
+
+            <label class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" onchange="toggleOption(this, 80)" class="w-4 h-4 rounded text-accent focus:ring-accent">
+              <div class="flex-1">
+                <span class="font-medium text-ink">Sections personnalisées en code Liquid</span>
+                <span class="text-muted block text-[11px]">+80 € (mise en page sur mesure)</span>
+              </div>
+            </label>
+
+            <label class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" onchange="toggleOption(this, 100)" class="w-4 h-4 rounded text-accent focus:ring-accent">
+              <div class="flex-1">
+                <span class="font-medium text-ink">Optimisation SEO & Vitesse mobile</span>
+                <span class="text-muted block text-[11px]">+100 € (référencement propre)</span>
+              </div>
+            </label>
+
+            <label class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" onchange="toggleOption(this, 60)" class="w-4 h-4 rounded text-accent focus:ring-accent">
+              <div class="flex-1">
+                <span class="font-medium text-ink">Configuration du nom de domaine & emails pro</span>
+                <span class="text-muted block text-[11px]">+60 € (connexion DNS propre)</span>
+              </div>
+            </label>
           </div>
-          <dl><dt>Délai</dt><dd>1 à 2 semaines</dd></dl>
-          <p class="amount"><span class="from">À partir de</span>300 €</p>
-        </li>
-        <li class="price">
+        </fieldset>
+
+        <!-- Résultat & Estimation dynamique -->
+        <div class="p-6 rounded-xl bg-softbg border border-line flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <h3>Site web complet</h3>
-            <p>Site vitrine ou landing page codé sur mesure, rapide à charger et fait pour être partagé sur les réseaux.</p>
+            <span class="font-mono-tag text-xs text-muted uppercase">Montant estimé :</span>
+            <div class="text-3xl sm:text-4xl font-bold font-mono-tag text-ink mt-0.5" id="simDisplayPrice">300 €</div>
+            <div class="text-xs text-muted font-mono-tag mt-1">
+              Délai de réalisation : <strong id="simDisplayDelay" class="text-emerald-700 font-semibold">1 à 2 semaines</strong>
+            </div>
           </div>
-          <dl><dt>Délai</dt><dd>1 à 2 semaines en moyenne</dd></dl>
-          <p class="amount"><span class="from">À partir de</span>450 €</p>
-        </li>
-      </ul>
+
+          <a href="contact.html" id="validateQuoteLink" onclick="saveQuoteDetails(event)" class="w-full sm:w-auto px-6 py-3.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm text-center shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+            Valider ce devis par email →
+          </a>
+        </div>
+
+        <!-- Repères rassurants -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 mt-6 border-t border-line text-[11px] font-mono-tag text-muted text-center sm:text-left">
+          <div class="flex items-center gap-1.5 justify-center sm:justify-start">
+            <span class="text-emerald-600 font-bold">✓</span>
+            <span>Tarif forfaitaire ferme</span>
+          </div>
+          <div class="flex items-center gap-1.5 justify-center sm:justify-start">
+            <span class="text-emerald-600 font-bold">✓</span>
+            <span>Acompte puis solde à validation</span>
+          </div>
+          <div class="flex items-center gap-1.5 justify-center sm:justify-start">
+            <span class="text-emerald-600 font-bold">✓</span>
+            <span>100% propriétaire de votre site</span>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Un besoin précis ?<br><a href="mailto:nolann.duchaussoy.pro@gmail.com?subject=Demande%20de%20devis">Demandez un devis</a>.<br><a class="mail" href="mailto:nolann.duchaussoy.pro@gmail.com">nolann.duchaussoy.pro@gmail.com</a></p>
+    <!-- GRILLE OFFICIELLE DES TARIFS -->
+    <section class="py-16 border-b border-line" aria-labelledby="heading-grille">
+      <div class="max-w-2xl mb-12">
+        <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Grille officielle</div>
+        <h2 id="heading-grille" class="text-3xl font-medium tracking-tight text-ink">
+          Récapitulatif des prestations fixes
+        </h2>
+      </div>
+
+      <div class="divide-y divide-line border-t border-b border-line">
+        
+        <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
+          <div class="sm:col-span-7">
+            <h3 class="text-xl font-medium text-ink">Petites retouches & Refonte de thème</h3>
+            <p class="text-sm text-[#3b3a36] mt-1 leading-relaxed">
+              Votre boutique est déjà en ligne : remise à neuf du thème, corrections visuelles, nouvelles sections, accélération de la vitesse.
+            </p>
+          </div>
+          <div class="sm:col-span-2 font-mono-tag text-xs text-emerald-700 font-semibold">
+            3 jours à 1 semaine
+          </div>
+          <div class="sm:col-span-3 sm:text-right">
+            <span class="font-mono-tag text-xs text-muted block">À partir de</span>
+            <span class="text-2xl font-bold font-mono-tag text-ink">150 €</span>
+          </div>
+        </div>
+
+        <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-center bg-white/40 -mx-6 px-6 rounded-lg">
+          <div class="sm:col-span-7">
+            <div class="inline-block px-2 py-0.5 rounded text-[10px] font-mono-tag bg-accent/10 text-accent font-semibold mb-1">RECOMMANDÉ POUR LES DROPS</div>
+            <h3 class="text-xl font-medium text-ink">Boutique Shopify complète (de zéro)</h3>
+            <p class="text-sm text-[#3b3a36] mt-1 leading-relaxed">
+              Création complète : thème personnalisé, collections, fiches produits, transporteurs, mise en ligne et remise des accès complets pour gérer vos ventes.
+            </p>
+          </div>
+          <div class="sm:col-span-2 font-mono-tag text-xs text-emerald-700 font-semibold">
+            1 à 2 semaines
+          </div>
+          <div class="sm:col-span-3 sm:text-right">
+            <span class="font-mono-tag text-xs text-muted block">À partir de</span>
+            <span class="text-2xl font-bold font-mono-tag text-ink">300 €</span>
+          </div>
+        </div>
+
+        <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
+          <div class="sm:col-span-7">
+            <h3 class="text-xl font-medium text-ink">Site web complet sur-mesure / Landing page</h3>
+            <p class="text-sm text-[#3b3a36] mt-1 leading-relaxed">
+              Site vitrine ou page de lancement de produit codée sur mesure (React, Next.js ou HTML/CSS/JS), sans CMS lourd, ultra-rapide et optimisée réseaux.
+            </p>
+          </div>
+          <div class="sm:col-span-2 font-mono-tag text-xs text-emerald-700 font-semibold">
+            1 à 2 semaines<br>
+            <span class="text-[11px] text-muted font-normal">(2 à 3 sem. si intégrations de paiement)</span>
+          </div>
+          <div class="sm:col-span-3 sm:text-right">
+            <span class="font-mono-tag text-xs text-muted block">À partir de</span>
+            <span class="text-2xl font-bold font-mono-tag text-ink">450 €</span>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <footer class="label">
-      <span>© 2026 Nolann Duchaussoy</span>
-      <a href="https://github.com/Nolanndch">GitHub</a>
+    <!-- REMERCIEMENTS & FOOTER -->
+    <footer class="pt-12 pb-10 space-y-8">
+      <div class="bg-white p-6 sm:p-7 rounded-xl border border-line text-xs leading-relaxed text-[#444] shadow-xs">
+        <div class="font-mono-tag text-[11px] text-accent uppercase tracking-wider font-semibold mb-2">
+          Remerciements & Confiance
+        </div>
+        <p>
+          Un grand merci aux marques et créateurs qui font confiance à <strong>Takuzo</strong> pour leurs boutiques et leurs lancements : 
+          <span class="text-ink font-medium">7venworld</span>, 
+          <span class="text-ink font-medium">Ambleme</span>, 
+          <span class="text-ink font-medium">Calciori</span>, 
+          ainsi qu'aux utilisateurs de la plateforme <span class="text-ink font-medium">InfluLab IA</span>. 
+          Merci également à tous ceux qui soutiennent le studio et partagent mon travail au quotidien sur les réseaux.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tag text-muted">
+        <div>
+          © 2026 Nolann Duchaussoy · <strong>Takuzo</strong> — Studio de création web & Shopify
+        </div>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
+          <a href="projets.html" class="hover:text-ink transition-colors">Projets</a>
+          <a href="services.html" class="hover:text-ink transition-colors">Services</a>
+          <a href="contact.html" class="hover:text-ink transition-colors">Contact</a>
+          <a href="mentions-legales.html" class="hover:text-ink underline transition-colors">Mentions légales</a>
+        </div>
+      </div>
     </footer>
-  </div>
+
+  </main>
+
+  <!-- BOUTON RETOUR EN HAUT (BACK TO TOP) -->
+  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-ink text-paper border border-line shadow-lg hover:bg-accent hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Remonter en haut de la page">
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
+
+  <!-- SCRIPT DU CALCULATEUR & NAVIGATION -->
+  <script>
+    let basePrice = 300;
+    let extraPrice = 0;
+    let baseDelay = "1 à 2 semaines";
+    let isPaymentComplex = false;
+    let currentProjectType = "shopify";
+    let currentProjectName = "Shopify complet de zéro";
+
+    function setSimProject(type, price, delay, btn) {
+      basePrice = price;
+      baseDelay = delay;
+      currentProjectType = type;
+
+      if (type === 'refonte') currentProjectName = "Petites retouches / Refonte de thème";
+      if (type === 'shopify') currentProjectName = "Shopify complet de zéro";
+      if (type === 'site') currentProjectName = "Site complet sur-mesure / Landing";
+
+      document.querySelectorAll('.sim-type-btn').forEach(b => {
+        b.className = "sim-type-btn p-4 rounded-xl border text-left transition-all border-line hover:border-ink bg-softbg/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent";
+      });
+      btn.className = "sim-type-btn p-4 rounded-xl border text-left transition-all border-accent bg-accent/5 ring-1 ring-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent";
+
+      updateQuote();
+    }
+
+    function toggleOption(checkbox, price) {
+      if (checkbox.checked) {
+        extraPrice += price;
+      } else {
+        extraPrice -= price;
+      }
+      updateQuote();
+    }
+
+    function toggleComplexOption(checkbox, price, affectsDelay) {
+      isPaymentComplex = checkbox.checked;
+      if (checkbox.checked) {
+        extraPrice += price;
+      } else {
+        extraPrice -= price;
+      }
+      updateQuote();
+    }
+
+    function updateQuote() {
+      const total = basePrice + extraPrice;
+      document.getElementById('simDisplayPrice').innerText = total + " €";
+
+      let finalDelay = baseDelay;
+      if (isPaymentComplex) {
+        finalDelay = "2 à 3 semaines (avec intégration paiements & fonctionnalités)";
+      }
+      document.getElementById('simDisplayDelay').innerText = finalDelay;
+    }
+
+    function saveQuoteDetails(event) {
+      if (event) event.preventDefault();
+      const total = basePrice + extraPrice;
+      const finalDelay = isPaymentComplex ? "2 à 3 semaines" : baseDelay;
+      const quoteString = `Projet: ${currentProjectName} | Budget estimé: ${total} € | Délai: ${finalDelay}`;
+      
+      try {
+        localStorage.setItem('takuzo_quote', quoteString);
+      } catch (err) {
+        console.warn("Storage disabled", err);
+      }
+
+      // Redirection sécurisée avec params d'URL pour fonctionner même si le stockage est désactivé
+      const targetUrl = `contact.html?besoin=${encodeURIComponent(currentProjectType)}&total=${total}&delai=${encodeURIComponent(finalDelay)}`;
+      window.location.href = targetUrl;
+    }
+
+    // Navigation & Back to Top
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+      
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !isExpanded);
+      
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    }
+
+    window.addEventListener('scroll', () => {
+      const btt = document.getElementById('back-to-top');
+      if (window.scrollY > 300) {
+        btt.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+        btt.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      } else {
+        btt.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+        btt.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const menu = document.getElementById('mobile-menu');
+        if (menu && !menu.classList.contains('hidden')) {
+          toggleMobileMenu();
+        }
+      }
+    });
+  </script>
 </body>
 </html>

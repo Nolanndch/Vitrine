@@ -1,142 +1,484 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nolann Duchaussoy — Sites web &amp; boutiques Shopify</title>
-  <meta name="description" content="Je crée des boutiques Shopify et des sites web pour des marques qui veulent vendre en ligne. Livraison en 1 à 2 semaines, tarifs dès 150 €.">
-  <meta property="og:title" content="Nolann Duchaussoy — Sites web &amp; boutiques Shopify">
-  <meta property="og:description" content="Boutiques Shopify et sites web pour des marques qui veulent vendre en ligne. Livraison en 1 à 2 semaines.">
+  <title>Nolann Duchaussoy · Takuzo — Studio de création Shopify & Sites Web</title>
+  <meta name="description" content="Nolann Duchaussoy (Takuzo). Création de boutiques Shopify et de sites web sur-mesure pour marques indépendantes et créateurs. Découvrez 7venworld, Ambleme, Calciori, InfluLab IA.">
+  <meta name="theme-color" content="#f6f5f1">
+
+  <!-- Open Graph / Réseaux sociaux -->
+  <meta property="og:site_name" content="Nolann Duchaussoy · Takuzo">
+  <meta property="og:title" content="Takuzo — Studio de création Shopify & Sites Web">
+  <meta property="og:description" content="Boutiques Shopify et sites web sur-mesure pour marques indépendantes et créateurs. Drops streetwear, paiements 1-click et code haute performance.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="images/ambleme.jpg">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111'/%3E%3Ctext x='50' y='72' font-family='Arial' font-weight='700' font-size='64' fill='%23f6f5f1' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon vectorielle haute définition -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f6f5f1'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%232438ff'/%3E%3C/svg%3E">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Person","name":"Nolann Duchaussoy","jobTitle":"Développeur Shopify et web","email":"mailto:nolann.duchaussoy.pro@gmail.com","sameAs":["https://github.com/Nolanndch"]}
-  </script>
-</head>
-<body>
-  <div class="wrap">
-    <nav>
-      <strong><a href="index.html">Nolann Duchaussoy</a></strong>
-      <ul>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="tarifs.html">Tarifs</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
 
-    <header class="intro">
-      <h1>Je crée des boutiques Shopify et des sites web <span>pour des marques qui veulent vendre en ligne.</span></h1>
-      <div class="intro-cols">
-        <div>
-          <p>Je m'appelle Nolann Duchaussoy. Je conçois et je développe des boutiques Shopify et des sites sur mesure, surtout pour des marques de vêtements indépendantes qui sortent leurs collections par drops.</p>
-          <p>Je m'occupe du site de A à Z : maquette, thème, pages produits, configuration, mise en ligne. Quand un thème ne suffit plus, je code ce qu'il manque.</p>
-          <div class="actions">
-            <a class="btn" href="#contact">Discuter de votre projet</a>
-            <a class="link" href="tarifs.html">Voir les tarifs</a>
-          </div>
+  <style>
+    :root {
+      --bg: #f6f5f1;
+      --ink: #121212;
+      --muted: #6b6a66;
+      --line: #dcd8cf;
+      --accent: #2438ff;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: 'Archivo', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-mono-tag {
+      font-family: var(--mono);
+    }
+    ::selection {
+      background-color: #2438ff;
+      color: #ffffff;
+    }
+    .project-card:hover .project-img {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink selection:bg-accent selection:text-white">
+
+  <!-- LIEN D'ÉVITEMENT ACCESSIBILITÉ -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:bg-ink focus:text-paper focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent">
+    Aller au contenu principal
+  </a>
+
+  <!-- BANDEAU DISPONIBILITÉ FIXE -->
+  <aside class="border-b border-line bg-softbg/80 py-2 px-4 text-xs font-mono-tag text-muted text-center flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+    <span class="text-ink font-medium">Takuzo est disponible pour de nouveaux projets</span>
+    <span class="text-line">•</span>
+    <span>Livraison en 3j à 2 sem.</span>
+    <span class="text-line hidden sm:inline">•</span>
+    <a href="tarifs.html" class="hidden sm:inline text-accent hover:underline font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent">
+      Tarifs dès 150 € →
+    </a>
+  </aside>
+
+  <!-- NAVIGATION PRINCIPALE STICKY -->
+  <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-line/80 transition-all">
+    <div class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+      <nav class="flex justify-between items-center py-4 sm:py-5" aria-label="Navigation principale">
+        <!-- Logo -->
+        <a href="index.html" class="group flex items-center gap-2 font-bold text-xl tracking-tight text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
+          <span>Nolann Duchaussoy</span>
+          <span class="text-muted group-hover:text-accent transition-colors">·</span>
+          <span class="text-accent">Takuzo</span>
+        </a>
+
+        <!-- Liens Desktop -->
+        <ul class="hidden md:flex items-center gap-7 text-sm font-medium">
+          <li>
+            <a href="index.html" class="text-ink font-semibold flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/5" aria-current="page">
+              <span>Accueil</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            </a>
+          </li>
+          <li>
+            <a href="projets.html" class="text-muted hover:text-ink transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+              <span>Projets</span>
+              <span class="font-mono-tag text-xs text-accent">04</span>
+            </a>
+          </li>
+          <li>
+            <a href="services.html" class="text-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="tarifs.html" class="text-muted hover:text-ink transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+              <span>Tarifs & Devis</span>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="px-4 py-2 rounded-md bg-ink text-paper hover:bg-accent hover:text-white transition-colors text-xs sm:text-sm font-medium shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
+              Contact
+            </a>
+          </li>
+        </ul>
+
+        <!-- Bouton Menu Mobile (Hamburger) -->
+        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-line bg-white text-ink hover:text-accent hover:border-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Menu principal" aria-expanded="false">
+          <svg id="menu-icon-open" class="w-5 h-5 block" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Tiroir Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-line bg-paper/95 backdrop-blur-md px-6 py-5 transition-all">
+      <ul class="flex flex-col gap-3 font-medium text-base">
+        <li>
+          <a href="index.html" class="flex items-center justify-between p-2.5 rounded-lg bg-black/5 text-ink font-semibold" aria-current="page">
+            <span>Accueil</span>
+            <span class="w-2 h-2 rounded-full bg-accent"></span>
+          </a>
+        </li>
+        <li>
+          <a href="projets.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
+            <span>Projets & Réalisations</span>
+            <span class="font-mono-tag text-xs text-accent bg-accent/10 px-2 py-0.5 rounded">04</span>
+          </a>
+        </li>
+        <li>
+          <a href="services.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
+            <span>Services & Méthode</span>
+            <span class="font-mono-tag text-xs text-muted">Shopify & Code</span>
+          </a>
+        </li>
+        <li>
+          <a href="tarifs.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
+            <span>Tarifs & Simulateur</span>
+            <span class="font-mono-tag text-xs text-emerald-700 font-semibold">Dès 150 €</span>
+          </a>
+        </li>
+        <li class="pt-2 border-t border-line">
+          <a href="contact.html" class="flex items-center justify-center p-3 rounded-lg bg-ink text-paper hover:bg-accent text-center font-medium transition-colors">
+            Prendre contact →
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content" class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+
+    <!-- HERO SECTION ÉPURÉE -->
+    <header class="py-16 sm:py-24 border-b border-line">
+      <div class="max-w-4xl">
+        <div class="inline-flex items-center gap-2 mb-6 text-xs font-mono-tag text-muted">
+          <span>NOLANN DUCHAUSSOY</span>
+          <span>/</span>
+          <span>TAKUZO STUDIO</span>
+          <span>/</span>
+          <span>BASÉ À PARIS · PROJETS À DISTANCE</span>
         </div>
-        <dl class="facts">
-          <dt>Spécialité</dt><dd>Boutiques Shopify, sites sur mesure</dd>
-          <dt>Stack</dt><dd>Liquid, HTML, CSS, JavaScript, React</dd>
-          <dt>Délai</dt><dd>1 à 2 semaines en moyenne</dd>
-          <dt>Tarifs</dt><dd>À partir de 150 €</dd>
-        </dl>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-[64px] font-medium tracking-tight text-ink leading-[1.12]">
+          Je crée des boutiques Shopify et des sites web 
+          <span class="text-muted">pour des marques qui veulent vendre en ligne.</span>
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-4 mt-10">
+          <a href="tarifs.html" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+            <span>Simuler mon tarif en direct</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href="projets.html" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-white border border-line text-ink hover:border-accent hover:text-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+            <span>Voir les 4 projets réalisés</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12 pt-12 border-t border-line">
+        <!-- Présentation -->
+        <div class="lg:col-span-7 space-y-4 text-base sm:text-lg leading-relaxed text-[#2b2a27]">
+          <p>
+            Je m'appelle <strong>Nolann Duchaussoy</strong>, fondateur de <strong>Takuzo</strong>. Je conçois des boutiques Shopify et des sites sur mesure pour les marques indépendantes et les créateurs qui sortent leurs collections par <strong>drops</strong>.
+          </p>
+          <p>
+            De la maquette à la mise en ligne : thème, pages produits, paiement, livraisons. Quand un thème standard ne suffit plus, je code ce qu'il vous manque.
+          </p>
+        </div>
+
+        <!-- Fiche d'identité rapide -->
+        <div class="lg:col-span-5 bg-white p-6 sm:p-7 rounded-xl border border-line shadow-xs">
+          <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-4 pb-3 border-b border-line">
+            Takuzo · Repères
+          </div>
+
+          <dl class="space-y-3.5 text-sm">
+            <div class="flex justify-between items-start gap-4">
+              <dt class="font-mono-tag text-xs text-muted shrink-0 pt-0.5">Spécialité</dt>
+              <dd class="text-right font-medium text-ink">Boutiques Shopify, Drops streetwear, Sites sur-mesure</dd>
+            </div>
+            <div class="flex justify-between items-start gap-4 border-t border-line/60 pt-3">
+              <dt class="font-mono-tag text-xs text-muted shrink-0 pt-0.5">Stack</dt>
+              <dd class="text-right font-medium text-ink">Liquid, Shopify, React, Next.js, HTML/CSS, Tailwind, Vercel</dd>
+            </div>
+            <div class="flex justify-between items-start gap-4 border-t border-line/60 pt-3">
+              <dt class="font-mono-tag text-xs text-muted shrink-0 pt-0.5">Délais réels</dt>
+              <dd class="text-right font-semibold text-emerald-700">3 jours à 2 semaines selon le besoin</dd>
+            </div>
+            <div class="flex justify-between items-start gap-4 border-t border-line/60 pt-3">
+              <dt class="font-mono-tag text-xs text-muted shrink-0 pt-0.5">Interlocuteur</dt>
+              <dd class="text-right font-medium text-ink">Une seule personne, du brief à la mise en ligne</dd>
+            </div>
+          </dl>
+        </div>
       </div>
     </header>
 
-    <section id="projets">
-      <h2>Projets sélectionnés</h2>
-
-      <article class="project">
+    <!-- APERÇU DES PROJETS (4 RÉALISATIONS) -->
+    <section class="py-16 sm:py-24 border-b border-line" aria-labelledby="heading-projets">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
         <div>
-          <span class="num">01</span>
-          <h3>7venworld</h3>
-          <p>Boutique d'une marque streetwear, pensée pour les sorties de collection : bandeau défilant pour annoncer les drops et les promos, catalogue filtrable par catégorie (t-shirts, packs, casquettes) et packs d'été mis en avant.</p>
-          <dl>
-            <dt>Type</dt><dd>Boutique Shopify · client</dd>
-            <dt>Rôle</dt><dd>Design, intégration, configuration</dd>
-          </dl>
-          <a class="visit" href="https://7venworld.com/" target="_blank" rel="noopener">7venworld.com ↗</a>
+          <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Portfolio</div>
+          <h2 id="heading-projets" class="text-3xl sm:text-4xl font-medium tracking-tight text-ink">
+            Projets sélectionnés
+          </h2>
         </div>
-        <a class="shot" href="https://7venworld.com/" target="_blank" rel="noopener"><img src="images/7venworld.jpg" alt="Page d'accueil de la boutique 7venworld" loading="lazy"></a>
-      </article>
+        <a href="projets.html" class="text-sm font-semibold text-accent hover:underline flex items-center gap-1 font-mono-tag focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent">
+          <span>Consulter les études détaillées</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
 
-      <article class="project">
-        <div>
-          <span class="num">02</span>
-          <h3>Ambleme</h3>
-          <p>Boutique d'une marque de vêtements qui en est à son troisième drop.<br>Longsleeves, tatouages temporaires, et une FAQ intégrée à la page pour répondre avant qu'on ne pose la question : livraison, suivi de commande, restocks, entretien.</p>
-          <dl>
-            <dt>Type</dt><dd>Boutique Shopify · client</dd>
-            <dt>Rôle</dt><dd>Design, intégration, configuration</dd>
-          </dl>
-          <a class="visit" href="https://ambleme.fr/" target="_blank" rel="noopener">ambleme.fr ↗</a>
-        </div>
-        <a class="shot" href="https://ambleme.fr/" target="_blank" rel="noopener"><img src="images/ambleme.jpg" alt="Page d'accueil de la boutique Ambleme" loading="lazy"></a>
-      </article>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- 7venworld -->
+        <a href="projets.html#7venworld" class="block group bg-white border border-line rounded-xl overflow-hidden hover:border-accent transition-colors shadow-xs">
+          <div class="p-4 bg-softbg border-b border-line flex justify-between items-center text-xs font-mono-tag text-muted">
+            <span class="text-accent font-semibold">01 / SHOPIFY</span>
+            <span class="group-hover:text-ink transition-colors">7venworld.com ↗</span>
+          </div>
+          <div class="aspect-[16/10] overflow-hidden bg-softbg">
+            <img src="images/7venworld.webp" width="1440" height="729" alt="Boutique en ligne 7venworld" class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-medium text-ink group-hover:text-accent transition-colors">7venworld</h3>
+            <p class="text-xs text-muted mt-1 leading-relaxed">
+              Boutique Shopify pour une marque de streetwear parisienne, pensée pour les sorties de collection par drops (bandeau défilant, catalogue filtrable, checkout 1-click).
+            </p>
+          </div>
+        </a>
 
-      <article class="project">
-        <div>
-          <span class="num">03</span>
-          <h3>Calciori</h3>
-          <p>Page de lancement de la Sopra, premier modèle d'une marque de montres.<br>Tout tient sur une page : photos, fiche technique détaillée (acier 316L brossé, boîtier 41 mm, fond gravé) et annonce du premier drop.</p>
-          <dl>
-            <dt>Type</dt><dd>Landing page sur mesure</dd>
-            <dt>Rôle</dt><dd>Design et code · HTML, CSS, JS · Vercel</dd>
-          </dl>
-          <a class="visit" href="https://calciori.vercel.app/" target="_blank" rel="noopener">calciori.vercel.app ↗</a>
-        </div>
-        <a class="shot" href="https://calciori.vercel.app/" target="_blank" rel="noopener"><img src="images/calciori.jpg" alt="Page de lancement de la montre Calciori Sopra" loading="lazy"></a>
-      </article>
+        <!-- Ambleme -->
+        <a href="projets.html#ambleme" class="block group bg-white border border-line rounded-xl overflow-hidden hover:border-accent transition-colors shadow-xs">
+          <div class="p-4 bg-softbg border-b border-line flex justify-between items-center text-xs font-mono-tag text-muted">
+            <span class="text-accent font-semibold">02 / SHOPIFY</span>
+            <span class="group-hover:text-ink transition-colors">ambleme.fr ↗</span>
+          </div>
+          <div class="aspect-[16/10] overflow-hidden bg-softbg">
+            <img src="images/ambleme.webp" width="1440" height="900" alt="Boutique de vêtements Ambleme" class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-medium text-ink group-hover:text-accent transition-colors">Ambleme</h3>
+            <p class="text-xs text-muted mt-1 leading-relaxed">
+              Boutique de vêtements au 3ème drop. Longsleeves, fiches immersives, lookbook de collection et FAQ intelligente pour réassurer avant l'achat.
+            </p>
+          </div>
+        </a>
 
-      <article class="project">
-        <div>
-          <span class="num">04</span>
-          <h3>InfluLab IA</h3>
-          <p>Mon propre produit : un outil pour les créateurs de contenu.<br>On importe ses statistiques Instagram, TikTok ou YouTube, et l'IA en tire des recommandations concrètes sur ce qui marche et ce qu'il faut publier ensuite.<br>Avec abonnement et blog de guides.</p>
-          <dl>
-            <dt>Type</dt><dd>Application web · projet perso</dd>
-            <dt>Rôle</dt><dd>Conception et développement · React, API, Vercel</dd>
-          </dl>
-          <a class="visit" href="https://influlabia.fr/" target="_blank" rel="noopener">influlabia.fr ↗</a>
-        </div>
-        <a class="shot" href="https://influlabia.fr/" target="_blank" rel="noopener"><img src="images/influlab.jpg" alt="Page d'accueil d'InfluLab IA" loading="lazy"></a>
-      </article>
+        <!-- Calciori -->
+        <a href="projets.html#calciori" class="block group bg-white border border-line rounded-xl overflow-hidden hover:border-accent transition-colors shadow-xs">
+          <div class="p-4 bg-softbg border-b border-line flex justify-between items-center text-xs font-mono-tag text-muted">
+            <span class="text-accent font-semibold">03 / SUR-MESURE</span>
+            <span class="group-hover:text-ink transition-colors">calciori.vercel.app ↗</span>
+          </div>
+          <div class="aspect-[16/10] overflow-hidden bg-softbg">
+            <img src="images/calciori.webp" width="1440" height="900" alt="Montre Calciori Sopra page de lancement" class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-medium text-ink group-hover:text-accent transition-colors">Calciori</h3>
+            <p class="text-xs text-muted mt-1 leading-relaxed">
+              Page de lancement pour la montre Sopra (acier 316L brossé, 41 mm). Landing page sur-mesure ultra-rapide avec fiche technique détaillée.
+            </p>
+          </div>
+        </a>
+
+        <!-- InfluLab IA -->
+        <a href="projets.html#influlab" class="block group bg-white border border-line rounded-xl overflow-hidden hover:border-accent transition-colors shadow-xs">
+          <div class="p-4 bg-softbg border-b border-line flex justify-between items-center text-xs font-mono-tag text-muted">
+            <span class="text-accent font-semibold">04 / SAAS IA</span>
+            <span class="group-hover:text-ink transition-colors">influlabia.fr ↗</span>
+          </div>
+          <div class="aspect-[16/10] overflow-hidden bg-softbg">
+            <img src="images/influlab.webp" width="1440" height="729" alt="Application InfluLab IA" class="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-500" loading="lazy">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-medium text-ink group-hover:text-accent transition-colors">InfluLab IA</h3>
+            <p class="text-xs text-muted mt-1 leading-relaxed">
+              Produit SaaS personnel : application web d'analyse et de recommandations IA pour créateurs de contenu avec abonnements récurrents Stripe.
+            </p>
+          </div>
+        </a>
+
+      </div>
     </section>
 
-    <section id="services">
-      <h2>Ce que je peux faire pour vous</h2>
-      <div class="services">
-        <div>
-          <h3>Votre boutique Shopify</h3>
-          <p>Création complète ou refonte : choix et personnalisation du thème, collections, fiches produits, paiement, livraison.<br>Vous repartez avec une boutique prête à vendre et vous savez la gérer.</p>
+    <!-- SECTION SERVICES EN BREF -->
+    <section class="py-16 sm:py-24 border-b border-line" aria-labelledby="heading-services">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-4">
+          <div class="font-mono-tag text-xs text-muted uppercase">Ce que je propose</div>
+          <h2 id="heading-services" class="text-3xl sm:text-4xl font-medium tracking-tight text-ink">
+            Un accompagnement clair, sans agence intermédiaire.
+          </h2>
+          <p class="text-sm text-[#2b2a27] leading-relaxed">
+            Vous échangez en direct avec celui qui conçoit et développe votre site. Pas de réunion inutile, des délais respectés et un résultat propre.
+          </p>
+          <div class="pt-2">
+            <a href="services.html" class="font-mono-tag text-xs font-semibold text-accent hover:underline inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent">
+              <span>Découvrir les services & la méthode complète</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
-        <div>
-          <h3>Un site ou une landing page</h3>
-          <p>Pour présenter une marque ou lancer un produit.<br>Codé sur mesure, rapide à charger et fait pour être partagé sur les réseaux.</p>
-        </div>
-        <div>
-          <h3>Améliorer l'existant</h3>
-          <p>Une boutique qui a besoin d'un coup de propre, d'une nouvelle section, d'une page qui convertit mieux ou d'un meilleur référencement.</p>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-white p-5 rounded-xl border border-line shadow-xs">
+            <span class="font-mono-tag text-xs text-accent font-semibold">01</span>
+            <h3 class="font-semibold text-ink text-sm mt-2 mb-1">Refonte & Retouches</h3>
+            <p class="text-xs text-muted">Amélioration de thème, nouvelles sections custom en Liquid.</p>
+            <div class="mt-4 pt-3 border-t border-line font-mono-tag text-[11px] text-ink font-medium">
+              3j à 1 semaine · Dès 150 €
+            </div>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-line shadow-xs">
+            <span class="font-mono-tag text-xs text-accent font-semibold">02</span>
+            <h3 class="font-semibold text-ink text-sm mt-2 mb-1">Boutique Shopify</h3>
+            <p class="text-xs text-muted">Création de zéro prête à vendre, optimisée pour vos drops.</p>
+            <div class="mt-4 pt-3 border-t border-line font-mono-tag text-[11px] text-ink font-medium">
+              1 à 2 semaines · Dès 300 €
+            </div>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-line shadow-xs">
+            <span class="font-mono-tag text-xs text-accent font-semibold">03</span>
+            <h3 class="font-semibold text-ink text-sm mt-2 mb-1">Site sur-mesure</h3>
+            <p class="text-xs text-muted">Landing page ou site vitrine codé sur mesure et rapide.</p>
+            <div class="mt-4 pt-3 border-t border-line font-mono-tag text-[11px] text-ink font-medium">
+              1 à 2 semaines · Dès 450 €
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>Un projet de boutique ou de site ?<br><a href="mailto:nolann.duchaussoy.pro@gmail.com">Écrivez-moi</a>, on en parle.<br><a class="mail" href="mailto:nolann.duchaussoy.pro@gmail.com">nolann.duchaussoy.pro@gmail.com</a></p>
+    <!-- SECTION CTA RAPIDE & ORIENTATION -->
+    <!-- TÉMOIGNAGES : décommenter et remplir avec de vraies citations clients
+    <section class="py-16 sm:py-24 border-b border-line" aria-labelledby="heading-avis">
+      <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Avis clients</div>
+      <h2 id="heading-avis" class="text-3xl sm:text-4xl font-medium tracking-tight text-ink mb-12">Ce qu'en disent les marques</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <figure class="bg-white border border-line rounded-xl p-6 sm:p-8">
+          <blockquote class="text-lg leading-relaxed text-ink">« Citation du client. »</blockquote>
+          <figcaption class="mt-6 font-mono-tag text-xs text-muted">Prénom Nom · <span class="text-accent">7venworld</span></figcaption>
+        </figure>
+        <figure class="bg-white border border-line rounded-xl p-6 sm:p-8">
+          <blockquote class="text-lg leading-relaxed text-ink">« Citation du client. »</blockquote>
+          <figcaption class="mt-6 font-mono-tag text-xs text-muted">Prénom Nom · <span class="text-accent">Ambleme</span></figcaption>
+        </figure>
+      </div>
+    </section>
+    -->
+
+    <section class="py-16 sm:py-20 text-center" aria-labelledby="heading-cta">
+      <div class="max-w-2xl mx-auto space-y-4">
+        <div class="font-mono-tag text-xs text-accent uppercase font-semibold">Démarrer votre projet</div>
+        <h2 id="heading-cta" class="text-3xl sm:text-4xl font-medium tracking-tight text-ink">
+          Vous avez une date de drop ou un projet de site ?
+        </h2>
+        <p class="text-sm text-muted">
+          Obtenez une estimation claire en 2 minutes ou écrivez-moi directement pour en parler.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+          <a href="tarifs.html" class="px-6 py-3.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+            Simulateur de devis en direct →
+          </a>
+          <a href="contact.html" class="px-6 py-3.5 rounded-md bg-white border border-line text-ink hover:border-accent hover:text-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+            Formulaire de contact
+          </a>
+        </div>
+      </div>
     </section>
 
-    <footer class="label">
-      <span>© 2026 Nolann Duchaussoy</span>
-      <a href="https://github.com/Nolanndch">GitHub</a>
+    <!-- REMERCIEMENTS & FOOTER -->
+    <footer class="pt-12 pb-10 border-t border-line space-y-8">
+      
+      <!-- Clients -->
+      <div class="bg-white p-6 sm:p-7 rounded-xl border border-line text-xs leading-relaxed text-[#444] shadow-xs">
+        <div class="font-mono-tag text-[11px] text-accent uppercase tracking-wider font-semibold mb-2">
+          Ils m'ont fait confiance
+        </div>
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-ink font-medium">
+          <li><a href="https://7venworld.com" target="_blank" rel="noopener" class="hover:text-accent transition-colors">7venworld</a></li>
+          <li><a href="https://ambleme.fr" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Ambleme</a></li>
+          <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Calciori</a></li>
+          <li><a href="https://influlabia.fr" target="_blank" rel="noopener" class="hover:text-accent transition-colors">InfluLab IA</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tag text-muted">
+        <div>
+          © 2026 Nolann Duchaussoy · <strong>Takuzo</strong> — Studio de création web & Shopify
+        </div>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="projets.html" class="hover:text-ink transition-colors">Projets</a>
+          <a href="services.html" class="hover:text-ink transition-colors">Services</a>
+          <a href="tarifs.html" class="hover:text-ink transition-colors">Tarifs & Devis</a>
+          <a href="contact.html" class="hover:text-ink transition-colors">Contact</a>
+          <a href="mentions-legales.html" class="hover:text-ink underline transition-colors">Mentions légales</a>
+        </div>
+      </div>
     </footer>
-  </div>
+
+  </main>
+
+  <!-- BOUTON RETOUR EN HAUT (BACK TO TOP) -->
+  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-ink text-paper border border-line shadow-lg hover:bg-accent hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Remonter en haut de la page">
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
+
+  <script>
+    // Toggle Menu Mobile
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+      
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !isExpanded);
+      
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    }
+
+    // Gestion du bouton Back to Top
+    window.addEventListener('scroll', () => {
+      const btt = document.getElementById('back-to-top');
+      if (window.scrollY > 300) {
+        btt.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+        btt.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      } else {
+        btt.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+        btt.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      }
+    });
+
+    // Fermer menu mobile sur touche Echap
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const menu = document.getElementById('mobile-menu');
+        if (menu && !menu.classList.contains('hidden')) {
+          toggleMobileMenu();
+        }
+      }
+    });
+  </script>
 </body>
 </html>
