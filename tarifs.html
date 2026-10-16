@@ -1,54 +1,52 @@
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="motion-safe:scroll-smooth">
 <head>
   <meta charset="utf-8">
+  <script id="lang-redirect">
+    // Visiteurs dont le navigateur n'est pas en français -> version anglaise (jamais les robots d'indexation)
+    (function () {
+      if (/bot|crawl|spider|slurp|lighthouse|inspectiontool|facebookexternalhit/i.test(navigator.userAgent)) return;
+      var pref = null;
+      try { pref = localStorage.getItem('takuzo_lang'); } catch (e) {}
+      if (pref === 'fr') return;
+      // Clic interne vers la version FR : ne pas renvoyer vers EN (utile si localStorage est bloqué)
+      if (pref !== 'en' && document.referrer.indexOf(location.href.replace(/[^\/]*([?#].*)?$/, '').replace(/\/$/, '')) === 0) return;
+      var l = (navigator.languages && navigator.languages[0]) || navigator.language || 'fr';
+      if (pref === 'en' || !/^fr\b/i.test(l)) {
+        var page = location.pathname.split('/').pop() || 'index.html';
+        location.replace('en/' + page + location.search + location.hash);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tarifs & Simulateur de Devis — Nolann Duchaussoy · Takuzo</title>
-  <meta name="description" content="Simulateur de tarif et grille officielle de Nolann Duchaussoy (Takuzo). Refonte dès 150 €, boutique Shopify dès 300 €, site sur-mesure dès 450 €.">
-  <meta name="theme-color" content="#f6f5f1">
+  <title>Tarifs & estimation en ligne — Nolann Duchaussoy · Takuzo</title>
+  <meta name="description" content="Simulateur de tarif Takuzo : retouches & refonte Shopify dès 150 €, boutique Shopify complète dès 300 €, site web sur mesure dès 450 €.">
+  <meta name="theme-color" content="#f2f2f2">
 
   <!-- Open Graph / Réseaux sociaux -->
   <meta property="og:site_name" content="Nolann Duchaussoy · Takuzo">
-  <meta property="og:title" content="Tarifs & Simulateur de Devis — Nolann Duchaussoy · Takuzo">
-  <meta property="og:description" content="Simulez en 2 minutes le coût et les délais de votre boutique Shopify ou de votre site web sur-mesure. Tarifs fixes et sans surprise.">
+  <meta property="og:title" content="Tarifs & estimation en ligne — Nolann Duchaussoy · Takuzo">
+  <meta property="og:description" content="Estimez en 2 minutes le prix et le délai de votre boutique Shopify ou de votre site web sur mesure. Estimation immédiate, devis ferme confirmé après un court échange.">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://nolanndch.github.io/Vitrine/tarifs.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://nolanndch.github.io/Vitrine/tarifs.html">
+  <link rel="alternate" hreflang="fr" href="https://nolanndch.github.io/Vitrine/tarifs.html">
+  <link rel="alternate" hreflang="en" href="https://nolanndch.github.io/Vitrine/en/tarifs.html">
+  <link rel="alternate" hreflang="x-default" href="https://nolanndch.github.io/Vitrine/en/tarifs.html">
 
   <!-- Favicon vectorielle haute définition -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f6f5f1'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%232438ff'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f2f2f2'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%23d71921'/%3E%3C/svg%3E">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&text=%E6%8B%93%E3%82%BF%E3%82%AF%E3%82%BE%E3%82%A6&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
-    :root {
-      --bg: #f6f5f1;
-      --ink: #121212;
-      --muted: #6b6a66;
-      --line: #dcd8cf;
-      --accent: #2438ff;
-      --mono: "IBM Plex Mono", ui-monospace, monospace;
-    }
-    body {
-      background-color: var(--bg);
-      color: var(--ink);
-      font-family: 'Archivo', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    .font-mono-tag {
-      font-family: var(--mono);
-    }
-    ::selection {
-      background-color: #2438ff;
-      color: #ffffff;
-    }
-    .custom-shadow {
-      box-shadow: 0 4px 20px -2px rgba(18, 18, 18, 0.05);
-    }
-  </style>
 </head>
 <body class="bg-paper text-ink selection:bg-accent selection:text-white">
 
@@ -58,48 +56,48 @@
   </a>
 
   <!-- BANDEAU DISPONIBILITÉ -->
-  <aside class="border-b border-line bg-softbg/80 py-2 px-4 text-xs font-mono-tag text-muted text-center flex items-center justify-center gap-2">
-    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+  <aside aria-label="Disponibilité" class="glass-bar py-2 px-4 text-xs font-mono-tag text-muted text-center flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-accent motion-safe:animate-pulse" aria-hidden="true"></span>
     <span class="text-ink font-medium">Takuzo est disponible pour de nouveaux projets</span>
-    <span class="text-line">•</span>
-    <span>Livraison en 3j à 2 sem.</span>
-    <span class="text-line hidden sm:inline">•</span>
-    <span class="hidden sm:inline font-semibold text-ink">Devis garanti sans surprise</span>
+    <span class="text-line" aria-hidden="true">•</span>
+    <span>Livraison en 3 j à 3 sem.</span>
+    <span class="text-line hidden sm:inline" aria-hidden="true">•</span>
+    <span class="hidden sm:inline font-semibold text-ink">Devis ferme validé avant démarrage</span>
   </aside>
 
   <!-- NAVIGATION PRINCIPALE STICKY -->
-  <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-line/80 transition-all">
-    <div class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
-      <nav class="flex justify-between items-center py-4 sm:py-5" aria-label="Navigation principale">
+  <header class="sticky top-0 z-50 px-3 sm:px-4 pt-3 transition-all">
+    <div class="glass max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
+      <nav class="flex justify-between items-center py-3 sm:py-4" aria-label="Navigation principale">
         <!-- Logo -->
-        <a href="index.html" class="group flex items-center gap-2 font-bold text-xl tracking-tight text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
-          <span>Nolann Duchaussoy</span>
-          <span class="text-muted group-hover:text-accent transition-colors">·</span>
-          <span class="text-accent">Takuzo</span>
+        <a href="index.html" translate="no" class="group flex items-center gap-1.5 sm:gap-2 whitespace-nowrap font-dot font-black text-lg sm:text-xl tracking-tight text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
+          <span class="hanko" aria-hidden="true" translate="no">拓</span>
+          <span translate="no">Takuzo</span>
+          <span class="font-jp font-medium text-[11px] text-muted tracking-[0.25em] ml-1 pl-3 border-l border-line" aria-hidden="true" translate="no">タクゾウ</span>
         </a>
 
         <!-- Liens Desktop -->
         <ul class="hidden md:flex items-center gap-7 text-sm font-medium">
           <li>
-            <a href="index.html" class="text-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+            <a href="index.html" class="nav-link text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               Accueil
             </a>
           </li>
           <li>
-            <a href="projets.html" class="text-muted hover:text-ink transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+            <a href="projets.html" class="nav-link text-muted flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               <span>Projets</span>
-              <span class="font-mono-tag text-xs text-accent">04</span>
+              <span class="font-mono-tag text-xs text-accent" aria-hidden="true">04</span>
             </a>
           </li>
           <li>
-            <a href="services.html" class="text-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+            <a href="services.html" class="nav-link text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               Services
             </a>
           </li>
           <li>
-            <a href="tarifs.html" class="text-ink font-semibold flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/5" aria-current="page">
-              <span>Tarifs & Devis</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            <a href="tarifs.html" class="nav-link text-ink font-semibold flex items-center gap-1.5 bg-black/5" aria-current="page">
+              <span>Tarifs</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true"></span>
             </a>
           </li>
           <li>
@@ -107,14 +105,17 @@
               Contact
             </a>
           </li>
+          <li>
+            <a href="en/tarifs.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav-link text-muted font-mono-tag text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="EN – English version">EN</a>
+          </li>
         </ul>
 
         <!-- Bouton Menu Mobile (Hamburger) -->
-        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-line bg-white text-ink hover:text-accent hover:border-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Menu principal" aria-expanded="false">
-          <svg id="menu-icon-open" class="w-5 h-5 block" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-line bg-white text-ink hover:text-accent hover:border-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Menu principal" aria-controls="mobile-menu" aria-expanded="false">
+          <svg id="menu-icon-open" aria-hidden="true" class="w-5 h-5 block" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
-          <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+          <svg id="menu-icon-close" aria-hidden="true" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -122,38 +123,44 @@
     </div>
 
     <!-- Tiroir Mobile -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-line bg-paper/95 backdrop-blur-md px-6 py-5 transition-all">
+    <nav id="mobile-menu" aria-label="Menu mobile" class="glass hidden md:hidden max-w-[1200px] mx-auto mt-2 px-5 py-5 transition-all">
       <ul class="flex flex-col gap-3 font-medium text-base">
         <li>
-          <a href="index.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
+          <a href="index.html" class="nav-link flex items-center justify-between text-muted">
             <span>Accueil</span>
           </a>
         </li>
         <li>
-          <a href="projets.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
-            <span>Projets & Réalisations</span>
-            <span class="font-mono-tag text-xs text-accent bg-accent/10 px-2 py-0.5 rounded">04</span>
+          <a href="projets.html" class="nav-link flex items-center justify-between text-muted">
+            <span>Projets</span>
+            <span class="font-mono-tag text-xs text-white bg-accent px-2 py-0.5 rounded" aria-hidden="true">04</span>
           </a>
         </li>
         <li>
-          <a href="services.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
-            <span>Services & Méthode</span>
-            <span class="font-mono-tag text-xs text-muted">Shopify & Code</span>
+          <a href="services.html" class="nav-link flex items-center justify-between text-muted">
+            <span>Services</span>
+            <span class="font-mono-tag text-xs text-muted" aria-hidden="true">Shopify & code</span>
           </a>
         </li>
         <li>
-          <a href="tarifs.html" class="flex items-center justify-between p-2.5 rounded-lg bg-black/5 text-ink font-semibold" aria-current="page">
-            <span>Tarifs & Simulateur</span>
-            <span class="w-2 h-2 rounded-full bg-accent"></span>
+          <a href="tarifs.html" class="nav-link flex items-center justify-between bg-black/5 text-ink font-semibold" aria-current="page">
+            <span>Tarifs</span>
+            <span class="w-2 h-2 rounded-full bg-accent" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li>
+          <a href="en/tarifs.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav-link flex items-center justify-between text-muted" aria-label="English version">
+            <span>English</span>
+            <span class="font-mono-tag text-xs">EN</span>
           </a>
         </li>
         <li class="pt-2 border-t border-line">
           <a href="contact.html" class="flex items-center justify-center p-3 rounded-lg bg-ink text-paper hover:bg-accent text-center font-medium transition-colors">
-            Prendre contact →
+            Contact
           </a>
         </li>
       </ul>
-    </div>
+    </nav>
   </header>
 
   <main id="main-content" class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -161,39 +168,39 @@
     <!-- FIL D'ARIANE PRO -->
     <nav aria-label="Fil d'Ariane" class="pt-8 pb-2 text-xs font-mono-tag text-muted flex items-center gap-2">
       <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
-      <span>/</span>
-      <span class="text-ink font-medium" aria-current="page">Tarifs & Devis</span>
+      <span aria-hidden="true">/</span>
+      <span class="text-ink font-medium" aria-current="page">Tarifs</span>
     </nav>
 
     <!-- HEADER TARIFS -->
     <header class="py-12 sm:py-16 border-b border-line">
       <div class="max-w-3xl">
-        <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Transparence & Estimation directe</div>
-        <h1 class="text-4xl sm:text-6xl font-medium tracking-tight text-ink">
+        <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Transparence & estimation directe</div>
+        <h1 class="text-4xl sm:text-6xl tracking-tight text-ink">
           Des tarifs simples,<br>
-          <span class="text-muted">et des délais clairs et respectés.</span>
+          <span class="text-muted">des délais clairs et respectés.</span>
         </h1>
         <p class="text-base sm:text-lg text-muted mt-4 leading-relaxed">
-          Petites modifications livrées en 3 jours à 1 semaine. Boutiques Shopify et sites sur mesure livrés en 1 à 2 semaines (2 à 3 semaines en cas d'intégrations de paiement avancées et fonctionnalités complexes).
+          Retouches & refonte Shopify livrées en 3 jours à 1 semaine (1 à 2 semaines à partir de 3 options). Boutiques Shopify et sites web sur mesure livrés en 1 à 2 semaines (2 à 3 semaines pour un site avec paiement en ligne).
         </p>
       </div>
     </header>
 
     <!-- SIMULATEUR DE DEVIS INTERACTIF -->
-    <section class="py-16 border-b border-line" aria-labelledby="heading-simulateur">
+    <section id="simulateur" class="py-16 border-b border-line scroll-mt-28" aria-labelledby="heading-simulateur">
       <div class="max-w-3xl mx-auto mb-10 text-center">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-white border border-line font-mono-tag text-xs text-accent font-semibold mb-3">
           OUTIL D'ESTIMATION DIRECTE
         </div>
-        <h2 id="heading-simulateur" class="text-3xl sm:text-4xl font-medium text-ink">
-          Simulateur de devis personnalisé
+        <h2 id="heading-simulateur" class="text-3xl sm:text-4xl text-ink">
+          Simulateur de tarif
         </h2>
         <p class="text-sm text-muted mt-2">
           Ajustez vos options : le tarif et le délai s'actualisent en temps réel.
         </p>
       </div>
 
-      <div class="max-w-3xl mx-auto bg-white rounded-2xl border border-line p-6 sm:p-10 custom-shadow">
+      <div class="max-w-3xl mx-auto bg-white rounded-2xl border border-line p-6 sm:p-10">
         
         <!-- Étape 1 : Prestation principale -->
         <fieldset class="mb-8 border-none p-0 m-0">
@@ -202,111 +209,207 @@
           </legend>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
             
-            <button type="button" onclick="setSimProject('refonte', 150, '3 jours à 1 semaine', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-line hover:border-ink bg-softbg/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-              <div class="font-semibold text-sm text-ink">Petites retouches / Refonte</div>
-              <div class="text-xs text-muted mt-1">Boutique existante à améliorer</div>
-              <div class="font-mono-tag text-xs font-semibold text-emerald-700 mt-2">Délai : 3j à 1 sem.</div>
-              <div class="font-mono-tag text-sm font-bold text-accent mt-1">Dès 150 €</div>
+            <button type="button" data-type="refonte" aria-pressed="false" onclick="setSimProject('refonte', 150, '3 jours à 1 semaine', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-line hover:border-ink bg-softbg/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <span class="block font-semibold text-sm text-ink">Retouches & refonte Shopify</span>
+              <span class="block text-xs text-muted mt-1">Votre boutique existe déjà</span>
+              <span class="block font-mono-tag text-xs font-semibold text-ink mt-2">Délai : 3 jours à 1 semaine</span>
+              <span class="block font-mono-tag text-sm font-bold text-accent mt-1">Dès 150 €</span>
             </button>
 
-            <button type="button" onclick="setSimProject('shopify', 300, '1 à 2 semaines', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-accent bg-accent/5 ring-1 ring-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-              <div class="font-semibold text-sm text-ink">Shopify complet de zéro</div>
-              <div class="text-xs text-muted mt-1">Boutique neuve prête pour drops</div>
-              <div class="font-mono-tag text-xs font-semibold text-emerald-700 mt-2">Délai : 1 à 2 sem.</div>
-              <div class="font-mono-tag text-sm font-bold text-accent mt-1">Dès 300 €</div>
+            <button type="button" data-type="shopify" aria-pressed="true" onclick="setSimProject('shopify', 300, '1 à 2 semaines', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-accent bg-accent/5 ring-1 ring-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <span class="block font-semibold text-sm text-ink">Boutique Shopify complète</span>
+              <span class="block text-xs text-muted mt-1">Créée de zéro, prête pour vos drops</span>
+              <span class="block font-mono-tag text-xs font-semibold text-ink mt-2">Délai : 1 à 2 semaines</span>
+              <span class="block font-mono-tag text-sm font-bold text-accent mt-1">Dès 300 €</span>
             </button>
 
-            <button type="button" onclick="setSimProject('site', 450, '1 à 2 semaines', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-line hover:border-ink bg-softbg/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-              <div class="font-semibold text-sm text-ink">Site complet sur-mesure</div>
-              <div class="text-xs text-muted mt-1">Landing page / Vitrine rapide</div>
-              <div class="font-mono-tag text-xs font-semibold text-emerald-700 mt-2">Délai : 1 à 2 sem.</div>
-              <div class="font-mono-tag text-sm font-bold text-accent mt-1">Dès 450 €</div>
+            <button type="button" data-type="site" aria-pressed="false" onclick="setSimProject('site', 450, '1 à 2 semaines', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-line hover:border-ink bg-softbg/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <span class="block font-semibold text-sm text-ink">Site web sur mesure</span>
+              <span class="block text-xs text-muted mt-1">Landing page ou site vitrine codé</span>
+              <span class="block font-mono-tag text-xs font-semibold text-ink mt-2">Délai : 1 à 2 semaines</span>
+              <span class="block font-mono-tag text-sm font-bold text-accent mt-1">Dès 450 €</span>
             </button>
 
           </div>
         </fieldset>
 
-        <!-- Étape 2 : Options & Intégrations -->
+        <!-- Étape 2 : Sections & options (filtrées selon le type de projet via data-for) -->
         <fieldset class="mb-8 border-none p-0 m-0">
           <legend class="block font-mono-tag text-xs uppercase tracking-wider text-muted mb-3 font-semibold">
-            2. Options et intégrations techniques :
+            2. Ajoutez des sections et des options :
           </legend>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-            
-            <label class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" id="optPayment" onchange="toggleComplexOption(this, 120, true)" class="w-4 h-4 rounded text-accent focus:ring-accent">
-              <div class="flex-1">
-                <span class="font-medium text-ink">Intégration paiements avancés (Stripe / Apple Pay / Multi-devises)</span>
-                <span class="text-muted block text-[11px]">+120 € · Délai ajusté : 2 à 3 sem.</span>
-              </div>
+            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" data-price="40" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Bandeau d'annonce défilant</span>
+                <span class="text-muted block text-[11px]">+40 € · Dates de drop, offres, livraison offerte</span>
+              </span>
             </label>
-
-            <label class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" onchange="toggleOption(this, 80)" class="w-4 h-4 rounded text-accent focus:ring-accent">
-              <div class="flex-1">
-                <span class="font-medium text-ink">Sections personnalisées en code Liquid</span>
-                <span class="text-muted block text-[11px]">+80 € (mise en page sur mesure)</span>
-              </div>
+            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" data-price="60" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Compte à rebours de drop</span>
+                <span class="text-muted block text-[11px]">+60 € · Page d'attente avant l'ouverture de la collection</span>
+              </span>
             </label>
-
-            <label class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" onchange="toggleOption(this, 100)" class="w-4 h-4 rounded text-accent focus:ring-accent">
-              <div class="flex-1">
-                <span class="font-medium text-ink">Optimisation SEO & Vitesse mobile</span>
-                <span class="text-muted block text-[11px]">+100 € (référencement propre)</span>
-              </div>
+            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" data-price="60" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Lookbook de collection</span>
+                <span class="text-muted block text-[11px]">+60 € · Galerie éditoriale reliée aux produits</span>
+              </span>
             </label>
-
-            <label class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" onchange="toggleOption(this, 60)" class="w-4 h-4 rounded text-accent focus:ring-accent">
-              <div class="flex-1">
-                <span class="font-medium text-ink">Configuration du nom de domaine & emails pro</span>
-                <span class="text-muted block text-[11px]">+60 € (connexion DNS propre)</span>
-              </div>
+            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" data-price="40" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">FAQ & réassurance produit</span>
+                <span class="text-muted block text-[11px]">+40 € · Livraison, retours et entretien, directement sur la fiche produit</span>
+              </span>
+            </label>
+            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" data-price="40" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Guide des tailles</span>
+                <span class="text-muted block text-[11px]">+40 € · Tableau de mesures en pop-up sur la fiche produit</span>
+              </span>
+            </label>
+            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" data-price="80" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Fiche produit premium</span>
+                <span class="text-muted block text-[11px]">+80 € · Galerie immersive et « Complétez le look »</span>
+              </span>
+            </label>
+            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" data-price="40" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Filtres de catalogue</span>
+                <span class="text-muted block text-[11px]">+40 € · Par catégorie, taille, couleur et prix</span>
+              </span>
+            </label>
+            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" data-price="60" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Boutique bilingue FR / EN</span>
+                <span class="text-muted block text-[11px]">+60 € · Traduction et devises locales via Shopify Markets</span>
+              </span>
+            </label>
+            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
+              <input type="checkbox" data-price="80" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Optimisation vitesse & SEO</span>
+                <span class="text-muted block text-[11px]">+80 € · Images, code du thème, balises et données produits</span>
+              </span>
+            </label>
+            <label data-for="site" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors hidden">
+              <input type="checkbox" data-price="90" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Pages supplémentaires</span>
+                <span class="text-muted block text-[11px]">+90 € · À propos, collection, contact… (jusqu'à 3 pages)</span>
+              </span>
+            </label>
+            <label data-for="site" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors hidden">
+              <input type="checkbox" data-price="40" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Compte à rebours de lancement</span>
+                <span class="text-muted block text-[11px]">+40 € · Pour faire monter l'attente avant la sortie</span>
+              </span>
+            </label>
+            <label data-for="site" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors hidden">
+              <input type="checkbox" data-price="60" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Liste d'attente / avant-première</span>
+                <span class="text-muted block text-[11px]">+60 € · Formulaire d'inscription relié à votre outil d'emailing</span>
+              </span>
+            </label>
+            <label data-for="site" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors hidden">
+              <input type="checkbox" data-price="120" data-delay="1" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Paiement en ligne (Stripe)</span>
+                <span class="text-muted block text-[11px]">+120 € · Précommandes ou vente directe · Délai : 2 à 3 semaines</span>
+              </span>
+            </label>
+            <label data-for="site" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors hidden">
+              <input type="checkbox" data-price="80" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Version bilingue FR / EN</span>
+                <span class="text-muted block text-[11px]">+80 € · Contenu traduit et sélecteur de langue</span>
+              </span>
+            </label>
+            <label data-for="site" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors hidden">
+              <input type="checkbox" data-price="80" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Animations avancées</span>
+                <span class="text-muted block text-[11px]">+80 € · Effets au défilement, transitions, survols</span>
+              </span>
+            </label>
+            <label data-for="site" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors hidden">
+              <input type="checkbox" data-price="80" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Référencement naturel avancé (SEO)</span>
+                <span class="text-muted block text-[11px]">+80 € · Balises, données structurées, Search Console</span>
+              </span>
+            </label>
+            <label data-for="site" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors hidden">
+              <input type="checkbox" data-price="60" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
+              <span class="flex-1">
+                <span class="font-medium text-ink">Adresses email à votre nom de domaine</span>
+                <span class="text-muted block text-[11px]">+60 € · Configuration DNS et boîtes mail (Google Workspace, Zoho…)</span>
+              </span>
             </label>
           </div>
+          <p data-for="refonte" class="hidden text-[11px] text-muted mt-3 leading-relaxed">
+            Inclus : corrections visuelles, ajustements mobile et nettoyage du thème existant. Chaque section est codée en Liquid et reste modifiable depuis l'éditeur Shopify. À partir de 3 options, prévoir 1 à 2 semaines.
+          </p>
+          <p data-for="shopify" class="text-[11px] text-muted mt-3 leading-relaxed">
+            Inclus : thème personnalisé, collections, fiches produits, livraisons et mise en ligne. Les paiements (CB, Apple Pay, Shop Pay, PayPal) et le nom de domaine sont gérés nativement par Shopify : je les configure sans supplément. L'abonnement Shopify, l'achat du nom de domaine et les éventuelles applications payantes restent à votre charge.
+          </p>
+          <p data-for="site" class="hidden text-[11px] text-muted mt-3 leading-relaxed">
+            Inclus : design sur mesure adapté à tous les écrans, page d'accueil complète, mise en ligne sur Vercel et connexion de votre nom de domaine. L'achat du nom de domaine, l'éventuel abonnement d'hébergement et les services tiers (boîtes mail, frais Stripe) restent à votre charge.
+          </p>
         </fieldset>
 
         <!-- Résultat & Estimation dynamique -->
         <div class="p-6 rounded-xl bg-softbg border border-line flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
+          <div role="status" aria-live="polite" aria-atomic="true">
             <span class="font-mono-tag text-xs text-muted uppercase">Montant estimé :</span>
             <div class="text-3xl sm:text-4xl font-bold font-mono-tag text-ink mt-0.5" id="simDisplayPrice">300 €</div>
             <div class="text-xs text-muted font-mono-tag mt-1">
-              Délai de réalisation : <strong id="simDisplayDelay" class="text-emerald-700 font-semibold">1 à 2 semaines</strong>
+              Délai de réalisation : <strong id="simDisplayDelay" class="text-ink font-semibold">1 à 2 semaines</strong>
             </div>
           </div>
 
-          <a href="contact.html" id="validateQuoteLink" onclick="saveQuoteDetails(event)" class="w-full sm:w-auto px-6 py-3.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm text-center shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-            Valider ce devis par email →
+          <a href="contact.html" id="validateQuoteLink" onclick="saveQuoteDetails(event)" class="w-full sm:w-auto px-6 py-3.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+            Demander un devis ferme →
           </a>
         </div>
 
         <!-- Repères rassurants -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 mt-6 border-t border-line text-[11px] font-mono-tag text-muted text-center sm:text-left">
           <div class="flex items-center gap-1.5 justify-center sm:justify-start">
-            <span class="text-emerald-600 font-bold">✓</span>
-            <span>Tarif forfaitaire ferme</span>
+            <span class="text-accent font-bold">✓</span>
+            <span>Devis ferme validé avant démarrage</span>
           </div>
           <div class="flex items-center gap-1.5 justify-center sm:justify-start">
-            <span class="text-emerald-600 font-bold">✓</span>
-            <span>Acompte puis solde à validation</span>
+            <span class="text-accent font-bold">✓</span>
+            <span>Acompte, puis solde à la livraison</span>
           </div>
           <div class="flex items-center gap-1.5 justify-center sm:justify-start">
-            <span class="text-emerald-600 font-bold">✓</span>
-            <span>100% propriétaire de votre site</span>
+            <span class="text-accent font-bold">✓</span>
+            <span>100% propriétaire de votre boutique ou de votre site</span>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- GRILLE OFFICIELLE DES TARIFS -->
+    <!-- GRILLE TARIFAIRE -->
     <section class="py-16 border-b border-line" aria-labelledby="heading-grille">
       <div class="max-w-2xl mb-12">
-        <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Grille officielle</div>
-        <h2 id="heading-grille" class="text-3xl font-medium tracking-tight text-ink">
-          Récapitulatif des prestations fixes
+        <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Grille tarifaire</div>
+        <h2 id="heading-grille" class="text-3xl tracking-tight text-ink">
+          Prix de départ par prestation
         </h2>
       </div>
 
@@ -314,13 +417,14 @@
         
         <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
           <div class="sm:col-span-7">
-            <h3 class="text-xl font-medium text-ink">Petites retouches & Refonte de thème</h3>
+            <h3 class="text-xl font-medium text-ink">Retouches & refonte Shopify</h3>
             <p class="text-sm text-[#3b3a36] mt-1 leading-relaxed">
-              Votre boutique est déjà en ligne : remise à neuf du thème, corrections visuelles, nouvelles sections, accélération de la vitesse.
+              Votre boutique est déjà en ligne : corrections visuelles, ajustements mobile et nettoyage du thème. Nouvelles sections (bandeau, lookbook, FAQ…) et optimisation de la vitesse en option.
             </p>
           </div>
-          <div class="sm:col-span-2 font-mono-tag text-xs text-emerald-700 font-semibold">
-            3 jours à 1 semaine
+          <div class="sm:col-span-2 font-mono-tag text-xs text-ink font-semibold">
+            3 jours à 1 semaine<br>
+            <span class="text-[11px] text-muted font-normal">(1 à 2 semaines à partir de 3 options)</span>
           </div>
           <div class="sm:col-span-3 sm:text-right">
             <span class="font-mono-tag text-xs text-muted block">À partir de</span>
@@ -330,13 +434,13 @@
 
         <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-center bg-white/40 -mx-6 px-6 rounded-lg">
           <div class="sm:col-span-7">
-            <div class="inline-block px-2 py-0.5 rounded text-[10px] font-mono-tag bg-accent/10 text-accent font-semibold mb-1">RECOMMANDÉ POUR LES DROPS</div>
-            <h3 class="text-xl font-medium text-ink">Boutique Shopify complète (de zéro)</h3>
+            <div class="inline-block px-2 py-0.5 rounded text-[10px] font-mono-tag bg-accent text-white font-semibold mb-1">RECOMMANDÉ POUR LES DROPS</div>
+            <h3 class="text-xl font-medium text-ink">Boutique Shopify complète</h3>
             <p class="text-sm text-[#3b3a36] mt-1 leading-relaxed">
-              Création complète : thème personnalisé, collections, fiches produits, transporteurs, mise en ligne et remise des accès complets pour gérer vos ventes.
+              Création de A à Z : thème personnalisé, collections, fiches produits, transporteurs, mise en ligne et remise de tous les accès pour gérer vos ventes.
             </p>
           </div>
-          <div class="sm:col-span-2 font-mono-tag text-xs text-emerald-700 font-semibold">
+          <div class="sm:col-span-2 font-mono-tag text-xs text-ink font-semibold">
             1 à 2 semaines
           </div>
           <div class="sm:col-span-3 sm:text-right">
@@ -347,14 +451,14 @@
 
         <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
           <div class="sm:col-span-7">
-            <h3 class="text-xl font-medium text-ink">Site web complet sur-mesure / Landing page</h3>
+            <h3 class="text-xl font-medium text-ink">Site web sur mesure / Landing page</h3>
             <p class="text-sm text-[#3b3a36] mt-1 leading-relaxed">
-              Site vitrine ou page de lancement de produit codée sur mesure (React, Next.js ou HTML/CSS/JS), sans CMS lourd, ultra-rapide et optimisée réseaux.
+              Site vitrine ou page de lancement codés sur mesure (React, Next.js ou HTML/CSS/JS), sans CMS lourd, rapides à charger et prêts à être partagés sur les réseaux sociaux.
             </p>
           </div>
-          <div class="sm:col-span-2 font-mono-tag text-xs text-emerald-700 font-semibold">
+          <div class="sm:col-span-2 font-mono-tag text-xs text-ink font-semibold">
             1 à 2 semaines<br>
-            <span class="text-[11px] text-muted font-normal">(2 à 3 sem. si intégrations de paiement)</span>
+            <span class="text-[11px] text-muted font-normal">(2 à 3 semaines avec paiement en ligne)</span>
           </div>
           <div class="sm:col-span-3 sm:text-right">
             <span class="font-mono-tag text-xs text-muted block">À partir de</span>
@@ -365,41 +469,51 @@
       </div>
     </section>
 
-    <!-- REMERCIEMENTS & FOOTER -->
-    <footer class="pt-12 pb-10 space-y-8">
-      <div class="bg-white p-6 sm:p-7 rounded-xl border border-line text-xs leading-relaxed text-[#444] shadow-xs">
+    <!-- PROCHAINE ÉTAPE -->
+    <section class="my-16 p-8 sm:p-12 rounded-2xl bg-white border border-line text-center space-y-4" aria-labelledby="heading-transition">
+      <div class="font-mono-tag text-xs text-accent uppercase font-semibold">Prochaine étape</div>
+      <h2 id="heading-transition" class="text-2xl sm:text-3xl font-medium tracking-tight text-ink">Prêt à lancer votre projet ?</h2>
+      <p class="text-sm text-muted max-w-xl mx-auto">Envoyez-moi votre estimation ou décrivez votre besoin : je vous réponds sous 24h, puis nous validons ensemble un devis ferme avant de démarrer.</p>
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <a href="contact.html" onclick="if (simTouched) saveQuoteDetails(event)" class="px-6 py-3 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Demander un devis ferme →</a>
+        <a href="#simulateur" class="px-6 py-3 rounded-md bg-softbg border border-line text-ink hover:border-accent hover:text-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Revenir au simulateur</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="pt-12 pb-10 border-t border-line space-y-8">
+      <div class="bg-white p-6 sm:p-7 rounded-xl border border-line text-xs leading-relaxed text-[#444]">
         <div class="font-mono-tag text-[11px] text-accent uppercase tracking-wider font-semibold mb-2">
-          Remerciements & Confiance
+          Ils m'ont fait confiance
         </div>
-        <p>
-          Un grand merci aux marques et créateurs qui font confiance à <strong>Takuzo</strong> pour leurs boutiques et leurs lancements : 
-          <span class="text-ink font-medium">7venworld</span>, 
-          <span class="text-ink font-medium">Ambleme</span>, 
-          <span class="text-ink font-medium">Calciori</span>, 
-          ainsi qu'aux utilisateurs de la plateforme <span class="text-ink font-medium">InfluLab IA</span>. 
-          Merci également à tous ceux qui soutiennent le studio et partagent mon travail au quotidien sur les réseaux.
-        </p>
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-ink font-medium">
+          <li><a href="https://7venworld.com" target="_blank" rel="noopener" class="hover:text-accent transition-colors">7venworld<span class="sr-only"> (nouvel onglet)</span></a></li>
+          <li><a href="https://ambleme.fr" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Ambleme<span class="sr-only"> (nouvel onglet)</span></a></li>
+          <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Calciori<span class="sr-only"> (nouvel onglet)</span></a></li>
+        </ul>
       </div>
 
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tag text-muted">
         <div>
-          © 2026 Nolann Duchaussoy · <strong>Takuzo</strong> — Studio de création web & Shopify
+          © 2026 Nolann Duchaussoy · <strong translate="no">Takuzo</strong> — Studio de création web & Shopify
         </div>
-        <div class="flex flex-wrap items-center gap-6">
+        <nav aria-label="Pied de page" class="flex flex-wrap items-center gap-6">
           <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
           <a href="projets.html" class="hover:text-ink transition-colors">Projets</a>
           <a href="services.html" class="hover:text-ink transition-colors">Services</a>
           <a href="contact.html" class="hover:text-ink transition-colors">Contact</a>
           <a href="mentions-legales.html" class="hover:text-ink underline transition-colors">Mentions légales</a>
-        </div>
+        </nav>
       </div>
-    </footer>
-
-  </main>
+    </div>
+  </footer>
 
   <!-- BOUTON RETOUR EN HAUT (BACK TO TOP) -->
-  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-ink text-paper border border-line shadow-lg hover:bg-accent hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Remonter en haut de la page">
-    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+  <button id="back-to-top" type="button" tabindex="-1" aria-hidden="true" onclick="window.scrollTo({top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'})" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-ink text-paper border border-line shadow-lg hover:bg-accent hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Revenir en haut de la page">
+    <svg class="w-4 h-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
     </svg>
   </button>
@@ -407,75 +521,84 @@
   <!-- SCRIPT DU CALCULATEUR & NAVIGATION -->
   <script>
     let basePrice = 300;
-    let extraPrice = 0;
     let baseDelay = "1 à 2 semaines";
-    let isPaymentComplex = false;
     let currentProjectType = "shopify";
-    let currentProjectName = "Shopify complet de zéro";
+    let currentProjectName = document.querySelector('.sim-type-btn[aria-pressed="true"] .font-semibold').textContent.trim();
 
     function setSimProject(type, price, delay, btn) {
       basePrice = price;
       baseDelay = delay;
       currentProjectType = type;
-
-      if (type === 'refonte') currentProjectName = "Petites retouches / Refonte de thème";
-      if (type === 'shopify') currentProjectName = "Shopify complet de zéro";
-      if (type === 'site') currentProjectName = "Site complet sur-mesure / Landing";
+      // Garde le type dans l'URL : retour arrière, rechargement et changement de langue le conservent
+      history.replaceState(null, '', '?type=' + type + location.hash);
+      document.querySelectorAll('a[hreflang]').forEach(a => { a.href = a.href.split(/[?#]/)[0] + '?type=' + type; });
+      currentProjectName = btn.querySelector('.font-semibold').textContent.trim();
 
       document.querySelectorAll('.sim-type-btn').forEach(b => {
         b.className = "sim-type-btn p-4 rounded-xl border text-left transition-all border-line hover:border-ink bg-softbg/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent";
+        b.setAttribute('aria-pressed', 'false');
       });
       btn.className = "sim-type-btn p-4 rounded-xl border text-left transition-all border-accent bg-accent/5 ring-1 ring-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent";
+      btn.setAttribute('aria-pressed', 'true');
 
+      syncOptions();
       updateQuote();
     }
 
-    function toggleOption(checkbox, price) {
-      if (checkbox.checked) {
-        extraPrice += price;
-      } else {
-        extraPrice -= price;
-      }
-      updateQuote();
+    // N'affiche que les options du type choisi (Shopify ou site codé) et décoche les autres
+    function syncOptions() {
+      document.querySelectorAll('[data-for]').forEach(el => {
+        const show = el.dataset.for.split(' ').includes(currentProjectType);
+        el.classList.toggle('hidden', !show);
+        if (!show) el.querySelectorAll('.sim-option').forEach(cb => { cb.checked = false; });
+      });
     }
 
-    function toggleComplexOption(checkbox, price, affectsDelay) {
-      isPaymentComplex = checkbox.checked;
-      if (checkbox.checked) {
-        extraPrice += price;
-      } else {
-        extraPrice -= price;
-      }
-      updateQuote();
+    // Le total est recalculé depuis les cases cochées : il reste juste même si le navigateur
+    // restaure leur état (retour arrière, rechargement)
+    function getQuote() {
+      const checked = [...document.querySelectorAll('.sim-option:checked')]
+        .filter(cb => cb.closest('[data-for]').dataset.for.split(' ').includes(currentProjectType));
+      let delay = baseDelay;
+      const online = checked.some(cb => cb.dataset.delay);
+      if (online) delay = "2 à 3 semaines";
+      else if (currentProjectType === 'refonte' && checked.length >= 3) delay = "1 à 2 semaines";
+      return {
+        total: basePrice + checked.reduce((sum, cb) => sum + Number(cb.dataset.price), 0),
+        delay: delay,
+        online: online,
+        options: checked.map(cb => cb.closest('label').querySelector('.font-medium').textContent.trim())
+      };
     }
 
     function updateQuote() {
-      const total = basePrice + extraPrice;
+      const { total, delay } = getQuote();
       document.getElementById('simDisplayPrice').innerText = total + " €";
-
-      let finalDelay = baseDelay;
-      if (isPaymentComplex) {
-        finalDelay = "2 à 3 semaines (avec intégration paiements & fonctionnalités)";
-      }
-      document.getElementById('simDisplayDelay').innerText = finalDelay;
+      document.getElementById('simDisplayDelay').innerText = delay;
     }
 
     function saveQuoteDetails(event) {
       if (event) event.preventDefault();
-      const total = basePrice + extraPrice;
-      const finalDelay = isPaymentComplex ? "2 à 3 semaines" : baseDelay;
-      const quoteString = `Projet: ${currentProjectName} | Budget estimé: ${total} € | Délai: ${finalDelay}`;
-      
-      try {
-        localStorage.setItem('takuzo_quote', quoteString);
-      } catch (err) {
-        console.warn("Storage disabled", err);
-      }
-
-      // Redirection sécurisée avec params d'URL pour fonctionner même si le stockage est désactivé
-      const targetUrl = `contact.html?besoin=${encodeURIComponent(currentProjectType)}&total=${total}&delai=${encodeURIComponent(finalDelay)}`;
-      window.location.href = targetUrl;
+      const { total, delay, online, options } = getQuote();
+      const params = new URLSearchParams({
+        besoin: online ? 'paiements_complexes' : currentProjectType,
+        projet: currentProjectName,
+        total: total,
+        delai: delay
+      });
+      if (options.length) params.set('options', options.join(' + '));
+      window.location.href = 'contact.html?' + params;
     }
+
+    // Le bouton « Demander un devis ferme » du bas ne transmet l'estimation que si le simulateur a été utilisé
+    let simTouched = false;
+    document.getElementById('simulateur').addEventListener('click', () => { simTouched = true; });
+
+    // Pré-sélection du type depuis un lien (?type=refonte|shopify|site)
+    const preType = new URLSearchParams(location.search).get('type');
+    if (['refonte', 'shopify', 'site'].includes(preType)) document.querySelector(`.sim-type-btn[data-type="${preType}"]`).click();
+
+    window.addEventListener('pageshow', () => { syncOptions(); updateQuote(); });
 
     // Navigation & Back to Top
     function toggleMobileMenu() {
@@ -497,9 +620,13 @@
       if (window.scrollY > 300) {
         btt.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
         btt.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        btt.tabIndex = 0;
+        btt.removeAttribute('aria-hidden');
       } else {
         btt.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
         btt.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        btt.tabIndex = -1;
+        btt.setAttribute('aria-hidden', 'true');
       }
     });
 
@@ -508,6 +635,7 @@
         const menu = document.getElementById('mobile-menu');
         if (menu && !menu.classList.contains('hidden')) {
           toggleMobileMenu();
+          document.getElementById('mobile-menu-btn').focus();
         }
       }
     });

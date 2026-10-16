@@ -1,14 +1,21 @@
 {
   "name": "takuzo",
   "version": "1.0.0",
-  "description": "Studio Takuzo — Boutiques Shopify & Sites Web sur-mesure",
+  "description": "Studio Takuzo — boutiques Shopify & sites web sur mesure",
   "main": "index.html",
   "scripts": {
     "start": "npx serve .",
-    "build": "tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "i18n": "python3 i18n/build_en.py",
+    "build": "python3 i18n/build_en.py && tailwindcss -i ./src/input.css -o ./css/style.css --minify",
     "watch": "tailwindcss -i ./src/input.css -o ./css/style.css --watch"
   },
-  "keywords": ["shopify", "streetwear", "drops", "web-design", "takuzo"],
+  "keywords": [
+    "shopify",
+    "streetwear",
+    "drops",
+    "web-design",
+    "takuzo"
+  ],
   "author": "Nolann Duchaussoy",
   "license": "ISC",
   "devDependencies": {

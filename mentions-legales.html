@@ -1,51 +1,52 @@
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="motion-safe:scroll-smooth">
 <head>
   <meta charset="utf-8">
+  <script id="lang-redirect">
+    // Visiteurs dont le navigateur n'est pas en français -> version anglaise (jamais les robots d'indexation)
+    (function () {
+      if (/bot|crawl|spider|slurp|lighthouse|inspectiontool|facebookexternalhit/i.test(navigator.userAgent)) return;
+      var pref = null;
+      try { pref = localStorage.getItem('takuzo_lang'); } catch (e) {}
+      if (pref === 'fr') return;
+      // Clic interne vers la version FR : ne pas renvoyer vers EN (utile si localStorage est bloqué)
+      if (pref !== 'en' && document.referrer.indexOf(location.href.replace(/[^\/]*([?#].*)?$/, '').replace(/\/$/, '')) === 0) return;
+      var l = (navigator.languages && navigator.languages[0]) || navigator.language || 'fr';
+      if (pref === 'en' || !/^fr\b/i.test(l)) {
+        var page = location.pathname.split('/').pop() || 'index.html';
+        location.replace('en/' + page + location.search + location.hash);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mentions Légales & Confidentialité — Nolann Duchaussoy · Takuzo</title>
-  <meta name="description" content="Mentions légales, conditions et politique de confidentialité du site de Nolann Duchaussoy (Takuzo).">
-  <meta name="theme-color" content="#f6f5f1">
+  <title>Mentions légales & confidentialité — Nolann Duchaussoy · Takuzo</title>
+  <meta name="description" content="Mentions légales, hébergement et politique de confidentialité du site de Nolann Duchaussoy (Takuzo).">
+  <meta name="theme-color" content="#f2f2f2">
 
   <!-- Open Graph / Réseaux sociaux -->
   <meta property="og:site_name" content="Nolann Duchaussoy · Takuzo">
-  <meta property="og:title" content="Mentions Légales — Nolann Duchaussoy · Takuzo">
+  <meta property="og:title" content="Mentions légales — Nolann Duchaussoy · Takuzo">
   <meta property="og:description" content="Mentions légales, éditeur, hébergement et politique de confidentialité du studio Takuzo.">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://nolanndch.github.io/Vitrine/mentions-legales.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://nolanndch.github.io/Vitrine/mentions-legales.html">
+  <link rel="alternate" hreflang="fr" href="https://nolanndch.github.io/Vitrine/mentions-legales.html">
+  <link rel="alternate" hreflang="en" href="https://nolanndch.github.io/Vitrine/en/mentions-legales.html">
+  <link rel="alternate" hreflang="x-default" href="https://nolanndch.github.io/Vitrine/en/mentions-legales.html">
 
   <!-- Favicon vectorielle haute définition -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f6f5f1'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%232438ff'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f2f2f2'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%23d71921'/%3E%3C/svg%3E">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&text=%E6%8B%93%E3%82%BF%E3%82%AF%E3%82%BE%E3%82%A6&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
-    :root {
-      --bg: #f6f5f1;
-      --ink: #121212;
-      --muted: #6b6a66;
-      --line: #dcd8cf;
-      --accent: #2438ff;
-      --mono: "IBM Plex Mono", ui-monospace, monospace;
-    }
-    body {
-      background-color: var(--bg);
-      color: var(--ink);
-      font-family: 'Archivo', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    .font-mono-tag {
-      font-family: var(--mono);
-    }
-    ::selection {
-      background-color: #2438ff;
-      color: #ffffff;
-    }
-  </style>
 </head>
 <body class="bg-paper text-ink selection:bg-accent selection:text-white">
 
@@ -55,49 +56,49 @@
   </a>
 
   <!-- BANDEAU DISPONIBILITÉ -->
-  <aside class="border-b border-line bg-softbg/80 py-2 px-4 text-xs font-mono-tag text-muted text-center flex items-center justify-center gap-2">
-    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+  <aside aria-label="Disponibilité" class="glass-bar py-2 px-4 text-xs font-mono-tag text-muted text-center flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-accent motion-safe:animate-pulse" aria-hidden="true"></span>
     <span class="text-ink font-medium">Takuzo est disponible pour de nouveaux projets</span>
-    <span class="text-line">•</span>
-    <span>Livraison en 3j à 2 sem.</span>
-    <span class="text-line hidden sm:inline">•</span>
+    <span class="text-line" aria-hidden="true">•</span>
+    <span>Livraison en 3 j à 3 sem.</span>
+    <span class="text-line hidden sm:inline" aria-hidden="true">•</span>
     <a href="tarifs.html" class="hidden sm:inline text-accent hover:underline font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent">
       Tarifs dès 150 € →
     </a>
   </aside>
 
   <!-- NAVIGATION PRINCIPALE STICKY -->
-  <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-line/80 transition-all">
-    <div class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
-      <nav class="flex justify-between items-center py-4 sm:py-5" aria-label="Navigation principale">
+  <header class="sticky top-0 z-50 px-3 sm:px-4 pt-3 transition-all">
+    <div class="glass max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
+      <nav class="flex justify-between items-center py-3 sm:py-4" aria-label="Navigation principale">
         <!-- Logo -->
-        <a href="index.html" class="group flex items-center gap-2 font-bold text-xl tracking-tight text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
-          <span>Nolann Duchaussoy</span>
-          <span class="text-muted group-hover:text-accent transition-colors">·</span>
-          <span class="text-accent">Takuzo</span>
+        <a href="index.html" translate="no" class="group flex items-center gap-1.5 sm:gap-2 whitespace-nowrap font-dot font-black text-lg sm:text-xl tracking-tight text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
+          <span class="hanko" aria-hidden="true" translate="no">拓</span>
+          <span translate="no">Takuzo</span>
+          <span class="font-jp font-medium text-[11px] text-muted tracking-[0.25em] ml-1 pl-3 border-l border-line" aria-hidden="true" translate="no">タクゾウ</span>
         </a>
 
         <!-- Liens Desktop -->
         <ul class="hidden md:flex items-center gap-7 text-sm font-medium">
           <li>
-            <a href="index.html" class="text-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+            <a href="index.html" class="nav-link text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               Accueil
             </a>
           </li>
           <li>
-            <a href="projets.html" class="text-muted hover:text-ink transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+            <a href="projets.html" class="nav-link text-muted flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               <span>Projets</span>
-              <span class="font-mono-tag text-xs text-accent">04</span>
+              <span class="font-mono-tag text-xs text-accent" aria-hidden="true">04</span>
             </a>
           </li>
           <li>
-            <a href="services.html" class="text-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+            <a href="services.html" class="nav-link text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               Services
             </a>
           </li>
           <li>
-            <a href="tarifs.html" class="text-muted hover:text-ink transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
-              <span>Tarifs & Devis</span>
+            <a href="tarifs.html" class="nav-link text-muted flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <span>Tarifs</span>
             </a>
           </li>
           <li>
@@ -105,14 +106,17 @@
               Contact
             </a>
           </li>
+          <li>
+            <a href="en/mentions-legales.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav-link text-muted font-mono-tag text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="EN – English version">EN</a>
+          </li>
         </ul>
 
         <!-- Bouton Menu Mobile (Hamburger) -->
-        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-line bg-white text-ink hover:text-accent hover:border-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Menu principal" aria-expanded="false">
-          <svg id="menu-icon-open" class="w-5 h-5 block" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-line bg-white text-ink hover:text-accent hover:border-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Menu principal" aria-controls="mobile-menu" aria-expanded="false">
+          <svg id="menu-icon-open" aria-hidden="true" class="w-5 h-5 block" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
-          <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+          <svg id="menu-icon-close" aria-hidden="true" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -120,38 +124,44 @@
     </div>
 
     <!-- Tiroir Mobile -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-line bg-paper/95 backdrop-blur-md px-6 py-5 transition-all">
+    <nav id="mobile-menu" aria-label="Menu mobile" class="glass hidden md:hidden max-w-[1200px] mx-auto mt-2 px-5 py-5 transition-all">
       <ul class="flex flex-col gap-3 font-medium text-base">
         <li>
-          <a href="index.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
+          <a href="index.html" class="nav-link flex items-center justify-between text-muted">
             <span>Accueil</span>
           </a>
         </li>
         <li>
-          <a href="projets.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
-            <span>Projets & Réalisations</span>
-            <span class="font-mono-tag text-xs text-accent bg-accent/10 px-2 py-0.5 rounded">04</span>
+          <a href="projets.html" class="nav-link flex items-center justify-between text-muted">
+            <span>Projets</span>
+            <span class="font-mono-tag text-xs text-white bg-accent px-2 py-0.5 rounded" aria-hidden="true">04</span>
           </a>
         </li>
         <li>
-          <a href="services.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
-            <span>Services & Méthode</span>
-            <span class="font-mono-tag text-xs text-muted">Shopify & Code</span>
+          <a href="services.html" class="nav-link flex items-center justify-between text-muted">
+            <span>Services</span>
+            <span class="font-mono-tag text-xs text-muted" aria-hidden="true">Shopify & code</span>
           </a>
         </li>
         <li>
-          <a href="tarifs.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
-            <span>Tarifs & Simulateur</span>
-            <span class="font-mono-tag text-xs text-emerald-700 font-semibold">Dès 150 €</span>
+          <a href="tarifs.html" class="nav-link flex items-center justify-between text-muted">
+            <span>Tarifs</span>
+            <span class="font-mono-tag text-xs text-ink font-semibold">Dès 150 €</span>
+          </a>
+        </li>
+        <li>
+          <a href="en/mentions-legales.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav-link flex items-center justify-between text-muted" aria-label="English version">
+            <span>English</span>
+            <span class="font-mono-tag text-xs">EN</span>
           </a>
         </li>
         <li class="pt-2 border-t border-line">
           <a href="contact.html" class="flex items-center justify-center p-3 rounded-lg bg-ink text-paper hover:bg-accent text-center font-medium transition-colors">
-            Prendre contact →
+            Contact
           </a>
         </li>
       </ul>
-    </div>
+    </nav>
   </header>
 
   <main id="main-content" class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -159,45 +169,46 @@
     <!-- FIL D'ARIANE PRO -->
     <nav aria-label="Fil d'Ariane" class="pt-8 pb-2 text-xs font-mono-tag text-muted flex items-center gap-2">
       <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
-      <span>/</span>
-      <span class="text-ink font-medium" aria-current="page">Mentions légales & Confidentialité</span>
+      <span aria-hidden="true">/</span>
+      <span class="text-ink font-medium" aria-current="page">Mentions légales</span>
     </nav>
 
     <!-- CONTENU MENTIONS LÉGALES -->
     <article class="py-12 sm:py-16 border-b border-line max-w-3xl">
       <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Informations légales</div>
-      <h1 class="text-3xl sm:text-5xl font-medium tracking-tight text-ink mb-12">
-        Mentions légales & Confidentialité
+      <h1 class="text-3xl sm:text-5xl tracking-tight text-ink mb-12">
+        Mentions légales & confidentialité
       </h1>
 
       <div class="space-y-10 text-sm leading-relaxed text-[#2b2a27]">
         
         <div>
-          <h2 class="text-xl font-medium text-ink mb-2">1. Éditeur du site</h2>
+          <h2 class="text-xl text-ink mb-2">1. Éditeur du site</h2>
           <p>
             Le présent site internet est édité par :<br>
-            <strong>Nolann Duchaussoy</strong><br>
-            Opérant sous la marque et le nom commercial <strong>Takuzo</strong> (Studio de conception de boutiques Shopify et sites web sur mesure).<br>
+            <strong translate="no">Nolann Duchaussoy</strong><br>
+            Exerçant sous le nom commercial <strong translate="no">Takuzo</strong> (studio de conception de boutiques Shopify et de sites web sur mesure).<br>
+            Directeur de la publication : Nolann Duchaussoy<br>
             Email de contact : <a href="mailto:nolann.duchaussoy.pro@gmail.com" class="text-accent hover:underline font-mono-tag">nolann.duchaussoy.pro@gmail.com</a><br>
-            Localisation : France (Paris / À distance).
+            Localisation : Paris, France (projets réalisés à distance).
           </p>
         </div>
 
         <div>
-          <h2 class="text-xl font-medium text-ink mb-2">2. Hébergement</h2>
+          <h2 class="text-xl text-ink mb-2">2. Hébergement</h2>
           <p>
             Le site est hébergé par :<br>
             <strong>GitHub Inc.</strong> (GitHub Pages)<br>
             88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis.<br>
-            Site web : <a href="https://github.com" target="_blank" rel="noopener" class="text-accent hover:underline">github.com</a><br>
-            Certains sous-domaines et projets de démonstration sont également déployés sur <strong>Vercel Inc.</strong> (440 N Barranca Ave #4133, Covina, CA 91723, USA).
+            Téléphone : +1 (877) 448-4820<br>
+            Site web : <a href="https://github.com" target="_blank" rel="noopener" class="text-accent hover:underline">github.com<span class="sr-only"> (nouvel onglet)</span></a>
           </p>
         </div>
 
         <div>
-          <h2 class="text-xl font-medium text-ink mb-2">3. Propriété intellectuelle</h2>
+          <h2 class="text-xl text-ink mb-2">3. Propriété intellectuelle</h2>
           <p>
-            L'ensemble des contenus présents sur ce site (textes, typographies, code source, éléments graphiques, logo Takuzo) est la propriété exclusive de Nolann Duchaussoy (Takuzo), à l'exception des marques, logos et visuels appartenant respectivement à leurs clients et propriétaires légitimes (notamment <em>7venworld</em>, <em>Ambleme</em>, <em>Calciori</em> et <em>InfluLab IA</em>), présentés ici au titre du droit de citation et de portfolio professionnel.
+            L'ensemble des contenus présents sur ce site (textes, code source, éléments graphiques, logo Takuzo) est la propriété exclusive de Nolann Duchaussoy (Takuzo), à l'exception des marques, logos et visuels appartenant à leurs propriétaires respectifs (notamment <em translate="no">7venworld</em>, <em translate="no">Ambleme</em> et <em translate="no">Calciori</em>), présentés ici à titre de références professionnelles.
           </p>
           <p class="mt-2">
             Toute reproduction, distribution ou modification sans autorisation écrite préalable est strictement interdite.
@@ -205,21 +216,26 @@
         </div>
 
         <div>
-          <h2 class="text-xl font-medium text-ink mb-2">4. Données personnelles & Cookies</h2>
+          <h2 class="text-xl text-ink mb-2">4. Données personnelles & cookies</h2>
           <p>
-            Le respect de votre vie privée est une priorité :
+            Responsable du traitement : Nolann Duchaussoy (Takuzo), joignable à l'adresse email indiquée ci-dessus.
           </p>
           <ul class="list-disc list-inside space-y-1 mt-2 text-xs text-[#444]">
-            <li>Ce site n'utilise <strong>aucun cookie publicitaire</strong> ni traceur tiers intrusif.</li>
-            <li>Les seules données collectées sont celles que vous transmettez volontairement lors de l'envoi d'un message ou d'une demande de devis via votre client email.</li>
-            <li>Ces informations sont uniquement utilisées pour échanger sur votre projet et ne sont jamais vendues, cédées ou transmises à des tiers.</li>
+            <li>Données traitées : celles que vous m'envoyez par email (nom, marque, adresse email, message, estimation du simulateur). Le formulaire n'enregistre rien sur ce site : il prépare un email dans votre messagerie.</li>
+            <li>Finalité et base légale : répondre à votre demande et établir un devis (mesures précontractuelles, art. 6.1.b du RGPD).</li>
+            <li>Conservation : 3 ans après le dernier échange si aucun projet n'est conclu ; devis et factures conservés 10 ans (obligation comptable).</li>
+            <li>Destinataires : moi uniquement ; les emails sont hébergés par Google (Gmail). Aucune donnée n'est vendue ni cédée.</li>
+            <li>Hébergeur : GitHub peut enregistrer l'adresse IP des visiteurs dans ses journaux techniques, à des fins de sécurité.</li>
+            <li>Cookies : ce site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience. Votre choix de langue (français / anglais) est mémorisé uniquement dans votre navigateur (stockage local).</li>
+            <li>Polices : chargées depuis Google Fonts ; votre navigateur transmet alors votre adresse IP à Google.</li>
+            <li>Vos droits : accès, rectification, effacement, opposition, limitation et portabilité, sur simple email. Vous pouvez aussi introduire une réclamation auprès de la CNIL (cnil.fr).</li>
           </ul>
         </div>
 
         <div>
-          <h2 class="text-xl font-medium text-ink mb-2">5. Prestations et engagements de délais</h2>
+          <h2 class="text-xl text-ink mb-2">5. Prestations, tarifs et délais</h2>
           <p>
-            Les délais indiqués sur le site (3 jours à 1 semaine pour des retouches, 1 à 2 semaines pour une boutique Shopify ou un site sur-mesure, 2 à 3 semaines pour des intégrations de paiement complexes) sont des estimations moyennes fournies à titre indicatif. Chaque projet fait l'objet d'un calendrier précis et d'un devis validé d'un commun accord avant démarrage.
+            Les délais indiqués sur le site (3 jours à 1 semaine pour la prestation « Retouches & refonte Shopify », ou 1 à 2 semaines à partir de 3 options ; 1 à 2 semaines pour une boutique Shopify complète ou un site web sur mesure ; 2 à 3 semaines pour un site web sur mesure avec paiement en ligne) sont donnés à titre indicatif. Les montants affichés par le simulateur sont également des estimations : chaque projet fait l'objet d'un devis ferme et d'un calendrier précis, validés d'un commun accord avant le démarrage, avec un acompte au lancement et le solde à la livraison.
           </p>
         </div>
 
@@ -232,41 +248,40 @@
       </div>
     </article>
 
-    <!-- REMERCIEMENTS & FOOTER -->
-    <footer class="pt-12 pb-10 space-y-8">
-      <div class="bg-white p-6 sm:p-7 rounded-xl border border-line text-xs leading-relaxed text-[#444] shadow-xs">
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="pt-12 pb-10 space-y-8">
+      <div class="bg-white p-6 sm:p-7 rounded-xl border border-line text-xs leading-relaxed text-[#444]">
         <div class="font-mono-tag text-[11px] text-accent uppercase tracking-wider font-semibold mb-2">
-          Remerciements & Confiance
+          Ils m'ont fait confiance
         </div>
-        <p>
-          Un grand merci aux marques et créateurs qui font confiance à <strong>Takuzo</strong> pour leurs boutiques et leurs lancements : 
-          <span class="text-ink font-medium">7venworld</span>, 
-          <span class="text-ink font-medium">Ambleme</span>, 
-          <span class="text-ink font-medium">Calciori</span>, 
-          ainsi qu'aux utilisateurs de la plateforme <span class="text-ink font-medium">InfluLab IA</span>. 
-          Merci également à tous ceux qui soutiennent le studio et partagent mon travail au quotidien sur les réseaux.
-        </p>
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-ink font-medium">
+          <li><a href="https://7venworld.com" target="_blank" rel="noopener" class="hover:text-accent transition-colors">7venworld<span class="sr-only"> (nouvel onglet)</span></a></li>
+          <li><a href="https://ambleme.fr" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Ambleme<span class="sr-only"> (nouvel onglet)</span></a></li>
+          <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Calciori<span class="sr-only"> (nouvel onglet)</span></a></li>
+        </ul>
       </div>
 
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tag text-muted">
         <div>
-          © 2026 Nolann Duchaussoy · <strong>Takuzo</strong> — Studio de création web & Shopify
+          © 2026 Nolann Duchaussoy · <strong translate="no">Takuzo</strong> — Studio de création web & Shopify
         </div>
-        <div class="flex flex-wrap items-center gap-6">
+        <nav aria-label="Pied de page" class="flex flex-wrap items-center gap-6">
           <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
           <a href="projets.html" class="hover:text-ink transition-colors">Projets</a>
           <a href="services.html" class="hover:text-ink transition-colors">Services</a>
-          <a href="tarifs.html" class="hover:text-ink transition-colors">Tarifs & Devis</a>
+          <a href="tarifs.html" class="hover:text-ink transition-colors">Tarifs</a>
           <a href="contact.html" class="hover:text-ink transition-colors">Contact</a>
-        </div>
+        </nav>
       </div>
-    </footer>
-
-  </main>
+    </div>
+  </footer>
 
   <!-- BOUTON RETOUR EN HAUT (BACK TO TOP) -->
-  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-ink text-paper border border-line shadow-lg hover:bg-accent hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Remonter en haut de la page">
-    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+  <button id="back-to-top" type="button" tabindex="-1" aria-hidden="true" onclick="window.scrollTo({top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'})" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-ink text-paper border border-line shadow-lg hover:bg-accent hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Revenir en haut de la page">
+    <svg class="w-4 h-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
     </svg>
   </button>
@@ -291,9 +306,13 @@
       if (window.scrollY > 300) {
         btt.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
         btt.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        btt.tabIndex = 0;
+        btt.removeAttribute('aria-hidden');
       } else {
         btt.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
         btt.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        btt.tabIndex = -1;
+        btt.setAttribute('aria-hidden', 'true');
       }
     });
 
@@ -302,6 +321,7 @@
         const menu = document.getElementById('mobile-menu');
         if (menu && !menu.classList.contains('hidden')) {
           toggleMobileMenu();
+          document.getElementById('mobile-menu-btn').focus();
         }
       }
     });

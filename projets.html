@@ -1,51 +1,52 @@
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="motion-safe:scroll-smooth">
 <head>
   <meta charset="utf-8">
+  <script id="lang-redirect">
+    // Visiteurs dont le navigateur n'est pas en français -> version anglaise (jamais les robots d'indexation)
+    (function () {
+      if (/bot|crawl|spider|slurp|lighthouse|inspectiontool|facebookexternalhit/i.test(navigator.userAgent)) return;
+      var pref = null;
+      try { pref = localStorage.getItem('takuzo_lang'); } catch (e) {}
+      if (pref === 'fr') return;
+      // Clic interne vers la version FR : ne pas renvoyer vers EN (utile si localStorage est bloqué)
+      if (pref !== 'en' && document.referrer.indexOf(location.href.replace(/[^\/]*([?#].*)?$/, '').replace(/\/$/, '')) === 0) return;
+      var l = (navigator.languages && navigator.languages[0]) || navigator.language || 'fr';
+      if (pref === 'en' || !/^fr\b/i.test(l)) {
+        var page = location.pathname.split('/').pop() || 'index.html';
+        location.replace('en/' + page + location.search + location.hash);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projets & Réalisations — Nolann Duchaussoy · Takuzo</title>
-  <meta name="description" content="Découvrez les réalisations de Nolann Duchaussoy (Takuzo) : boutiques Shopify et sites web pour 7venworld, Ambleme, Calciori et InfluLab IA.">
-  <meta name="theme-color" content="#f6f5f1">
+  <title>Projets & réalisations — Nolann Duchaussoy · Takuzo</title>
+  <meta name="description" content="Découvrez les réalisations de Nolann Duchaussoy (Takuzo) : boutiques Shopify et sites web pour 7venworld, Ambleme et Calciori, ainsi que son propre produit, InfluLab IA.">
+  <meta name="theme-color" content="#f2f2f2">
 
   <!-- Open Graph / Réseaux sociaux -->
   <meta property="og:site_name" content="Nolann Duchaussoy · Takuzo">
-  <meta property="og:title" content="Projets & Réalisations — Nolann Duchaussoy · Takuzo">
-  <meta property="og:description" content="Études de cas réelles : boutiques Shopify pour marques indépendantes et code sur-mesure. 7venworld, Ambleme, Calciori, InfluLab IA.">
+  <meta property="og:title" content="Projets & réalisations — Nolann Duchaussoy · Takuzo">
+  <meta property="og:description" content="Études de cas : boutiques Shopify pour des marques indépendantes et sites codés sur mesure. 7venworld, Ambleme, Calciori, InfluLab IA.">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://nolanndch.github.io/Vitrine/projets.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://nolanndch.github.io/Vitrine/projets.html">
+  <link rel="alternate" hreflang="fr" href="https://nolanndch.github.io/Vitrine/projets.html">
+  <link rel="alternate" hreflang="en" href="https://nolanndch.github.io/Vitrine/en/projets.html">
+  <link rel="alternate" hreflang="x-default" href="https://nolanndch.github.io/Vitrine/en/projets.html">
 
   <!-- Favicon vectorielle haute définition -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f6f5f1'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%232438ff'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f2f2f2'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%23d71921'/%3E%3C/svg%3E">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&text=%E6%8B%93%E3%82%BF%E3%82%AF%E3%82%BE%E3%82%A6&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
-    :root {
-      --bg: #f6f5f1;
-      --ink: #121212;
-      --muted: #6b6a66;
-      --line: #dcd8cf;
-      --accent: #2438ff;
-      --mono: "IBM Plex Mono", ui-monospace, monospace;
-    }
-    body {
-      background-color: var(--bg);
-      color: var(--ink);
-      font-family: 'Archivo', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    .font-mono-tag {
-      font-family: var(--mono);
-    }
-    ::selection {
-      background-color: #2438ff;
-      color: #ffffff;
-    }
-  </style>
 </head>
 <body class="bg-paper text-ink selection:bg-accent selection:text-white">
 
@@ -55,49 +56,49 @@
   </a>
 
   <!-- BANDEAU DISPONIBILITÉ -->
-  <aside class="border-b border-line bg-softbg/80 py-2 px-4 text-xs font-mono-tag text-muted text-center flex items-center justify-center gap-2">
-    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+  <aside aria-label="Disponibilité" class="glass-bar py-2 px-4 text-xs font-mono-tag text-muted text-center flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-accent motion-safe:animate-pulse" aria-hidden="true"></span>
     <span class="text-ink font-medium">Takuzo est disponible pour de nouveaux projets</span>
-    <span class="text-line">•</span>
-    <span>Livraison en 3j à 2 sem.</span>
-    <span class="text-line hidden sm:inline">•</span>
+    <span class="text-line" aria-hidden="true">•</span>
+    <span>Livraison en 3 j à 3 sem.</span>
+    <span class="text-line hidden sm:inline" aria-hidden="true">•</span>
     <a href="tarifs.html" class="hidden sm:inline text-accent hover:underline font-semibold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent">
       Tarifs dès 150 € →
     </a>
   </aside>
 
   <!-- NAVIGATION PRINCIPALE STICKY -->
-  <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-line/80 transition-all">
-    <div class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
-      <nav class="flex justify-between items-center py-4 sm:py-5" aria-label="Navigation principale">
+  <header class="sticky top-0 z-50 px-3 sm:px-4 pt-3 transition-all">
+    <div class="glass max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
+      <nav class="flex justify-between items-center py-3 sm:py-4" aria-label="Navigation principale">
         <!-- Logo -->
-        <a href="index.html" class="group flex items-center gap-2 font-bold text-xl tracking-tight text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
-          <span>Nolann Duchaussoy</span>
-          <span class="text-muted group-hover:text-accent transition-colors">·</span>
-          <span class="text-accent">Takuzo</span>
+        <a href="index.html" translate="no" class="group flex items-center gap-1.5 sm:gap-2 whitespace-nowrap font-dot font-black text-lg sm:text-xl tracking-tight text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
+          <span class="hanko" aria-hidden="true" translate="no">拓</span>
+          <span translate="no">Takuzo</span>
+          <span class="font-jp font-medium text-[11px] text-muted tracking-[0.25em] ml-1 pl-3 border-l border-line" aria-hidden="true" translate="no">タクゾウ</span>
         </a>
 
         <!-- Liens Desktop -->
         <ul class="hidden md:flex items-center gap-7 text-sm font-medium">
           <li>
-            <a href="index.html" class="text-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+            <a href="index.html" class="nav-link text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               Accueil
             </a>
           </li>
           <li>
-            <a href="projets.html" class="text-ink font-semibold flex items-center gap-1.5 px-2.5 py-1 rounded bg-black/5" aria-current="page">
+            <a href="projets.html" class="nav-link text-ink font-semibold flex items-center gap-1.5 bg-black/5" aria-current="page">
               <span>Projets</span>
-              <span class="font-mono-tag text-xs text-accent">04</span>
+              <span class="font-mono-tag text-xs text-accent" aria-hidden="true">04</span>
             </a>
           </li>
           <li>
-            <a href="services.html" class="text-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+            <a href="services.html" class="nav-link text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               Services
             </a>
           </li>
           <li>
-            <a href="tarifs.html" class="text-muted hover:text-ink transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
-              <span>Tarifs & Devis</span>
+            <a href="tarifs.html" class="nav-link text-muted flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <span>Tarifs</span>
             </a>
           </li>
           <li>
@@ -105,14 +106,17 @@
               Contact
             </a>
           </li>
+          <li>
+            <a href="en/projets.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav-link text-muted font-mono-tag text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="EN – English version">EN</a>
+          </li>
         </ul>
 
         <!-- Bouton Menu Mobile (Hamburger) -->
-        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-line bg-white text-ink hover:text-accent hover:border-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Menu principal" aria-expanded="false">
-          <svg id="menu-icon-open" class="w-5 h-5 block" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-line bg-white text-ink hover:text-accent hover:border-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Menu principal" aria-controls="mobile-menu" aria-expanded="false">
+          <svg id="menu-icon-open" aria-hidden="true" class="w-5 h-5 block" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
-          <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+          <svg id="menu-icon-close" aria-hidden="true" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -120,38 +124,44 @@
     </div>
 
     <!-- Tiroir Mobile -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-line bg-paper/95 backdrop-blur-md px-6 py-5 transition-all">
+    <nav id="mobile-menu" aria-label="Menu mobile" class="glass hidden md:hidden max-w-[1200px] mx-auto mt-2 px-5 py-5 transition-all">
       <ul class="flex flex-col gap-3 font-medium text-base">
         <li>
-          <a href="index.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
+          <a href="index.html" class="nav-link flex items-center justify-between text-muted">
             <span>Accueil</span>
           </a>
         </li>
         <li>
-          <a href="projets.html" class="flex items-center justify-between p-2.5 rounded-lg bg-black/5 text-ink font-semibold" aria-current="page">
-            <span>Projets & Réalisations</span>
-            <span class="font-mono-tag text-xs text-accent bg-accent/10 px-2 py-0.5 rounded">04</span>
+          <a href="projets.html" class="nav-link flex items-center justify-between bg-black/5 text-ink font-semibold" aria-current="page">
+            <span>Projets</span>
+            <span class="font-mono-tag text-xs text-white bg-accent px-2 py-0.5 rounded" aria-hidden="true">04</span>
           </a>
         </li>
         <li>
-          <a href="services.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
-            <span>Services & Méthode</span>
-            <span class="font-mono-tag text-xs text-muted">Shopify & Code</span>
+          <a href="services.html" class="nav-link flex items-center justify-between text-muted">
+            <span>Services</span>
+            <span class="font-mono-tag text-xs text-muted" aria-hidden="true">Shopify & code</span>
           </a>
         </li>
         <li>
-          <a href="tarifs.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
-            <span>Tarifs & Simulateur</span>
-            <span class="font-mono-tag text-xs text-emerald-700 font-semibold">Dès 150 €</span>
+          <a href="tarifs.html" class="nav-link flex items-center justify-between text-muted">
+            <span>Tarifs</span>
+            <span class="font-mono-tag text-xs text-ink font-semibold">Dès 150 €</span>
+          </a>
+        </li>
+        <li>
+          <a href="en/projets.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav-link flex items-center justify-between text-muted" aria-label="English version">
+            <span>English</span>
+            <span class="font-mono-tag text-xs">EN</span>
           </a>
         </li>
         <li class="pt-2 border-t border-line">
           <a href="contact.html" class="flex items-center justify-center p-3 rounded-lg bg-ink text-paper hover:bg-accent text-center font-medium transition-colors">
-            Prendre contact →
+            Contact
           </a>
         </li>
       </ul>
-    </div>
+    </nav>
   </header>
 
   <main id="main-content" class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -159,19 +169,19 @@
     <!-- FIL D'ARIANE PRO -->
     <nav aria-label="Fil d'Ariane" class="pt-8 pb-2 text-xs font-mono-tag text-muted flex items-center gap-2">
       <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
-      <span>/</span>
-      <span class="text-ink font-medium" aria-current="page">Projets & Réalisations</span>
+      <span aria-hidden="true">/</span>
+      <span class="text-ink font-medium" aria-current="page">Projets</span>
     </nav>
 
     <!-- HEADER PROJETS -->
     <header class="py-12 sm:py-16 border-b border-line">
       <div class="max-w-3xl">
-        <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Portfolio & Études de cas</div>
-        <h1 class="text-4xl sm:text-6xl font-medium tracking-tight text-ink">
+        <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Portfolio & études de cas</div>
+        <h1 class="text-4xl sm:text-6xl tracking-tight text-ink">
           Ce que j'ai construit.
         </h1>
         <p class="text-base sm:text-lg text-muted mt-4 leading-relaxed">
-          Quatre projets réels conçus pour des clients et pour mon propre produit. Chaque site répond à une contrainte précise : encaissement de pics de trafic lors de drops, direction artistique luxueuse, ou architecture SaaS connectée à une IA.
+          Quatre projets en ligne, réalisés pour des marques clientes et pour mon propre produit. Chaque site répond à une contrainte précise : des sorties de collection par drops, une page de lancement soignée pour un produit haut de gamme ou une application SaaS connectée à une IA.
         </p>
 
         <!-- Raccourcis d'accès direct aux projets -->
@@ -199,22 +209,22 @@
       <article id="7venworld" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pb-20 border-b border-line scroll-mt-28">
         <div class="lg:col-span-5 space-y-5">
           <div class="flex items-center gap-2">
-            <span class="font-mono-tag text-xs text-accent font-semibold px-2 py-0.5 bg-accent/10 rounded">01 / PROJET CLIENT</span>
-            <span class="text-xs font-mono-tag text-muted">Shopify & Drops Streetwear</span>
+            <span class="font-mono-tag text-xs text-white font-semibold px-2 py-0.5 bg-accent rounded">01 / PROJET CLIENT</span>
+            <span class="text-xs font-mono-tag text-muted">Shopify & drops streetwear</span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl font-medium tracking-tight text-ink">7venworld</h2>
+          <h2 class="text-3xl sm:text-4xl tracking-tight text-ink">7venworld</h2>
           
           <p class="text-sm sm:text-base text-[#2b2a27] leading-relaxed">
-            7venworld est une marque de streetwear parisienne indépendante. La boutique a été spécialement architecturée pour absorber de forts pics de connexions simultanées lors des lancements de collections éphémères (capsules, tees graphiques, flare jeans, summer packs).
+            7venworld est une marque de streetwear parisienne indépendante. La boutique est pensée pour les lancements de collections éphémères (capsules, t-shirts graphiques, jeans flare, packs été) : drops annoncés clairement, catalogue facile à parcourir et paiement rapide.
           </p>
 
-          <div class="bg-white p-5 rounded-xl border border-line space-y-3 text-xs shadow-xs">
-            <div class="font-mono-tag font-semibold text-ink uppercase text-[11px] pb-2 border-b border-line">Points clés réalisés</div>
+          <div class="bg-white p-5 rounded-xl border border-line space-y-3 text-xs">
+            <div class="font-mono-tag font-semibold text-ink uppercase text-[11px] pb-2 border-b border-line">Ce que j'ai réalisé</div>
             <ul class="space-y-2 text-[#444] list-disc list-inside">
               <li><strong>Bandeau défilant dynamique</strong> pour communiquer les dates de drops et les offres.</li>
               <li><strong>Catalogue filtrable</strong> par catégorie (t-shirts, packs été, casquettes, denim).</li>
-              <li><strong>Tunnel de commande accéléré</strong> (Apple Pay & Stripe 1-Click) pour réduire l'abandon de panier pendant la frénésie du drop.</li>
+              <li><strong>Paiement express activé</strong> (Shop Pay & Apple Pay) pour un passage en caisse rapide pendant les drops.</li>
               <li><strong>Code Liquid sur mesure</strong> pour ajouter les sections que les thèmes standards ne proposaient pas.</li>
             </ul>
           </div>
@@ -226,14 +236,14 @@
             </div>
             <div>
               <dt class="text-muted">Statut :</dt>
-              <dd class="text-emerald-700 font-semibold mt-0.5">En ligne · Actif</dd>
+              <dd class="text-ink font-semibold mt-0.5">En ligne · Actif</dd>
             </div>
           </dl>
 
           <div class="pt-2">
             <a href="https://7venworld.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors text-xs font-mono-tag font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               <span>Visiter 7venworld.com</span>
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span>
             </a>
           </div>
         </div>
@@ -242,10 +252,10 @@
           <div class="bg-white border border-line rounded-xl overflow-hidden shadow-sm">
             <div class="px-4 py-2.5 bg-softbg border-b border-line flex items-center justify-between text-xs font-mono-tag text-muted">
               <span>Boutique en ligne 7venworld</span>
-              <span class="text-emerald-700 font-medium">https://7venworld.com</span>
+              <span class="text-ink font-medium">https://7venworld.com</span>
             </div>
             <div class="aspect-[16/10] bg-softbg overflow-hidden">
-              <img src="images/7venworld.webp" width="1440" height="729" alt="Capture d'écran boutique 7venworld" class="w-full h-full object-cover object-top" loading="lazy">
+              <img src="images/7venworld.webp" width="1440" height="729" alt="Capture d'écran de la boutique 7venworld" class="w-full h-full object-cover object-top" fetchpriority="high">
             </div>
           </div>
         </div>
@@ -255,21 +265,21 @@
       <article id="ambleme" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pb-20 border-b border-line scroll-mt-28">
         <div class="lg:col-span-5 space-y-5">
           <div class="flex items-center gap-2">
-            <span class="font-mono-tag text-xs text-accent font-semibold px-2 py-0.5 bg-accent/10 rounded">02 / PROJET CLIENT</span>
-            <span class="text-xs font-mono-tag text-muted">Shopify & Prêt-à-porter</span>
+            <span class="font-mono-tag text-xs text-white font-semibold px-2 py-0.5 bg-accent rounded">02 / PROJET CLIENT</span>
+            <span class="text-xs font-mono-tag text-muted">Shopify & prêt-à-porter</span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl font-medium tracking-tight text-ink">Ambleme</h2>
+          <h2 class="text-3xl sm:text-4xl tracking-tight text-ink">Ambleme</h2>
           
           <p class="text-sm sm:text-base text-[#2b2a27] leading-relaxed">
-            Ambleme est une marque de vêtements au positionnement affirmé, qui en est à son troisième drop. L'objectif était de concevoir une boutique épurée qui valorise l'univers visuel des pièces de confection tout en levant les doutes des clients.
+            Ambleme est une marque de vêtements au positionnement affirmé, qui en est à son troisième drop. L'objectif était de concevoir une boutique épurée qui valorise l'univers visuel de ses collections tout en levant les doutes des clients avant l'achat.
           </p>
 
-          <div class="bg-white p-5 rounded-xl border border-line space-y-3 text-xs shadow-xs">
-            <div class="font-mono-tag font-semibold text-ink uppercase text-[11px] pb-2 border-b border-line">Points clés réalisés</div>
+          <div class="bg-white p-5 rounded-xl border border-line space-y-3 text-xs">
+            <div class="font-mono-tag font-semibold text-ink uppercase text-[11px] pb-2 border-b border-line">Ce que j'ai réalisé</div>
             <ul class="space-y-2 text-[#444] list-disc list-inside">
-              <li><strong>Lookbook dynamique</strong> pour mettre en scène les coupes de vêtements (longsleeves, accessoires, tatouages temporaires).</li>
-              <li><strong>FAQ interactive intégrée</strong> directement sur la page d'achat pour répondre avant qu'on ne pose la question : délais de livraison, suivi colis, restocks et conseils d'entretien.</li>
+              <li><strong>Lookbook de collection</strong> pour mettre en scène les pièces (t-shirts à manches longues, accessoires, tatouages temporaires).</li>
+              <li><strong>FAQ interactive</strong> intégrée à la fiche produit pour répondre aux questions avant même qu'elles ne soient posées : délais de livraison, suivi de colis, réassorts et conseils d'entretien.</li>
               <li><strong>Expérience mobile raffinée</strong> avec navigation intuitive et transitions fluides.</li>
             </ul>
           </div>
@@ -281,14 +291,14 @@
             </div>
             <div>
               <dt class="text-muted">Statut :</dt>
-              <dd class="text-emerald-700 font-semibold mt-0.5">En ligne · Actif</dd>
+              <dd class="text-ink font-semibold mt-0.5">En ligne · Actif</dd>
             </div>
           </dl>
 
           <div class="pt-2">
             <a href="https://ambleme.fr/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors text-xs font-mono-tag font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               <span>Visiter ambleme.fr</span>
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span>
             </a>
           </div>
         </div>
@@ -297,10 +307,10 @@
           <div class="bg-white border border-line rounded-xl overflow-hidden shadow-sm">
             <div class="px-4 py-2.5 bg-softbg border-b border-line flex items-center justify-between text-xs font-mono-tag text-muted">
               <span>Boutique en ligne Ambleme</span>
-              <span class="text-emerald-700 font-medium">https://ambleme.fr</span>
+              <span class="text-ink font-medium">https://ambleme.fr</span>
             </div>
             <div class="aspect-[16/10] bg-softbg overflow-hidden">
-              <img src="images/ambleme.webp" width="1440" height="900" alt="Capture d'écran boutique Ambleme" class="w-full h-full object-cover object-top" loading="lazy">
+              <img src="images/ambleme.webp" width="1440" height="900" alt="Capture d'écran de la boutique Ambleme" class="w-full h-full object-cover object-top" loading="lazy">
             </div>
           </div>
         </div>
@@ -310,40 +320,40 @@
       <article id="calciori" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pb-20 border-b border-line scroll-mt-28">
         <div class="lg:col-span-5 space-y-5">
           <div class="flex items-center gap-2">
-            <span class="font-mono-tag text-xs text-accent font-semibold px-2 py-0.5 bg-accent/10 rounded">03 / SUR MESURE</span>
-            <span class="text-xs font-mono-tag text-muted">Landing Page & Montres</span>
+            <span class="font-mono-tag text-xs text-white font-semibold px-2 py-0.5 bg-accent rounded">03 / SUR MESURE</span>
+            <span class="text-xs font-mono-tag text-muted">Landing page & montres</span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl font-medium tracking-tight text-ink">Calciori</h2>
+          <h2 class="text-3xl sm:text-4xl tracking-tight text-ink">Calciori</h2>
           
           <p class="text-sm sm:text-base text-[#2b2a27] leading-relaxed">
-            Page de lancement sur mesure pour la <strong>Sopra</strong>, le tout premier modèle d'une marque de montres contemporaine. Tout tient sur une seule page ultra-rapide pour capturer l'attention et générer de l'attente avant le drop.
+            Page de lancement sur mesure pour la <strong translate="no">Sopra</strong>, le tout premier modèle d'une marque de montres contemporaine. Tout tient sur une seule page, rapide à charger, pour capter l'attention et créer de l'attente avant le drop.
           </p>
 
-          <div class="bg-white p-5 rounded-xl border border-line space-y-3 text-xs shadow-xs">
-            <div class="font-mono-tag font-semibold text-ink uppercase text-[11px] pb-2 border-b border-line">Points clés réalisés</div>
+          <div class="bg-white p-5 rounded-xl border border-line space-y-3 text-xs">
+            <div class="font-mono-tag font-semibold text-ink uppercase text-[11px] pb-2 border-b border-line">Ce que j'ai réalisé</div>
             <ul class="space-y-2 text-[#444] list-disc list-inside">
               <li><strong>Fiche technique détaillée</strong> : acier inoxydable 316L brossé, boîtier 41 mm, verre saphir, fond gravé.</li>
-              <li><strong>Vitesse de chargement &lt; 0.5s</strong> codée en pur HTML, CSS et JavaScript sans dépendance lourde.</li>
+              <li><strong>Page légère et rapide</strong> : codée en HTML, CSS et JavaScript, sans dépendance lourde.</li>
               <li><strong>Compte à rebours de drop</strong> et formulaire d'inscription en avant-première.</li>
             </ul>
           </div>
 
           <dl class="grid grid-cols-2 gap-4 text-xs font-mono-tag pt-2">
             <div>
-              <dt class="text-muted">Stack :</dt>
-              <dd class="text-ink font-semibold mt-0.5">Design & Code · HTML/CSS/JS · Vercel</dd>
+              <dt class="text-muted">Rôle & technologies :</dt>
+              <dd class="text-ink font-semibold mt-0.5">Design & code · HTML/CSS/JS · Vercel</dd>
             </div>
             <div>
               <dt class="text-muted">Statut :</dt>
-              <dd class="text-emerald-700 font-semibold mt-0.5">En ligne · Actif</dd>
+              <dd class="text-ink font-semibold mt-0.5">En ligne · Actif</dd>
             </div>
           </dl>
 
           <div class="pt-2">
             <a href="https://calciori.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors text-xs font-mono-tag font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               <span>Visiter calciori.vercel.app</span>
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span>
             </a>
           </div>
         </div>
@@ -352,10 +362,10 @@
           <div class="bg-white border border-line rounded-xl overflow-hidden shadow-sm">
             <div class="px-4 py-2.5 bg-softbg border-b border-line flex items-center justify-between text-xs font-mono-tag text-muted">
               <span>Landing page Calciori Sopra</span>
-              <span class="text-emerald-700 font-medium">https://calciori.vercel.app</span>
+              <span class="text-ink font-medium">https://calciori.vercel.app</span>
             </div>
             <div class="aspect-[16/10] bg-softbg overflow-hidden">
-              <img src="images/calciori.webp" width="1440" height="900" alt="Capture d'écran landing page Calciori" class="w-full h-full object-cover object-top" loading="lazy">
+              <img src="images/calciori.webp" width="1440" height="900" alt="Capture d'écran de la page de lancement Calciori" class="w-full h-full object-cover object-top" loading="lazy">
             </div>
           </div>
         </div>
@@ -365,41 +375,41 @@
       <article id="influlab" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start scroll-mt-28">
         <div class="lg:col-span-5 space-y-5">
           <div class="flex items-center gap-2">
-            <span class="font-mono-tag text-xs text-accent font-semibold px-2 py-0.5 bg-accent/10 rounded">04 / PRODUIT PERSONNEL</span>
-            <span class="text-xs font-mono-tag text-muted">Web App & Intelligence Artificielle</span>
+            <span class="font-mono-tag text-xs text-white font-semibold px-2 py-0.5 bg-accent rounded">04 / PRODUIT PERSONNEL</span>
+            <span class="text-xs font-mono-tag text-muted">Application web & IA</span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl font-medium tracking-tight text-ink">InfluLab IA</h2>
+          <h2 class="text-3xl sm:text-4xl tracking-tight text-ink">InfluLab IA</h2>
           
           <p class="text-sm sm:text-base text-[#2b2a27] leading-relaxed">
             Mon propre produit : une application web complète pour les créateurs de contenu sur YouTube, TikTok, Twitch et Instagram. L'utilisateur importe ses métriques et l'IA en tire des recommandations concrètes pour maximiser sa croissance et sa monétisation.
           </p>
 
-          <div class="bg-white p-5 rounded-xl border border-line space-y-3 text-xs shadow-xs">
-            <div class="font-mono-tag font-semibold text-ink uppercase text-[11px] pb-2 border-b border-line">Points clés réalisés</div>
+          <div class="bg-white p-5 rounded-xl border border-line space-y-3 text-xs">
+            <div class="font-mono-tag font-semibold text-ink uppercase text-[11px] pb-2 border-b border-line">Ce que j'ai réalisé</div>
             <ul class="space-y-2 text-[#444] list-disc list-inside">
-              <li><strong>Intégration d'APIs de modèles de langage (LLM)</strong> pour générer des plannings d'action sur mesure.</li>
+              <li><strong>Intégration d'API de modèles de langage (LLM)</strong> pour générer des plans d'action sur mesure.</li>
               <li><strong>Tableaux de bord interactifs</strong> avec graphiques d'analyse d'audience.</li>
-              <li><strong>Système d'abonnement SaaS</strong> récurrent sécurisé avec Stripe Billing.</li>
-              <li><strong>Blog et centre de ressources</strong> optimisé pour le référencement naturel (SEO).</li>
+              <li><strong>Abonnements</strong> gérés et sécurisés avec Stripe Billing.</li>
+              <li><strong>Blog et centre de ressources</strong> optimisés pour le référencement naturel (SEO).</li>
             </ul>
           </div>
 
           <dl class="grid grid-cols-2 gap-4 text-xs font-mono-tag pt-2">
             <div>
-              <dt class="text-muted">Stack :</dt>
+              <dt class="text-muted">Technologies :</dt>
               <dd class="text-ink font-semibold mt-0.5">React, Next.js, API IA, Stripe, Vercel</dd>
             </div>
             <div>
               <dt class="text-muted">Statut :</dt>
-              <dd class="text-emerald-700 font-semibold mt-0.5">En production · Actif</dd>
+              <dd class="text-ink font-semibold mt-0.5">En ligne · Actif</dd>
             </div>
           </dl>
 
           <div class="pt-2">
             <a href="https://influlabia.fr/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors text-xs font-mono-tag font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               <span>Visiter influlabia.fr</span>
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span>
             </a>
           </div>
         </div>
@@ -408,7 +418,7 @@
           <div class="bg-white border border-line rounded-xl overflow-hidden shadow-sm">
             <div class="px-4 py-2.5 bg-softbg border-b border-line flex items-center justify-between text-xs font-mono-tag text-muted">
               <span>Application web InfluLab IA</span>
-              <span class="text-emerald-700 font-medium">https://influlabia.fr</span>
+              <span class="text-ink font-medium">https://influlabia.fr</span>
             </div>
             <div class="aspect-[16/10] bg-softbg overflow-hidden">
               <img src="images/influlab.webp" width="1440" height="729" alt="Capture d'écran de l'application InfluLab IA" class="w-full h-full object-cover object-top" loading="lazy">
@@ -420,17 +430,17 @@
     </div>
 
     <!-- BLOC D'ORIENTATION ET TRANSITION SUIVANTE -->
-    <section class="my-16 p-8 sm:p-12 rounded-2xl bg-white border border-line text-center space-y-4 shadow-xs" aria-labelledby="heading-transition">
+    <section class="my-16 p-8 sm:p-12 rounded-2xl bg-white border border-line text-center space-y-4" aria-labelledby="heading-transition">
       <div class="font-mono-tag text-xs text-accent uppercase font-semibold">Prochaine étape</div>
-      <h3 id="heading-transition" class="text-2xl sm:text-3xl font-medium tracking-tight text-ink">
+      <h2 id="heading-transition" class="text-2xl sm:text-3xl font-medium tracking-tight text-ink">
         Envie d'un résultat similaire pour votre marque ?
-      </h3>
+      </h2>
       <p class="text-sm text-muted max-w-xl mx-auto">
-        Consultez le détail des prestations ou simulez votre devis personnalisé en direct selon vos besoins.
+        Consultez le détail des prestations ou estimez le tarif de votre projet en quelques clics.
       </p>
       <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-        <a href="tarifs.html" class="px-6 py-3 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-          Simuler mon tarif en direct →
+        <a href="tarifs.html#simulateur" class="px-6 py-3 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+          Simuler mon tarif →
         </a>
         <a href="services.html" class="px-6 py-3 rounded-md bg-softbg border border-line text-ink hover:border-accent hover:text-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
           Voir les services & la méthode
@@ -438,41 +448,40 @@
       </div>
     </section>
 
-    <!-- REMERCIEMENTS & FOOTER -->
-    <footer class="pt-12 pb-10 border-t border-line space-y-8">
-      <div class="bg-white p-6 sm:p-7 rounded-xl border border-line text-xs leading-relaxed text-[#444] shadow-xs">
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="pt-12 pb-10 border-t border-line space-y-8">
+      <div class="bg-white p-6 sm:p-7 rounded-xl border border-line text-xs leading-relaxed text-[#444]">
         <div class="font-mono-tag text-[11px] text-accent uppercase tracking-wider font-semibold mb-2">
-          Remerciements & Confiance
+          Ils m'ont fait confiance
         </div>
-        <p>
-          Un grand merci aux marques et créateurs qui font confiance à <strong>Takuzo</strong> pour leurs boutiques et leurs lancements : 
-          <span class="text-ink font-medium">7venworld</span>, 
-          <span class="text-ink font-medium">Ambleme</span>, 
-          <span class="text-ink font-medium">Calciori</span>, 
-          ainsi qu'aux utilisateurs de la plateforme <span class="text-ink font-medium">InfluLab IA</span>. 
-          Merci également à tous ceux qui soutiennent le studio et partagent mon travail au quotidien sur les réseaux.
-        </p>
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-ink font-medium">
+          <li><a href="https://7venworld.com" target="_blank" rel="noopener" class="hover:text-accent transition-colors">7venworld<span class="sr-only"> (nouvel onglet)</span></a></li>
+          <li><a href="https://ambleme.fr" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Ambleme<span class="sr-only"> (nouvel onglet)</span></a></li>
+          <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Calciori<span class="sr-only"> (nouvel onglet)</span></a></li>
+        </ul>
       </div>
 
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tag text-muted">
         <div>
-          © 2026 Nolann Duchaussoy · <strong>Takuzo</strong> — Studio de création web & Shopify
+          © 2026 Nolann Duchaussoy · <strong translate="no">Takuzo</strong> — Studio de création web & Shopify
         </div>
-        <div class="flex flex-wrap items-center gap-6">
+        <nav aria-label="Pied de page" class="flex flex-wrap items-center gap-6">
           <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
           <a href="services.html" class="hover:text-ink transition-colors">Services</a>
-          <a href="tarifs.html" class="hover:text-ink transition-colors">Tarifs & Devis</a>
+          <a href="tarifs.html" class="hover:text-ink transition-colors">Tarifs</a>
           <a href="contact.html" class="hover:text-ink transition-colors">Contact</a>
           <a href="mentions-legales.html" class="hover:text-ink underline transition-colors">Mentions légales</a>
-        </div>
+        </nav>
       </div>
-    </footer>
-
-  </main>
+    </div>
+  </footer>
 
   <!-- BOUTON RETOUR EN HAUT (BACK TO TOP) -->
-  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-ink text-paper border border-line shadow-lg hover:bg-accent hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Remonter en haut de la page">
-    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+  <button id="back-to-top" type="button" tabindex="-1" aria-hidden="true" onclick="window.scrollTo({top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'})" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-ink text-paper border border-line shadow-lg hover:bg-accent hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Revenir en haut de la page">
+    <svg class="w-4 h-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
     </svg>
   </button>
@@ -497,9 +506,11 @@
       if (window.scrollY > 300) {
         btt.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
         btt.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        btt.tabIndex = 0; btt.removeAttribute('aria-hidden');
       } else {
         btt.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
         btt.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        btt.tabIndex = -1; btt.setAttribute('aria-hidden', 'true');
       }
     });
 
@@ -508,6 +519,7 @@
         const menu = document.getElementById('mobile-menu');
         if (menu && !menu.classList.contains('hidden')) {
           toggleMobileMenu();
+          document.getElementById('mobile-menu-btn').focus();
         }
       }
     });

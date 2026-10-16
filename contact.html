@@ -1,54 +1,52 @@
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="motion-safe:scroll-smooth">
 <head>
   <meta charset="utf-8">
+  <script id="lang-redirect">
+    // Visiteurs dont le navigateur n'est pas en français -> version anglaise (jamais les robots d'indexation)
+    (function () {
+      if (/bot|crawl|spider|slurp|lighthouse|inspectiontool|facebookexternalhit/i.test(navigator.userAgent)) return;
+      var pref = null;
+      try { pref = localStorage.getItem('takuzo_lang'); } catch (e) {}
+      if (pref === 'fr') return;
+      // Clic interne vers la version FR : ne pas renvoyer vers EN (utile si localStorage est bloqué)
+      if (pref !== 'en' && document.referrer.indexOf(location.href.replace(/[^\/]*([?#].*)?$/, '').replace(/\/$/, '')) === 0) return;
+      var l = (navigator.languages && navigator.languages[0]) || navigator.language || 'fr';
+      if (pref === 'en' || !/^fr\b/i.test(l)) {
+        var page = location.pathname.split('/').pop() || 'index.html';
+        location.replace('en/' + page + location.search + location.hash);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact — Nolann Duchaussoy · Takuzo</title>
   <meta name="description" content="Contactez Nolann Duchaussoy (Takuzo) pour votre projet de boutique Shopify ou de site web sur mesure. Réponse sous 24h.">
-  <meta name="theme-color" content="#f6f5f1">
+  <meta name="theme-color" content="#f2f2f2">
 
   <!-- Open Graph / Réseaux sociaux -->
   <meta property="og:site_name" content="Nolann Duchaussoy · Takuzo">
   <meta property="og:title" content="Contact — Nolann Duchaussoy · Takuzo">
-  <meta property="og:description" content="Prenez contact pour votre projet de boutique Shopify ou de site web sur mesure. Échange direct, conseils techniques et devis sous 24h.">
+  <meta property="og:description" content="Prenez contact pour votre projet de boutique Shopify ou de site web sur mesure. Échange direct, conseils concrets et réponse sous 24h.">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://nolanndch.github.io/Vitrine/contact.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://nolanndch.github.io/Vitrine/contact.html">
+  <link rel="alternate" hreflang="fr" href="https://nolanndch.github.io/Vitrine/contact.html">
+  <link rel="alternate" hreflang="en" href="https://nolanndch.github.io/Vitrine/en/contact.html">
+  <link rel="alternate" hreflang="x-default" href="https://nolanndch.github.io/Vitrine/en/contact.html">
 
   <!-- Favicon vectorielle haute définition -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f6f5f1'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%232438ff'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f2f2f2'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%23d71921'/%3E%3C/svg%3E">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&text=%E6%8B%93%E3%82%BF%E3%82%AF%E3%82%BE%E3%82%A6&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
-    :root {
-      --bg: #f6f5f1;
-      --ink: #121212;
-      --muted: #6b6a66;
-      --line: #dcd8cf;
-      --accent: #2438ff;
-      --mono: "IBM Plex Mono", ui-monospace, monospace;
-    }
-    body {
-      background-color: var(--bg);
-      color: var(--ink);
-      font-family: 'Archivo', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    .font-mono-tag {
-      font-family: var(--mono);
-    }
-    ::selection {
-      background-color: #2438ff;
-      color: #ffffff;
-    }
-    .custom-shadow {
-      box-shadow: 0 4px 20px -2px rgba(18, 18, 18, 0.05);
-    }
-  </style>
 </head>
 <body class="bg-paper text-ink selection:bg-accent selection:text-white">
 
@@ -58,63 +56,66 @@
   </a>
 
   <!-- BANDEAU DISPONIBILITÉ -->
-  <aside class="border-b border-line bg-softbg/80 py-2 px-4 text-xs font-mono-tag text-muted text-center flex items-center justify-center gap-2">
-    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
+  <aside aria-label="Disponibilité" class="glass-bar py-2 px-4 text-xs font-mono-tag text-muted text-center flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-accent motion-safe:animate-pulse" aria-hidden="true"></span>
     <span class="text-ink font-medium">Takuzo est disponible pour de nouveaux projets</span>
-    <span class="text-line">•</span>
+    <span class="text-line" aria-hidden="true">•</span>
     <span>Réponse sous 24h</span>
-    <span class="text-line hidden sm:inline">•</span>
+    <span class="text-line hidden sm:inline" aria-hidden="true">•</span>
     <span class="hidden sm:inline font-semibold text-accent">Conseils personnalisés</span>
   </aside>
 
   <!-- NAVIGATION PRINCIPALE STICKY -->
-  <header class="sticky top-0 z-50 bg-paper/90 backdrop-blur-md border-b border-line/80 transition-all">
-    <div class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
-      <nav class="flex justify-between items-center py-4 sm:py-5" aria-label="Navigation principale">
+  <header class="sticky top-0 z-50 px-3 sm:px-4 pt-3 transition-all">
+    <div class="glass max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
+      <nav class="flex justify-between items-center py-3 sm:py-4" aria-label="Navigation principale">
         <!-- Logo -->
-        <a href="index.html" class="group flex items-center gap-2 font-bold text-xl tracking-tight text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
-          <span>Nolann Duchaussoy</span>
-          <span class="text-muted group-hover:text-accent transition-colors">·</span>
-          <span class="text-accent">Takuzo</span>
+        <a href="index.html" translate="no" class="group flex items-center gap-1.5 sm:gap-2 whitespace-nowrap font-dot font-black text-lg sm:text-xl tracking-tight text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
+          <span class="hanko" aria-hidden="true" translate="no">拓</span>
+          <span translate="no">Takuzo</span>
+          <span class="font-jp font-medium text-[11px] text-muted tracking-[0.25em] ml-1 pl-3 border-l border-line" aria-hidden="true" translate="no">タクゾウ</span>
         </a>
 
         <!-- Liens Desktop -->
         <ul class="hidden md:flex items-center gap-7 text-sm font-medium">
           <li>
-            <a href="index.html" class="text-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+            <a href="index.html" class="nav-link text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               Accueil
             </a>
           </li>
           <li>
-            <a href="projets.html" class="text-muted hover:text-ink transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+            <a href="projets.html" class="nav-link text-muted flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               <span>Projets</span>
-              <span class="font-mono-tag text-xs text-accent">04</span>
+              <span class="font-mono-tag text-xs text-accent" aria-hidden="true">04</span>
             </a>
           </li>
           <li>
-            <a href="services.html" class="text-muted hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
+            <a href="services.html" class="nav-link text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
               Services
             </a>
           </li>
           <li>
-            <a href="tarifs.html" class="text-muted hover:text-ink transition-colors flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded">
-              <span>Tarifs & Devis</span>
+            <a href="tarifs.html" class="nav-link text-muted flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <span>Tarifs</span>
             </a>
           </li>
           <li>
             <a href="contact.html" class="px-4 py-2 rounded-md bg-accent text-white transition-colors text-xs sm:text-sm font-semibold shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 flex items-center gap-1.5" aria-current="page">
               <span>Contact</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-white" aria-hidden="true"></span>
             </a>
+          </li>
+          <li>
+            <a href="en/contact.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav-link text-muted font-mono-tag text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="EN – English version">EN</a>
           </li>
         </ul>
 
         <!-- Bouton Menu Mobile (Hamburger) -->
-        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-line bg-white text-ink hover:text-accent hover:border-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Menu principal" aria-expanded="false">
-          <svg id="menu-icon-open" class="w-5 h-5 block" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-line bg-white text-ink hover:text-accent hover:border-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Menu principal" aria-controls="mobile-menu" aria-expanded="false">
+          <svg id="menu-icon-open" aria-hidden="true" class="w-5 h-5 block" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
-          <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
+          <svg id="menu-icon-close" aria-hidden="true" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -122,38 +123,45 @@
     </div>
 
     <!-- Tiroir Mobile -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-line bg-paper/95 backdrop-blur-md px-6 py-5 transition-all">
+    <nav id="mobile-menu" aria-label="Menu mobile" class="glass hidden md:hidden max-w-[1200px] mx-auto mt-2 px-5 py-5 transition-all">
       <ul class="flex flex-col gap-3 font-medium text-base">
         <li>
-          <a href="index.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
+          <a href="index.html" class="nav-link flex items-center justify-between text-muted">
             <span>Accueil</span>
           </a>
         </li>
         <li>
-          <a href="projets.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
-            <span>Projets & Réalisations</span>
-            <span class="font-mono-tag text-xs text-accent bg-accent/10 px-2 py-0.5 rounded">04</span>
+          <a href="projets.html" class="nav-link flex items-center justify-between text-muted">
+            <span>Projets</span>
+            <span class="font-mono-tag text-xs text-white bg-accent px-2 py-0.5 rounded" aria-hidden="true">04</span>
           </a>
         </li>
         <li>
-          <a href="services.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
-            <span>Services & Méthode</span>
-            <span class="font-mono-tag text-xs text-muted">Shopify & Code</span>
+          <a href="services.html" class="nav-link flex items-center justify-between text-muted">
+            <span>Services</span>
+            <span class="font-mono-tag text-xs text-muted" aria-hidden="true">Shopify & code</span>
           </a>
         </li>
         <li>
-          <a href="tarifs.html" class="flex items-center justify-between p-2.5 rounded-lg text-muted hover:text-ink hover:bg-softbg/60 transition-colors">
-            <span>Tarifs & Simulateur</span>
-            <span class="font-mono-tag text-xs text-emerald-700 font-semibold">Dès 150 €</span>
+          <a href="tarifs.html" class="nav-link flex items-center justify-between text-muted">
+            <span>Tarifs</span>
+            <span class="font-mono-tag text-xs text-ink font-semibold">Dès 150 €</span>
+          </a>
+        </li>
+        <li>
+          <a href="en/contact.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav-link flex items-center justify-between text-muted" aria-label="English version">
+            <span>English</span>
+            <span class="font-mono-tag text-xs">EN</span>
           </a>
         </li>
         <li class="pt-2 border-t border-line">
-          <a href="contact.html" class="flex items-center justify-center p-3 rounded-lg bg-accent text-white text-center font-semibold transition-colors" aria-current="page">
-            Contact (page actuelle)
+          <a href="contact.html" class="flex items-center justify-center gap-2 p-3 rounded-lg bg-accent text-white text-center font-semibold transition-colors" aria-current="page">
+            <span>Contact</span>
+            <span class="w-2 h-2 rounded-full bg-white" aria-hidden="true"></span>
           </a>
         </li>
       </ul>
-    </div>
+    </nav>
   </header>
 
   <main id="main-content" class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
@@ -161,7 +169,7 @@
     <!-- FIL D'ARIANE PRO -->
     <nav aria-label="Fil d'Ariane" class="pt-8 pb-2 text-xs font-mono-tag text-muted flex items-center gap-2">
       <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
-      <span>/</span>
+      <span aria-hidden="true">/</span>
       <span class="text-ink font-medium" aria-current="page">Contact</span>
     </nav>
 
@@ -169,11 +177,11 @@
     <header class="py-12 sm:py-16 border-b border-line">
       <div class="max-w-3xl">
         <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Prendre contact</div>
-        <h1 class="text-4xl sm:text-6xl font-medium tracking-tight text-ink">
-          Parlons de votre boutique.
+        <h1 class="text-4xl sm:text-6xl tracking-tight text-ink">
+          Parlons de votre projet.
         </h1>
         <p class="text-base sm:text-lg text-muted mt-4 leading-relaxed">
-          Une question, une idée de boutique pour votre marque de vêtements ou une date de drop à tenir ? Écrivez-moi directement, je réponds en moins de 24h avec des conseils concrets.
+          Une question, un projet de boutique ou de site pour votre marque, ou une date de drop à tenir ? Écrivez-moi directement, je réponds en moins de 24h avec des conseils concrets.
         </p>
       </div>
     </header>
@@ -185,11 +193,11 @@
         <!-- Coordonnées & FAQ -->
         <div class="lg:col-span-5 space-y-8">
           <div>
-            <h2 class="text-2xl font-medium text-ink mb-4">Coordonnées directes</h2>
+            <h2 class="text-2xl text-ink mb-4">Coordonnées directes</h2>
             
             <div class="space-y-4 text-sm font-mono-tag">
-              <div class="p-4 rounded-xl bg-white border border-line shadow-xs">
-                <span class="text-xs text-muted block mb-1">Email personnel & pro :</span>
+              <div class="p-4 rounded-xl bg-white border border-line">
+                <span class="text-xs text-muted block mb-1">Adresse email :</span>
                 <div class="flex items-center justify-between gap-2 flex-wrap">
                   <a href="mailto:nolann.duchaussoy.pro@gmail.com" class="font-semibold text-accent hover:underline text-sm sm:text-base break-all">
                     nolann.duchaussoy.pro@gmail.com
@@ -198,40 +206,40 @@
                     Copier
                   </button>
                 </div>
-                <div id="copyToast" class="hidden text-emerald-700 text-xs mt-1.5 font-medium">✓ Adresse copiée dans le presse-papier !</div>
+                <div role="status" aria-live="polite"><div id="copyToast" class="hidden text-ink text-xs mt-1.5 font-medium">✓ Adresse copiée dans le presse-papier !</div></div>
               </div>
 
-              <div class="p-4 rounded-xl bg-white border border-line shadow-xs">
-                <span class="text-xs text-muted block mb-1">GitHub officiel :</span>
+              <div class="p-4 rounded-xl bg-white border border-line">
+                <span class="text-xs text-muted block mb-1">GitHub :</span>
                 <a href="https://github.com/Nolanndch" target="_blank" rel="noopener" class="font-medium text-ink hover:text-accent underline flex items-center justify-between">
                   <span>github.com/Nolanndch</span>
-                  <span>↗</span>
+                  <span aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span>
                 </a>
               </div>
 
-              <div class="p-4 rounded-xl bg-white border border-line shadow-xs">
+              <div class="p-4 rounded-xl bg-white border border-line">
                 <span class="text-xs text-muted block mb-1">Disponibilité :</span>
-                <span class="font-medium text-emerald-700">Ouvert aux nouveaux projets · Réponse en &lt; 24h</span>
+                <span class="font-medium text-ink">Disponible pour de nouveaux projets · Réponse sous 24h</span>
               </div>
             </div>
           </div>
 
           <!-- FAQ rapide -->
           <div class="space-y-4 pt-4 border-t border-line">
-            <h3 class="font-mono-tag text-xs uppercase text-muted tracking-wider">Questions fréquentes</h3>
+            <h2 class="font-mono-tag text-xs uppercase text-muted tracking-wider font-normal">Questions fréquentes</h2>
             
             <div class="space-y-4 text-xs leading-relaxed text-[#3b3a36]">
-              <div class="bg-white p-4 rounded-xl border border-line shadow-xs">
-                <strong class="text-ink block mb-1 text-sm font-medium">Comment se passe le paiement ?</strong>
-                Un acompte est demandé au lancement du projet pour bloquer votre créneau de production, et le solde est versé à la mise en ligne finale après validation complète.
+              <div class="bg-white p-4 rounded-xl border border-line">
+                <h3 class="text-ink mb-1 text-sm font-medium">Comment se passe le paiement ?</h3>
+                Un acompte est demandé au démarrage du projet pour réserver votre créneau. Le solde est réglé à la livraison, une fois le projet validé.
               </div>
-              <div class="bg-white p-4 rounded-xl border border-line shadow-xs">
-                <strong class="text-ink block mb-1 text-sm font-medium">Suis-je propriétaire de ma boutique ?</strong>
-                Oui, à 100%. Vous êtes l'unique propriétaire de votre boutique Shopify, de vos accès d'administration et de votre nom de domaine.
+              <div class="bg-white p-4 rounded-xl border border-line">
+                <h3 class="text-ink mb-1 text-sm font-medium">Suis-je propriétaire de ma boutique ou de mon site ?</h3>
+                Oui, à 100%. Vous êtes l'unique propriétaire de votre boutique Shopify ou du code de votre site sur mesure, de vos accès d'administration et de votre nom de domaine.
               </div>
-              <div class="bg-white p-4 rounded-xl border border-line shadow-xs">
-                <strong class="text-ink block mb-1 text-sm font-medium">Que faire si j'ai besoin d'aide après la livraison ?</strong>
-                Je vous remets l'ensemble des accès pour gérer votre boutique en direct, et je reste joignable si vous avez la moindre question technique lors de vos drops.
+              <div class="bg-white p-4 rounded-xl border border-line">
+                <h3 class="text-ink mb-1 text-sm font-medium">Que faire si j'ai besoin d'aide après la livraison ?</h3>
+                Je vous remets l'ensemble des accès pour gérer votre boutique ou votre site en autonomie, et je reste joignable pour toute question technique, notamment pendant vos drops.
               </div>
             </div>
           </div>
@@ -239,60 +247,63 @@
 
         <!-- Formulaire de contact -->
         <div class="lg:col-span-7">
-          <div class="bg-white p-6 sm:p-10 rounded-2xl border border-line custom-shadow">
-            <h2 id="heading-form" class="text-2xl font-medium text-ink mb-2">Envoyer un message</h2>
+          <div class="bg-white p-6 sm:p-10 rounded-2xl border border-line">
+            <h2 id="heading-form" class="text-2xl text-ink mb-2">Envoyer un message</h2>
             <p class="text-xs text-muted mb-6">
-              Remplissez ce formulaire et votre messagerie s'ouvrira automatiquement avec un récapitulatif clair.
+              Tous les champs sont obligatoires. Votre messagerie s'ouvrira ensuite avec un récapitulatif de votre demande.
             </p>
 
             <!-- Alerte devis transmis depuis simulateur -->
             <div id="quoteNotice" class="hidden mb-6 p-4 rounded-xl bg-accent/5 border border-accent/20 text-xs font-mono-tag text-accent flex items-start gap-3">
               <span class="text-base">✓</span>
               <div>
-                <strong>Estimation intégrée :</strong>
+                <strong>Estimation du simulateur :</strong>
                 <span id="quoteNoticeText"></span>
               </div>
             </div>
 
             <form onsubmit="handleContact(event)" class="space-y-4">
               <div>
-                <label for="contactName" class="block text-xs font-mono-tag text-muted uppercase mb-1">Votre Nom & Marque</label>
-                <input type="text" id="contactName" required placeholder="Ex: Lucas — Marque Streetwear" class="w-full px-3.5 py-2.5 rounded-md border border-line bg-paper/40 text-ink text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all">
+                <label for="contactName" class="block text-xs font-mono-tag text-muted uppercase mb-1">Votre nom & marque</label>
+                <input type="text" id="contactName" name="name" autocomplete="name" required placeholder="Ex. : Lucas — marque streetwear" class="w-full px-3.5 py-2.5 rounded-md border border-line bg-paper/40 text-ink text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all">
               </div>
 
               <div>
                 <label for="contactEmail" class="block text-xs font-mono-tag text-muted uppercase mb-1">Votre adresse email</label>
-                <input type="email" id="contactEmail" required placeholder="contact@votre-marque.com" class="w-full px-3.5 py-2.5 rounded-md border border-line bg-paper/40 text-ink text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all">
+                <input type="email" id="contactEmail" name="email" autocomplete="email" required placeholder="contact@votre-marque.com" class="w-full px-3.5 py-2.5 rounded-md border border-line bg-paper/40 text-ink text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all">
               </div>
 
               <div>
                 <label for="contactService" class="block text-xs font-mono-tag text-muted uppercase mb-1">Type de besoin</label>
-                <select id="contactService" class="w-full px-3.5 py-2.5 rounded-md border border-line bg-paper/40 text-ink text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all">
+                <select id="contactService" name="service" required class="w-full px-3.5 py-2.5 rounded-md border border-line bg-paper/40 text-ink text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all">
+                  <option value="" disabled selected>Choisissez le type de projet</option>
+                  <option value="refonte">Retouches & refonte Shopify (3 jours à 1 semaine · dès 150 €)</option>
                   <option value="shopify">Boutique Shopify complète (1 à 2 semaines · dès 300 €)</option>
-                  <option value="refonte">Petites retouches / Refonte de thème (3j à 1 semaine · dès 150 €)</option>
-                  <option value="site">Site complet sur-mesure / Landing page (1 à 2 semaines · dès 450 €)</option>
-                  <option value="paiements_complexes">Site avec intégrations paiements & flux avancés (2 à 3 semaines)</option>
+                  <option value="site">Site web sur mesure / Landing page (1 à 2 semaines · dès 450 €)</option>
+                  <option value="paiements_complexes">Site web sur mesure avec paiement en ligne (2 à 3 semaines · dès 570 €)</option>
                   <option value="autre">Autre demande personnalisée</option>
                 </select>
               </div>
 
               <div>
                 <label for="contactMessage" class="block text-xs font-mono-tag text-muted uppercase mb-1">Détails de votre projet ou date de drop</label>
-                <textarea id="contactMessage" rows="5" required placeholder="Expliquez-moi vos besoins, vos inspirations (ex: style 7venworld ou Ambleme) et votre calendrier..." class="w-full px-3.5 py-2.5 rounded-md border border-line bg-paper/40 text-ink text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"></textarea>
+                <textarea id="contactMessage" name="message" rows="5" required placeholder="Décrivez vos besoins, vos inspirations (par exemple 7venworld ou Ambleme) et votre calendrier…" class="w-full px-3.5 py-2.5 rounded-md border border-line bg-paper/40 text-ink text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"></textarea>
               </div>
 
-              <button type="submit" class="w-full py-3.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+              <button type="submit" class="w-full py-3.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
                 Envoyer ma demande par email →
               </button>
 
               <div class="text-center pt-2">
-                <a href="#" id="gmailWebLink" onclick="openGmailWeb(event)" class="text-xs text-muted hover:text-accent font-mono-tag underline inline-block">
-                  Vous utilisez Gmail dans le navigateur ? Cliquez ici ↗
-                </a>
+                <button type="button" id="gmailWebLink" onclick="openGmailWeb(event)" class="text-xs text-muted hover:text-accent font-mono-tag underline inline-block focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent">
+                  Envoyer plutôt avec Gmail (navigateur) ↗
+                </button>
               </div>
 
-              <div id="contactSuccess" class="hidden p-3 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono-tag text-center">
-                ✓ Ouverture de votre client email avec votre demande pré-remplie...
+              <div role="status" aria-live="polite">
+                <div id="contactSuccess" class="hidden p-3 rounded-md bg-white border border-ink text-ink text-xs font-mono-tag text-center">
+                  ✓ Votre messagerie va s'ouvrir avec votre demande préremplie. Rien ne s'ouvre ? Utilisez le bouton Gmail ci-dessus ou écrivez directement à <a href="mailto:nolann.duchaussoy.pro@gmail.com" class="text-accent underline break-all">nolann.duchaussoy.pro@gmail.com</a>.
+                </div>
               </div>
             </form>
           </div>
@@ -301,102 +312,94 @@
       </div>
     </section>
 
-    <!-- REMERCIEMENTS & FOOTER -->
-    <footer class="pt-12 pb-10 space-y-8">
-      <div class="bg-white p-6 sm:p-7 rounded-xl border border-line text-xs leading-relaxed text-[#444] shadow-xs">
+  </main>
+
+  <!-- PIED DE PAGE -->
+  <footer class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="pt-12 pb-10 space-y-8">
+      <div class="bg-white p-6 sm:p-7 rounded-xl border border-line text-xs leading-relaxed text-[#444]">
         <div class="font-mono-tag text-[11px] text-accent uppercase tracking-wider font-semibold mb-2">
-          Remerciements & Confiance
+          Ils m'ont fait confiance
         </div>
-        <p>
-          Un grand merci aux marques et créateurs qui font confiance à <strong>Takuzo</strong> pour leurs boutiques et leurs lancements : 
-          <span class="text-ink font-medium">7venworld</span>, 
-          <span class="text-ink font-medium">Ambleme</span>, 
-          <span class="text-ink font-medium">Calciori</span>, 
-          ainsi qu'aux utilisateurs de la plateforme <span class="text-ink font-medium">InfluLab IA</span>. 
-          Merci également à tous ceux qui soutiennent le studio et partagent mon travail au quotidien sur les réseaux.
-        </p>
+        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-ink font-medium">
+          <li><a href="https://7venworld.com" target="_blank" rel="noopener" class="hover:text-accent transition-colors">7venworld<span class="sr-only"> (nouvel onglet)</span></a></li>
+          <li><a href="https://ambleme.fr" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Ambleme<span class="sr-only"> (nouvel onglet)</span></a></li>
+          <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Calciori<span class="sr-only"> (nouvel onglet)</span></a></li>
+        </ul>
       </div>
 
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tag text-muted">
         <div>
-          © 2026 Nolann Duchaussoy · <strong>Takuzo</strong> — Studio de création web & Shopify
+          © 2026 Nolann Duchaussoy · <strong translate="no">Takuzo</strong> — Studio de création web & Shopify
         </div>
-        <div class="flex flex-wrap items-center gap-6">
+        <nav aria-label="Pied de page" class="flex flex-wrap items-center gap-6">
           <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
           <a href="projets.html" class="hover:text-ink transition-colors">Projets</a>
           <a href="services.html" class="hover:text-ink transition-colors">Services</a>
-          <a href="tarifs.html" class="hover:text-ink transition-colors">Tarifs & Devis</a>
+          <a href="tarifs.html" class="hover:text-ink transition-colors">Tarifs</a>
           <a href="mentions-legales.html" class="hover:text-ink underline transition-colors">Mentions légales</a>
-        </div>
+        </nav>
       </div>
-    </footer>
-
-  </main>
+    </div>
+  </footer>
 
   <!-- BOUTON RETOUR EN HAUT (BACK TO TOP) -->
-  <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-ink text-paper border border-line shadow-lg hover:bg-accent hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Remonter en haut de la page">
-    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+  <button id="back-to-top" type="button" tabindex="-1" aria-hidden="true" onclick="window.scrollTo({top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'})" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-ink text-paper border border-line shadow-lg hover:bg-accent hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Revenir en haut de la page">
+    <svg class="w-4 h-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
     </svg>
   </button>
 
   <script>
-    // Vérifier l'arrivée d'une estimation (par URL ou par localStorage)
+    // Changement de langue : ne garder que les paramètres indépendants de la langue (le reste est déduit de la liste)
+    if (location.search) {
+      const p = new URLSearchParams(location.search), keep = new URLSearchParams();
+      ['besoin', 'total'].forEach(k => { if (p.get(k)) keep.set(k, p.get(k)); });
+      if (keep.toString()) document.querySelectorAll('a[hreflang]').forEach(a => { a.href = a.href.split('?')[0] + '?' + keep; });
+    }
+
+    // Pré-remplir le formulaire avec l'estimation transmise par le simulateur (tarifs.html)
     window.addEventListener('DOMContentLoaded', () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const besoin = urlParams.get('besoin');
-      const total = urlParams.get('total');
-      const delai = urlParams.get('delai');
+      const params = new URLSearchParams(window.location.search);
+      const besoin = params.get('besoin');
+      const total = params.get('total');
+      if (!besoin || !total) return;
 
-      let savedQuote = null;
-      try {
-        savedQuote = localStorage.getItem('takuzo_quote');
-      } catch (e) {}
+      const select = document.getElementById('contactService');
+      if ([...select.options].some(o => o.value === besoin)) select.value = besoin;
+      const label = select.options[select.selectedIndex].text;
+      const projet = params.get('projet') || label.replace(/\s*\(.*\)\s*$/, '');
+      const delai = params.get('delai') || ((label.match(/\(([^·)]+)/) || [])[1] || '1 à 2 semaines').trim();
+      const options = params.get('options') || '';
 
-      if (besoin && total) {
-        const select = document.getElementById('contactService');
-        if (select) {
-          select.value = besoin;
-        }
-        const notice = document.getElementById('quoteNotice');
-        const noticeText = document.getElementById('quoteNoticeText');
-        if (notice && noticeText) {
-          noticeText.innerText = `Prestation ${besoin} · Montant estimé : ${total} € · Délai : ${delai || '1 à 2 semaines'}`;
-          notice.classList.remove('hidden');
-        }
-        document.getElementById('contactMessage').value = `Bonjour Nolann,\n\nJ'ai réalisé une estimation sur votre simulateur :\n- Type de projet : ${besoin}\n- Montant estimé : ${total} €\n- Délai estimé : ${delai || '1 à 2 semaines'}\n\nJ'aimerais échanger avec vous sur mon projet et mes prochaines dates de drop !`;
-      } else if (savedQuote) {
-        const notice = document.getElementById('quoteNotice');
-        const noticeText = document.getElementById('quoteNoticeText');
-        if (notice && noticeText) {
-          noticeText.innerText = savedQuote;
-          notice.classList.remove('hidden');
-        }
-        document.getElementById('contactMessage').value = `Bonjour Nolann,\n\nJ'ai réalisé une estimation sur votre simulateur :\n[ ${savedQuote} ]\n\nJ'aimerais qu'on discute de mon projet et des prochaines étapes !`;
-      }
+      document.getElementById('quoteNoticeText').innerText = `${projet} · Montant estimé : ${total} € · Délai : ${delai}` + (options ? ` · Options : ${options}` : '');
+      document.getElementById('quoteNotice').classList.remove('hidden');
+      document.getElementById('contactMessage').value = `Bonjour Nolann,\n\nJ'ai réalisé une estimation sur votre simulateur :\n- Type de projet : ${projet}\n- Options : ${options || (params.get('projet') ? 'aucune' : 'à préciser')}\n- Montant estimé : ${total} €\n- Délai estimé : ${delai}\n\nJ'aimerais échanger avec vous sur mon projet.`;
     });
 
     // Copier l'adresse email
     function copyEmailToClipboard() {
       const email = 'nolann.duchaussoy.pro@gmail.com';
+      if (!navigator.clipboard) { window.prompt('Adresse email :', email); return; }
       navigator.clipboard.writeText(email).then(() => {
         const toast = document.getElementById('copyToast');
         const btn = document.getElementById('copyEmailBtn');
         toast.classList.remove('hidden');
         btn.innerText = 'Copié !';
-        btn.classList.add('bg-emerald-600', 'text-white');
+        btn.classList.add('bg-ink', 'text-white');
         setTimeout(() => {
           toast.classList.add('hidden');
           btn.innerText = 'Copier';
-          btn.classList.remove('bg-emerald-600', 'text-white');
+          btn.classList.remove('bg-ink', 'text-white');
         }, 3000);
-      });
+      }).catch(() => window.prompt('Adresse email :', email));
     }
 
     function getContactData() {
       const name = document.getElementById('contactName').value || 'Client';
       const email = document.getElementById('contactEmail').value || '';
-      const service = document.getElementById('contactService').value;
+      const select = document.getElementById('contactService');
+      const service = select.options[select.selectedIndex].text.replace(/\s*\(.*\)\s*$/, '');
       const message = document.getElementById('contactMessage').value;
       const subject = `Demande de projet — ${name} (Takuzo)`;
       const body = `Nom / Marque : ${name}\nEmail : ${email}\nPrestation : ${service}\n\nMessage :\n${message}`;
@@ -415,9 +418,11 @@
 
     function openGmailWeb(e) {
       e.preventDefault();
+      const form = e.currentTarget.closest('form');
+      if (form && !form.reportValidity()) return;
       const { subject, body } = getContactData();
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=nolann.duchaussoy.pro@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.open(gmailUrl, '_blank');
+      window.open(gmailUrl, '_blank', 'noopener');
     }
 
     // Navigation & Back to Top
@@ -440,9 +445,11 @@
       if (window.scrollY > 300) {
         btt.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
         btt.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        btt.tabIndex = 0; btt.removeAttribute('aria-hidden');
       } else {
         btt.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
         btt.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+        btt.tabIndex = -1; btt.setAttribute('aria-hidden', 'true');
       }
     });
 
@@ -451,6 +458,7 @@
         const menu = document.getElementById('mobile-menu');
         if (menu && !menu.classList.contains('hidden')) {
           toggleMobileMenu();
+          document.getElementById('mobile-menu-btn').focus();
         }
       }
     });

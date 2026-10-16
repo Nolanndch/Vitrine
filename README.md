@@ -12,4 +12,4 @@ npm run watch   # recompile css/style.css à chaque modification
 npm start       # serveur local
 ```
 
-Avant de pousser : `npm run build` (le fichier `css/style.css` est versionné, GitHub Pages le sert tel quel).
+Avant de pousser : `npm run build`. Il régénère la version anglaise `en/*.html` à partir des pages FR et de `i18n/en.py` (ne jamais éditer `en/` à la main ; tout texte FR sans traduction est signalé), puis recompile `css/style.css`. Les deux sont versionnés : GitHub Pages les sert tels quels.
