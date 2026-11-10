@@ -45,7 +45,7 @@ for f in sorted(glob.glob('*.html')):
     s = s.replace('<meta property="og:url" content="' + BASE, '<meta property="og:url" content="' + BASE + 'en/')
     s = s.replace('<meta property="og:locale" content="fr_FR">', '<meta property="og:locale" content="en_GB">')
     s = s.replace('<meta property="og:locale:alternate" content="en_GB">', '<meta property="og:locale:alternate" content="fr_FR">')
-    s = s.replace('href="css/', 'href="../css/').replace('src="images/', 'src="../images/')
+    s = s.replace('href="css/', 'href="../css/').replace('src="images/', 'src="../images/').replace('src="js/', 'src="../js/')
     s = re.sub(r'href="en/([\w.-]+)" hreflang', r'href="../\1" hreflang', s)
     open(os.path.join('en', f), 'w').write(s)
 print('Pages EN générées.' + (' Textes sans traduction (ajouter à T ou KEEP dans i18n/en.py) :\n- ' + '\n- '.join(sorted(missing)) if missing else ''))

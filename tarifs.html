@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" class="motion-safe:scroll-smooth">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <script id="lang-redirect">
@@ -20,8 +20,8 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tarifs & estimation en ligne — Nolann Duchaussoy · Takuzo</title>
-  <meta name="description" content="Simulateur de tarif Takuzo : retouches & refonte Shopify dès 150 €, boutique Shopify complète dès 300 €, site web sur mesure dès 450 €.">
-  <meta name="theme-color" content="#f2f2f2">
+  <meta name="description" content="Simulateur de tarif Takuzo : retouches & refonte Shopify dès 150 €, boutique Shopify complète dès 400 €, site web sur mesure dès 450 €.">
+  <meta name="theme-color" content="#0b1019">
 
   <!-- Open Graph / Réseaux sociaux -->
   <meta property="og:site_name" content="Nolann Duchaussoy · Takuzo">
@@ -36,451 +36,281 @@
   <link rel="alternate" hreflang="fr" href="https://nolanndch.github.io/Vitrine/tarifs.html">
   <link rel="alternate" hreflang="en" href="https://nolanndch.github.io/Vitrine/en/tarifs.html">
   <link rel="alternate" hreflang="x-default" href="https://nolanndch.github.io/Vitrine/en/tarifs.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='c' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.48' stop-color='%23aab4c2'/%3E%3Cstop offset='.52' stop-color='%23435063'/%3E%3Cstop offset='1' stop-color='%23e9edf2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='18' fill='%230b1019'/%3E%3Cpath d='M28 30 H72 V41 H56 V76 H44 V41 H28 Z' fill='url(%23c)'/%3E%3Crect x='66' y='66' width='8' height='8' fill='%23ff653d'/%3E%3C/svg%3E">
 
-  <!-- Favicon vectorielle haute définition -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f2f2f2'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%23d71921'/%3E%3C/svg%3E">
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&text=%E6%8B%93%E3%82%BF%E3%82%AF%E3%82%BE%E3%82%A6&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&text=%E6%8B%93&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
+  <script>document.documentElement.classList.add('js')</script>
 </head>
-<body class="bg-paper text-ink selection:bg-accent selection:text-white">
+<body class="has-sim-bar">
 
-  <!-- LIEN D'ÉVITEMENT ACCESSIBILITÉ -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:bg-ink focus:text-paper focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent">
-    Aller au contenu principal
-  </a>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
-  <!-- BANDEAU DISPONIBILITÉ -->
-  <aside aria-label="Disponibilité" class="glass-bar py-2 px-4 text-xs font-mono-tag text-muted text-center flex items-center justify-center gap-2">
-    <span class="inline-block w-2 h-2 rounded-full bg-accent motion-safe:animate-pulse" aria-hidden="true"></span>
-    <span class="text-ink font-medium">Takuzo est disponible pour de nouveaux projets</span>
-    <span class="text-line" aria-hidden="true">•</span>
-    <span>Livraison en 3 j à 2 sem.</span>
-    <span class="text-line hidden sm:inline" aria-hidden="true">•</span>
-    <span class="hidden sm:inline font-semibold text-ink">Devis ferme validé avant démarrage</span>
-  </aside>
-
-  <!-- NAVIGATION PRINCIPALE STICKY -->
-  <header class="sticky top-0 z-50 px-3 sm:px-4 pt-3 transition-all">
-    <div class="glass max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
-      <nav class="flex justify-between items-center py-3 sm:py-4" aria-label="Navigation principale">
-        <!-- Logo -->
-        <a href="index.html" translate="no" class="group flex items-center gap-1.5 sm:gap-2 whitespace-nowrap font-dot font-black text-lg sm:text-xl tracking-tight text-ink hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
-          <span class="hanko" aria-hidden="true" translate="no">拓</span>
-          <span translate="no">Takuzo</span>
-          <span class="font-jp font-medium text-[11px] text-muted tracking-[0.25em] ml-1 pl-3 border-l border-line" aria-hidden="true" translate="no">タクゾウ</span>
-        </a>
-
-        <!-- Liens Desktop -->
-        <ul class="hidden md:flex items-center gap-7 text-sm font-medium">
-          <li>
-            <a href="index.html" class="nav-link text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-              Accueil
-            </a>
-          </li>
-          <li>
-            <a href="projets.html" class="nav-link text-muted flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-              <span>Projets</span>
-              <span class="font-mono-tag text-xs text-accent" aria-hidden="true">04</span>
-            </a>
-          </li>
-          <li>
-            <a href="services.html" class="nav-link text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-              Services
-            </a>
-          </li>
-          <li>
-            <a href="tarifs.html" class="nav-link text-ink font-semibold flex items-center gap-1.5 bg-black/5" aria-current="page">
-              <span>Tarifs</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true"></span>
-            </a>
-          </li>
-          <li>
-            <a href="contact.html" class="px-4 py-2 rounded-md bg-ink text-paper hover:bg-accent hover:text-white transition-colors text-xs sm:text-sm font-medium shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2">
-              Contact
-            </a>
-          </li>
-          <li>
-            <a href="en/tarifs.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav-link text-muted font-mono-tag text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="EN – English version">EN</a>
-          </li>
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="brand" translate="no">
+        <span class="brand__mark" aria-hidden="true">拓</span>
+        <span>Takuzo</span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html" class="nav__link">Accueil</a></li>
+          <li><a href="projets.html" class="nav__link">Projets <sup class="nav__count" aria-hidden="true">04</sup></a></li>
+          <li><a href="services.html" class="nav__link">Services</a></li>
+          <li><a href="tarifs.html" class="nav__link" aria-current="page">Tarifs</a></li>
         </ul>
-
-        <!-- Bouton Menu Mobile (Hamburger) -->
-        <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-line bg-white text-ink hover:text-accent hover:border-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Menu principal" aria-controls="mobile-menu" aria-expanded="false">
-          <svg id="menu-icon-open" aria-hidden="true" class="w-5 h-5 block" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <svg id="menu-icon-close" aria-hidden="true" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+        <a href="en/tarifs.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav__lang" aria-label="EN – English version">EN</a>
+        <a href="contact.html" class="btn btn--primary btn--sm">Contact</a>
       </nav>
+      <button type="button" id="mobile-menu-btn" class="menu-btn" onclick="toggleMobileMenu()" aria-label="Menu principal" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="menu-btn__bars" aria-hidden="true"></span>
+      </button>
     </div>
-
-    <!-- Tiroir Mobile -->
-    <nav id="mobile-menu" aria-label="Menu mobile" class="glass hidden md:hidden max-w-[1200px] mx-auto mt-2 px-5 py-5 transition-all">
-      <ul class="flex flex-col gap-3 font-medium text-base">
-        <li>
-          <a href="index.html" class="nav-link flex items-center justify-between text-muted">
-            <span>Accueil</span>
-          </a>
-        </li>
-        <li>
-          <a href="projets.html" class="nav-link flex items-center justify-between text-muted">
-            <span>Projets</span>
-            <span class="font-mono-tag text-xs text-white bg-accent px-2 py-0.5 rounded" aria-hidden="true">04</span>
-          </a>
-        </li>
-        <li>
-          <a href="services.html" class="nav-link flex items-center justify-between text-muted">
-            <span>Services</span>
-            <span class="font-mono-tag text-xs text-muted" aria-hidden="true">Shopify & code</span>
-          </a>
-        </li>
-        <li>
-          <a href="tarifs.html" class="nav-link flex items-center justify-between bg-black/5 text-ink font-semibold" aria-current="page">
-            <span>Tarifs</span>
-            <span class="w-2 h-2 rounded-full bg-accent" aria-hidden="true"></span>
-          </a>
-        </li>
-        <li>
-          <a href="en/tarifs.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav-link flex items-center justify-between text-muted" aria-label="English version">
-            <span>English</span>
-            <span class="font-mono-tag text-xs">EN</span>
-          </a>
-        </li>
-        <li class="pt-2 border-t border-line">
-          <a href="contact.html" class="flex items-center justify-center p-3 rounded-lg bg-ink text-paper hover:bg-accent text-center font-medium transition-colors">
-            Contact
-          </a>
-        </li>
-      </ul>
-    </nav>
   </header>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Menu mobile">
+    <ol>
+        <li><a href="index.html"><span aria-hidden="true">01</span><span>Accueil</span></a></li>
+        <li><a href="projets.html"><span aria-hidden="true">02</span><span>Projets</span></a></li>
+        <li><a href="services.html"><span aria-hidden="true">03</span><span>Services</span></a></li>
+        <li><a href="tarifs.html" aria-current="page"><span aria-hidden="true">04</span><span>Tarifs</span></a></li>
+        <li><a href="contact.html"><span aria-hidden="true">05</span><span>Contact</span></a></li>
+    </ol>
+    <div class="mobile-menu__foot">
+      <span>Dès 150 €</span>
+      <a href="en/tarifs.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" aria-label="English version"><span class="lang-name">English</span> <span class="lang-code">EN</span></a>
+    </div>
+  </nav>
 
-  <main id="main-content" class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+  <main id="main-content">
 
-    <!-- FIL D'ARIANE PRO -->
-    <nav aria-label="Fil d'Ariane" class="pt-8 pb-2 text-xs font-mono-tag text-muted flex items-center gap-2">
-      <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
-      <span aria-hidden="true">/</span>
-      <span class="text-ink font-medium" aria-current="page">Tarifs</span>
-    </nav>
-
-    <!-- HEADER TARIFS -->
-    <header class="py-12 sm:py-16 border-b border-line">
-      <div class="max-w-3xl">
-        <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Transparence & estimation directe</div>
-        <h1 class="text-4xl sm:text-6xl tracking-tight text-ink">
-          Des tarifs simples,<br>
-          <span class="text-muted">des délais clairs et respectés.</span>
-        </h1>
-        <p class="text-base sm:text-lg text-muted mt-4 leading-relaxed">
-          Retouches & refonte Shopify livrées en 3 jours à 1 semaine (1 à 2 semaines à partir de 3 options). Boutiques Shopify et sites web sur mesure livrés en 1 à 2 semaines.
-        </p>
+    <header class="page-head mood-orange">
+      <div class="halo" aria-hidden="true"></div>
+      <div class="wrap">
+        <nav aria-label="Fil d'Ariane" class="crumbs">
+          <a href="index.html">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Tarifs</span>
+        </nav>
+        <div class="page-head__body">
+          <p class="eyebrow" data-reveal>Transparence & estimation directe</p>
+          <h1 class="title-l" data-reveal>
+            <span class="line-mask"><span>Des tarifs simples,</span></span>
+            <span class="line-mask" style="--d:1"><span class="dim">des délais clairs et respectés.</span></span>
+          </h1>
+          <p class="lead" data-reveal style="--d:2">
+            Retouches & refonte Shopify livrées en 3 jours à 1 semaine (1 à 2 semaines à partir de 3 options). Boutiques Shopify et sites web sur mesure livrés en 1 à 2 semaines.
+          </p>
+        </div>
       </div>
     </header>
 
     <!-- SIMULATEUR DE DEVIS INTERACTIF -->
-    <section id="simulateur" class="py-16 border-b border-line scroll-mt-28" aria-labelledby="heading-simulateur">
-      <div class="max-w-3xl mx-auto mb-10 text-center">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-white border border-line font-mono-tag text-xs text-accent font-semibold mb-3">
-          OUTIL D'ESTIMATION DIRECTE
+    <section id="simulateur" class="section section--deep" aria-labelledby="heading-simulateur" style="padding-top:clamp(3.5rem,7vw,5.5rem)">
+      <div class="wrap">
+        <div class="sec-head" style="margin-bottom:clamp(2rem,4vw,3rem)">
+          <div>
+            <p class="eyebrow">Outil d'estimation directe</p>
+            <h2 id="heading-simulateur" class="title-m" style="margin-top:1rem">Simulateur de tarif</h2>
+          </div>
+          <p class="muted" style="max-width:24rem">Ajustez vos options : le tarif et le délai s'actualisent en temps réel.</p>
         </div>
-        <h2 id="heading-simulateur" class="text-3xl sm:text-4xl text-ink">
-          Simulateur de tarif
-        </h2>
-        <p class="text-sm text-muted mt-2">
-          Ajustez vos options : le tarif et le délai s'actualisent en temps réel.
-        </p>
-      </div>
 
-      <div class="max-w-3xl mx-auto bg-white rounded-2xl border border-line p-6 sm:p-10">
-        
-        <!-- Étape 1 : Prestation principale -->
-        <fieldset class="mb-8 border-none p-0 m-0">
-          <legend class="block font-mono-tag text-xs uppercase tracking-wider text-muted mb-3 font-semibold">
-            1. Choisissez le type de projet :
-          </legend>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            
-            <button type="button" data-type="refonte" aria-pressed="false" onclick="setSimProject('refonte', 150, '3 jours à 1 semaine', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-line hover:border-ink bg-softbg/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-              <span class="block font-semibold text-sm text-ink">Retouches & refonte Shopify</span>
-              <span class="block text-xs text-muted mt-1">Votre boutique existe déjà</span>
-              <span class="block font-mono-tag text-xs font-semibold text-ink mt-2">Délai : 3 jours à 1 semaine</span>
-              <span class="block font-mono-tag text-sm font-bold text-accent mt-1">Dès 150 €</span>
-            </button>
+        <div class="sim">
+          <div>
+            <!-- Étape 1 : Prestation principale -->
+            <fieldset>
+              <legend><span class="mono dim">01</span> Choisissez le type de projet :</legend>
+              <div class="sim-types">
+                <button type="button" data-type="refonte" aria-pressed="false" onclick="setSimProject('refonte', 150, '3 jours à 1 semaine', this)" class="sim-type-btn">
+                  <span class="sim-type-name">Retouches & refonte Shopify</span>
+                  <span class="sim-type-sub">Votre boutique existe déjà</span>
+                  <span class="sim-type-meta"><span>3 jours à 1 semaine</span><strong>Dès 150 €</strong></span>
+                </button>
+                <button type="button" data-type="shopify" aria-pressed="true" onclick="setSimProject('shopify', 400, '1 à 2 semaines', this)" class="sim-type-btn">
+                  <span class="sim-type-name">Boutique Shopify complète</span>
+                  <span class="sim-type-sub">Créée de zéro, prête pour vos drops</span>
+                  <span class="sim-type-meta"><span>1 à 2 semaines</span><strong>Dès 400 €</strong></span>
+                </button>
+                <button type="button" data-type="site" aria-pressed="false" onclick="setSimProject('site', 450, '1 à 2 semaines', this)" class="sim-type-btn">
+                  <span class="sim-type-name">Site web sur mesure</span>
+                  <span class="sim-type-sub">Landing page ou site vitrine codé</span>
+                  <span class="sim-type-meta"><span>1 à 2 semaines</span><strong>Dès 450 €</strong></span>
+                </button>
+              </div>
+            </fieldset>
 
-            <button type="button" data-type="shopify" aria-pressed="true" onclick="setSimProject('shopify', 300, '1 à 2 semaines', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-accent bg-accent/5 ring-1 ring-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-              <span class="block font-semibold text-sm text-ink">Boutique Shopify complète</span>
-              <span class="block text-xs text-muted mt-1">Créée de zéro, prête pour vos drops</span>
-              <span class="block font-mono-tag text-xs font-semibold text-ink mt-2">Délai : 1 à 2 semaines</span>
-              <span class="block font-mono-tag text-sm font-bold text-accent mt-1">Dès 300 €</span>
-            </button>
-
-            <button type="button" data-type="site" aria-pressed="false" onclick="setSimProject('site', 450, '1 à 2 semaines', this)" class="sim-type-btn p-4 rounded-xl border text-left transition-all border-line hover:border-ink bg-softbg/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-              <span class="block font-semibold text-sm text-ink">Site web sur mesure</span>
-              <span class="block text-xs text-muted mt-1">Landing page ou site vitrine codé</span>
-              <span class="block font-mono-tag text-xs font-semibold text-ink mt-2">Délai : 1 à 2 semaines</span>
-              <span class="block font-mono-tag text-sm font-bold text-accent mt-1">Dès 450 €</span>
-            </button>
-
+            <!-- Étape 2 : Sections & options (filtrées selon le type de projet via data-for) -->
+            <fieldset style="margin-top:3rem">
+              <legend><span class="mono dim">02</span> Ce qui est inclus et les options :</legend>
+              <div data-for="refonte" class="sim-included hidden">
+                <p class="sim-included__label">Inclus dans la refonte :</p>
+                <ul><li>Hero / bannière d'accueil</li><li>Bandeau d'annonce défilant</li><li>Guide des tailles</li><li>Filtres de catalogue</li><li>Lookbook de collection</li><li>FAQ & réassurance produit</li></ul>
+              </div>
+              <div data-for="shopify" class="sim-included">
+                <p class="sim-included__label">Tout est inclus dans la boutique complète :</p>
+                <ul><li>Hero / bannière d'accueil</li><li>Bandeau d'annonce défilant</li><li>Guide des tailles</li><li>Filtres de catalogue</li><li>Lookbook de collection</li><li>FAQ & réassurance produit</li><li>Compte à rebours de drop</li><li>Boutique bilingue FR / EN</li><li>Optimisation vitesse & SEO</li></ul>
+              </div>
+              <div class="sim-opts">
+                <label data-for="refonte" class="opt hidden">
+                  <input type="checkbox" data-price="60" onchange="updateQuote()" class="sim-option">
+                  <span><span class="opt-name">Compte à rebours de drop</span><span class="opt-desc">+60 € · Page d'attente avant l'ouverture de la collection</span></span>
+                </label>
+                <label data-for="refonte" class="opt hidden">
+                  <input type="checkbox" data-price="80" onchange="updateQuote()" class="sim-option">
+                  <span><span class="opt-name">Boutique bilingue FR / EN</span><span class="opt-desc">+80 € · Traduction et devises locales via Shopify Markets</span></span>
+                </label>
+                <label data-for="refonte" class="opt hidden">
+                  <input type="checkbox" data-price="100" onchange="updateQuote()" class="sim-option">
+                  <span><span class="opt-name">Optimisation vitesse & SEO</span><span class="opt-desc">+100 € · Images, code du thème, balises et données produits</span></span>
+                </label>
+                <label data-for="site" class="opt hidden">
+                  <input type="checkbox" data-price="80" onchange="updateQuote()" class="sim-option">
+                  <span><span class="opt-name">Référencement naturel avancé (SEO)</span><span class="opt-desc">+80 € · Balises, données structurées, Search Console</span></span>
+                </label>
+                <label data-for="site" class="opt hidden">
+                  <input type="checkbox" data-price="60" onchange="updateQuote()" class="sim-option">
+                  <span><span class="opt-name">Nom de domaine & emails pro</span><span class="opt-desc">+60 € · Configuration du domaine (DNS) et adresses email à votre nom</span></span>
+                </label>
+              </div>
+              <p data-for="refonte" class="sim-note hidden">
+                Inclus : corrections visuelles, ajustements mobile et nettoyage du thème existant. Chaque section est codée en Liquid et reste modifiable depuis l'éditeur Shopify. À partir de 3 options, prévoir 1 à 2 semaines.
+              </p>
+              <p data-for="shopify" class="sim-note">
+                Inclus : thème personnalisé, collections, fiches produits, livraisons et mise en ligne. Les paiements (CB, Apple Pay, Shop Pay, PayPal) et le nom de domaine sont gérés nativement par Shopify : je les configure sans supplément. L'abonnement Shopify, l'achat du nom de domaine et les éventuelles applications payantes restent à votre charge.
+              </p>
+              <p data-for="site" class="sim-note hidden">
+                Inclus : design sur mesure adapté à tous les écrans, page d'accueil complète et mise en ligne sur Vercel. L'achat du nom de domaine, l'éventuel abonnement d'hébergement et les services tiers (boîtes mail) restent à votre charge.
+              </p>
+            </fieldset>
           </div>
-        </fieldset>
 
-        <!-- Étape 2 : Sections & options (filtrées selon le type de projet via data-for) -->
-        <fieldset class="mb-8 border-none p-0 m-0">
-          <legend class="block font-mono-tag text-xs uppercase tracking-wider text-muted mb-3 font-semibold">
-            2. Ajoutez des sections et des options :
-          </legend>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" data-price="40" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
-              <span class="flex-1">
-                <span class="font-medium text-ink">Bandeau d'annonce défilant</span>
-                <span class="text-muted block text-[11px]">+40 € · Dates de drop, offres, livraison offerte</span>
-              </span>
-            </label>
-            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" data-price="60" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
-              <span class="flex-1">
-                <span class="font-medium text-ink">Compte à rebours de drop</span>
-                <span class="text-muted block text-[11px]">+60 € · Page d'attente avant l'ouverture de la collection</span>
-              </span>
-            </label>
-            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" data-price="60" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
-              <span class="flex-1">
-                <span class="font-medium text-ink">Lookbook de collection</span>
-                <span class="text-muted block text-[11px]">+60 € · Galerie éditoriale reliée aux produits</span>
-              </span>
-            </label>
-            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" data-price="40" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
-              <span class="flex-1">
-                <span class="font-medium text-ink">FAQ & réassurance produit</span>
-                <span class="text-muted block text-[11px]">+40 € · Livraison, retours et entretien, directement sur la fiche produit</span>
-              </span>
-            </label>
-            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" data-price="40" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
-              <span class="flex-1">
-                <span class="font-medium text-ink">Guide des tailles</span>
-                <span class="text-muted block text-[11px]">+40 € · Tableau de mesures en pop-up sur la fiche produit</span>
-              </span>
-            </label>
-            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" data-price="80" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
-              <span class="flex-1">
-                <span class="font-medium text-ink">Fiche produit premium</span>
-                <span class="text-muted block text-[11px]">+80 € · Galerie immersive et « Complétez le look »</span>
-              </span>
-            </label>
-            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" data-price="40" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
-              <span class="flex-1">
-                <span class="font-medium text-ink">Filtres de catalogue</span>
-                <span class="text-muted block text-[11px]">+40 € · Par catégorie, taille, couleur et prix</span>
-              </span>
-            </label>
-            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" data-price="60" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
-              <span class="flex-1">
-                <span class="font-medium text-ink">Boutique bilingue FR / EN</span>
-                <span class="text-muted block text-[11px]">+60 € · Traduction et devises locales via Shopify Markets</span>
-              </span>
-            </label>
-            <label data-for="refonte shopify" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors">
-              <input type="checkbox" data-price="80" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
-              <span class="flex-1">
-                <span class="font-medium text-ink">Optimisation vitesse & SEO</span>
-                <span class="text-muted block text-[11px]">+80 € · Images, code du thème, balises et données produits</span>
-              </span>
-            </label>
-            <label data-for="site" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors hidden">
-              <input type="checkbox" data-price="80" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
-              <span class="flex-1">
-                <span class="font-medium text-ink">Référencement naturel avancé (SEO)</span>
-                <span class="text-muted block text-[11px]">+80 € · Balises, données structurées, Search Console</span>
-              </span>
-            </label>
-            <label data-for="site" class="flex items-center gap-3 p-3.5 rounded-lg border border-line hover:bg-softbg/30 cursor-pointer transition-colors hidden">
-              <input type="checkbox" data-price="60" onchange="updateQuote()" class="sim-option w-4 h-4 rounded accent-accent">
-              <span class="flex-1">
-                <span class="font-medium text-ink">Nom de domaine & emails pro</span>
-                <span class="text-muted block text-[11px]">+60 € · Configuration du domaine (DNS) et adresses email à votre nom</span>
-              </span>
-            </label>
-          </div>
-          <p data-for="refonte" class="hidden text-[11px] text-muted mt-3 leading-relaxed">
-            Inclus : corrections visuelles, ajustements mobile et nettoyage du thème existant. Chaque section est codée en Liquid et reste modifiable depuis l'éditeur Shopify. À partir de 3 options, prévoir 1 à 2 semaines.
-          </p>
-          <p data-for="shopify" class="text-[11px] text-muted mt-3 leading-relaxed">
-            Inclus : thème personnalisé, collections, fiches produits, livraisons et mise en ligne. Les paiements (CB, Apple Pay, Shop Pay, PayPal) et le nom de domaine sont gérés nativement par Shopify : je les configure sans supplément. L'abonnement Shopify, l'achat du nom de domaine et les éventuelles applications payantes restent à votre charge.
-          </p>
-          <p data-for="site" class="hidden text-[11px] text-muted mt-3 leading-relaxed">
-            Inclus : design sur mesure adapté à tous les écrans, page d'accueil complète et mise en ligne sur Vercel. L'achat du nom de domaine, l'éventuel abonnement d'hébergement et les services tiers (boîtes mail) restent à votre charge.
-          </p>
-        </fieldset>
-
-        <!-- Résultat & Estimation dynamique -->
-        <div class="p-6 rounded-xl bg-softbg border border-line flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div role="status" aria-live="polite" aria-atomic="true">
-            <span class="font-mono-tag text-xs text-muted uppercase">Montant estimé :</span>
-            <div class="text-3xl sm:text-4xl font-bold font-mono-tag text-ink mt-0.5" id="simDisplayPrice">300 €</div>
-            <div class="text-xs text-muted font-mono-tag mt-1">
-              Délai de réalisation : <strong id="simDisplayDelay" class="text-ink font-semibold">1 à 2 semaines</strong>
+          <!-- Résultat & estimation dynamique -->
+          <aside class="sim-summary" id="simSummary" aria-label="Montant estimé :">
+            <div role="status" aria-live="polite" aria-atomic="true">
+              <span class="sim-summary__label">Montant estimé :</span>
+              <div class="sim-summary__price" id="simDisplayPrice">400 €</div>
+              <div class="sim-summary__delay">Délai de réalisation : <strong id="simDisplayDelay">1 à 2 semaines</strong></div>
             </div>
-          </div>
-
-          <a href="contact.html" id="validateQuoteLink" onclick="saveQuoteDetails(event)" class="w-full sm:w-auto px-6 py-3.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-            Demander un devis ferme →
-          </a>
+            <a href="contact.html" id="validateQuoteLink" onclick="saveQuoteDetails(event)" class="btn btn--primary btn--block"><span>Demander un devis ferme</span><span class="arrow" aria-hidden="true">→</span></a>
+            <ul>
+              <li>Devis ferme validé avant démarrage</li>
+              <li>Acompte, puis solde à la livraison</li>
+              <li>100% propriétaire de votre boutique ou de votre site</li>
+            </ul>
+          </aside>
         </div>
-
-        <!-- Repères rassurants -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 mt-6 border-t border-line text-[11px] font-mono-tag text-muted text-center sm:text-left">
-          <div class="flex items-center gap-1.5 justify-center sm:justify-start">
-            <span class="text-accent font-bold">✓</span>
-            <span>Devis ferme validé avant démarrage</span>
-          </div>
-          <div class="flex items-center gap-1.5 justify-center sm:justify-start">
-            <span class="text-accent font-bold">✓</span>
-            <span>Acompte, puis solde à la livraison</span>
-          </div>
-          <div class="flex items-center gap-1.5 justify-center sm:justify-start">
-            <span class="text-accent font-bold">✓</span>
-            <span>100% propriétaire de votre boutique ou de votre site</span>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- GRILLE TARIFAIRE -->
-    <section class="py-16 border-b border-line" aria-labelledby="heading-grille">
-      <div class="max-w-2xl mb-12">
-        <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Grille tarifaire</div>
-        <h2 id="heading-grille" class="text-3xl tracking-tight text-ink">
-          Prix de départ par prestation
-        </h2>
+    <!-- Barre de synthèse mobile (visible pendant le simulateur) -->
+    <div class="sim-bar" id="simBar" aria-hidden="true">
+      <div>
+        <span class="sim-bar__price" id="simBarPrice">400 €</span>
+        <span class="sim-bar__delay" id="simBarDelay">1 à 2 semaines</span>
       </div>
+      <a href="contact.html" onclick="saveQuoteDetails(event)" class="btn btn--accent btn--sm" tabindex="-1"><span>Demander un devis ferme</span><span class="arrow" aria-hidden="true">→</span></a>
+    </div>
 
-      <div class="divide-y divide-line border-t border-b border-line">
-        
-        <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
-          <div class="sm:col-span-7">
-            <h3 class="text-xl font-medium text-ink">Retouches & refonte Shopify</h3>
-            <p class="text-sm text-[#3b3a36] mt-1 leading-relaxed">
-              Votre boutique est déjà en ligne : corrections visuelles, ajustements mobile et nettoyage du thème. Nouvelles sections (bandeau, lookbook, FAQ…) et optimisation de la vitesse en option.
-            </p>
-          </div>
-          <div class="sm:col-span-2 font-mono-tag text-xs text-ink font-semibold">
-            3 jours à 1 semaine<br>
-            <span class="text-[11px] text-muted font-normal">(1 à 2 semaines à partir de 3 options)</span>
-          </div>
-          <div class="sm:col-span-3 sm:text-right">
-            <span class="font-mono-tag text-xs text-muted block">À partir de</span>
-            <span class="text-2xl font-bold font-mono-tag text-ink">150 €</span>
+    <!-- GRILLE TARIFAIRE -->
+    <section class="section" aria-labelledby="heading-grille">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <div>
+            <p class="eyebrow">Grille tarifaire</p>
+            <h2 id="heading-grille" class="title-m" style="margin-top:1.25rem">Prix de départ par prestation</h2>
           </div>
         </div>
-
-        <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-center bg-white/40 -mx-6 px-6 rounded-lg">
-          <div class="sm:col-span-7">
-            <div class="inline-block px-2 py-0.5 rounded text-[10px] font-mono-tag bg-accent text-white font-semibold mb-1">RECOMMANDÉ POUR LES DROPS</div>
-            <h3 class="text-xl font-medium text-ink">Boutique Shopify complète</h3>
-            <p class="text-sm text-[#3b3a36] mt-1 leading-relaxed">
-              Création de A à Z : thème personnalisé, collections, fiches produits, transporteurs, mise en ligne et remise de tous les accès pour gérer vos ventes.
-            </p>
+        <div class="price-table">
+          <div class="price-row" data-reveal>
+            <div>
+              <h3>Retouches & refonte Shopify</h3>
+              <p>Votre boutique est déjà en ligne : corrections visuelles, ajustements mobile et nettoyage du thème. Hero, bandeau d'annonce, guide des tailles, filtres de catalogue, lookbook et FAQ inclus. Compte à rebours, boutique bilingue et optimisation vitesse & SEO en option.</p>
+            </div>
+            <div class="price-row__delay">3 jours à 1 semaine<br><span>(1 à 2 semaines à partir de 3 options)</span></div>
+            <div class="price-row__price"><span>À partir de</span>150 €</div>
           </div>
-          <div class="sm:col-span-2 font-mono-tag text-xs text-ink font-semibold">
-            1 à 2 semaines
+          <div class="price-row" data-reveal>
+            <div>
+              <span class="badge">RECOMMANDÉ POUR LES DROPS</span>
+              <h3>Boutique Shopify complète</h3>
+              <p>Création de A à Z : thème personnalisé, collections, fiches produits, transporteurs, mise en ligne et remise de tous les accès pour gérer vos ventes. Toutes les sections et options sont incluses.</p>
+            </div>
+            <div class="price-row__delay">1 à 2 semaines</div>
+            <div class="price-row__price"><span>À partir de</span>400 €</div>
           </div>
-          <div class="sm:col-span-3 sm:text-right">
-            <span class="font-mono-tag text-xs text-muted block">À partir de</span>
-            <span class="text-2xl font-bold font-mono-tag text-ink">300 €</span>
-          </div>
-        </div>
-
-        <div class="py-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
-          <div class="sm:col-span-7">
-            <h3 class="text-xl font-medium text-ink">Site web sur mesure / Landing page</h3>
-            <p class="text-sm text-[#3b3a36] mt-1 leading-relaxed">
-              Site vitrine ou page de lancement codés sur mesure (React, Next.js ou HTML/CSS/JS), sans CMS lourd, rapides à charger et prêts à être partagés sur les réseaux sociaux.
-            </p>
-          </div>
-          <div class="sm:col-span-2 font-mono-tag text-xs text-ink font-semibold">
-            1 à 2 semaines
-          </div>
-          <div class="sm:col-span-3 sm:text-right">
-            <span class="font-mono-tag text-xs text-muted block">À partir de</span>
-            <span class="text-2xl font-bold font-mono-tag text-ink">450 €</span>
+          <div class="price-row" data-reveal>
+            <div>
+              <h3>Site web sur mesure / Landing page</h3>
+              <p>Site vitrine ou page de lancement codés sur mesure (React, Next.js ou HTML/CSS/JS), sans CMS lourd, rapides à charger et prêts à être partagés sur les réseaux sociaux.</p>
+            </div>
+            <div class="price-row__delay">1 à 2 semaines</div>
+            <div class="price-row__price"><span>À partir de</span>450 €</div>
           </div>
         </div>
-
       </div>
     </section>
 
     <!-- PROCHAINE ÉTAPE -->
-    <section class="my-16 p-8 sm:p-12 rounded-2xl bg-white border border-line text-center space-y-4" aria-labelledby="heading-transition">
-      <div class="font-mono-tag text-xs text-accent uppercase font-semibold">Prochaine étape</div>
-      <h2 id="heading-transition" class="text-2xl sm:text-3xl font-medium tracking-tight text-ink">Prêt à lancer votre projet ?</h2>
-      <p class="text-sm text-muted max-w-xl mx-auto">Envoyez-moi votre estimation ou décrivez votre besoin : je vous réponds sous 24h, puis nous validons ensemble un devis ferme avant de démarrer.</p>
-      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-        <a href="contact.html" onclick="if (simTouched) saveQuoteDetails(event)" class="px-6 py-3 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Demander un devis ferme →</a>
-        <a href="#simulateur" class="px-6 py-3 rounded-md bg-softbg border border-line text-ink hover:border-accent hover:text-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Revenir au simulateur</a>
+    <section class="section cta is-light" aria-labelledby="heading-transition">
+      <div class="wrap">
+        <p class="eyebrow" data-reveal>Prochaine étape</p>
+        <h2 id="heading-transition" class="title-m" data-reveal style="margin-top:1.5rem">Prêt à lancer votre projet ?</h2>
+        <p data-reveal>Envoyez-moi votre estimation ou décrivez votre besoin : je vous réponds sous 24h, puis nous validons ensemble un devis ferme avant de démarrer.</p>
+        <div class="actions" data-reveal style="--d:1">
+          <a href="contact.html" onclick="if (simTouched) saveQuoteDetails(event)" class="btn btn--primary"><span>Demander un devis ferme</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a href="#simulateur" class="btn btn--ghost">Revenir au simulateur</a>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- PIED DE PAGE -->
-  <footer class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
-    <div class="pt-12 pb-10 border-t border-line space-y-8">
-      <div class="bg-white p-6 sm:p-7 rounded-xl border border-line text-xs leading-relaxed text-[#444]">
-        <div class="font-mono-tag text-[11px] text-accent uppercase tracking-wider font-semibold mb-2">
-          Ils m'ont fait confiance
-        </div>
-        <ul class="flex flex-wrap gap-x-6 gap-y-2 text-ink font-medium">
-          <li><a href="https://7venworld.com" target="_blank" rel="noopener" class="hover:text-accent transition-colors">7venworld<span class="sr-only"> (nouvel onglet)</span></a></li>
-          <li><a href="https://ambleme.fr" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Ambleme<span class="sr-only"> (nouvel onglet)</span></a></li>
-          <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Calciori<span class="sr-only"> (nouvel onglet)</span></a></li>
-        </ul>
-      </div>
-
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-tag text-muted">
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
         <div>
-          © 2026 Nolann Duchaussoy · <strong translate="no">Takuzo</strong> — Studio de création web & Shopify
+          <h2>Démarrer votre projet</h2>
+          <a href="mailto:nolann.duchaussoy.pro@gmail.com" class="mail-big">nolann.duchaussoy.pro@gmail.com</a>
+          <p class="footer-avail">Takuzo est disponible pour de nouveaux projets · Livraison en 3 j à 2 sem.</p>
         </div>
-        <nav aria-label="Pied de page" class="flex flex-wrap items-center gap-6">
-          <a href="index.html" class="hover:text-ink transition-colors">Accueil</a>
-          <a href="projets.html" class="hover:text-ink transition-colors">Projets</a>
-          <a href="services.html" class="hover:text-ink transition-colors">Services</a>
-          <a href="contact.html" class="hover:text-ink transition-colors">Contact</a>
-          <a href="mentions-legales.html" class="hover:text-ink underline transition-colors">Mentions légales</a>
+        <div>
+          <h2>Références</h2>
+          <ul>
+            <li><a href="https://7venworld.com" target="_blank" rel="noopener">7venworld<span class="sr-only"> (nouvel onglet)</span></a></li>
+            <li><a href="https://ambleme.fr" target="_blank" rel="noopener">Ambleme<span class="sr-only"> (nouvel onglet)</span></a></li>
+            <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener">Calciori<span class="sr-only"> (nouvel onglet)</span></a></li>
+          </ul>
+        </div>
+        <nav aria-label="Pied de page">
+          <h2>Navigation</h2>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="tarifs.html">Tarifs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </nav>
+      </div>
+      <span class="footer-word" aria-hidden="true" translate="no">Takuzo</span>
+      <div class="footer-bottom">
+        <span>© 2026 Nolann Duchaussoy · <strong translate="no">Takuzo</strong> — Studio de création web & Shopify</span>
+        <a href="mentions-legales.html">Mentions légales</a>
       </div>
     </div>
   </footer>
 
-  <!-- BOUTON RETOUR EN HAUT (BACK TO TOP) -->
-  <button id="back-to-top" type="button" tabindex="-1" aria-hidden="true" onclick="window.scrollTo({top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'})" class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-ink text-paper border border-line shadow-lg hover:bg-accent hover:text-white transition-all duration-300 opacity-0 pointer-events-none translate-y-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-label="Revenir en haut de la page">
-    <svg class="w-4 h-4" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-    </svg>
+  <button id="back-to-top" type="button" class="to-top" tabindex="-1" aria-hidden="true" aria-label="Revenir en haut de la page">
+    <svg width="16" height="16" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="2.25" stroke="currentColor"><path stroke-linecap="square" d="M4.5 15.75l7.5-7.5 7.5 7.5" /></svg>
   </button>
 
-  <!-- SCRIPT DU CALCULATEUR & NAVIGATION -->
-  <script>
-    let basePrice = 300;
+  <script src="js/site.js" defer></script>
+<script>
+    let basePrice = 400;
     let baseDelay = "1 à 2 semaines";
     let currentProjectType = "shopify";
-    let currentProjectName = document.querySelector('.sim-type-btn[aria-pressed="true"] .font-semibold').textContent.trim();
+    let currentProjectName = document.querySelector('.sim-type-btn[aria-pressed="true"] .sim-type-name').textContent.trim();
 
     function setSimProject(type, price, delay, btn) {
       basePrice = price;
@@ -489,15 +319,8 @@
       // Garde le type dans l'URL : retour arrière, rechargement et changement de langue le conservent
       history.replaceState(null, '', '?type=' + type + location.hash);
       document.querySelectorAll('a[hreflang]').forEach(a => { a.href = a.href.split(/[?#]/)[0] + '?type=' + type; });
-      currentProjectName = btn.querySelector('.font-semibold').textContent.trim();
-
-      document.querySelectorAll('.sim-type-btn').forEach(b => {
-        b.className = "sim-type-btn p-4 rounded-xl border text-left transition-all border-line hover:border-ink bg-softbg/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent";
-        b.setAttribute('aria-pressed', 'false');
-      });
-      btn.className = "sim-type-btn p-4 rounded-xl border text-left transition-all border-accent bg-accent/5 ring-1 ring-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent";
-      btn.setAttribute('aria-pressed', 'true');
-
+      currentProjectName = btn.querySelector('.sim-type-name').textContent.trim();
+      document.querySelectorAll('.sim-type-btn').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
       syncOptions();
       updateQuote();
     }
@@ -521,7 +344,7 @@
       return {
         total: basePrice + checked.reduce((sum, cb) => sum + Number(cb.dataset.price), 0),
         delay: delay,
-        options: checked.map(cb => cb.closest('label').querySelector('.font-medium').textContent.trim())
+        options: checked.map(cb => cb.closest('label').querySelector('.opt-name').textContent.trim())
       };
     }
 
@@ -529,6 +352,8 @@
       const { total, delay } = getQuote();
       document.getElementById('simDisplayPrice').innerText = total + " €";
       document.getElementById('simDisplayDelay').innerText = delay;
+      document.getElementById('simBarPrice').innerText = total + " €";
+      document.getElementById('simBarDelay').innerText = delay;
     }
 
     function saveQuoteDetails(event) {
@@ -548,51 +373,25 @@
     let simTouched = false;
     document.getElementById('simulateur').addEventListener('click', () => { simTouched = true; });
 
+    // Barre de synthèse mobile : visible tant que le simulateur est à l'écran et que le récapitulatif ne l'est pas
+    (function () {
+      const bar = document.getElementById('simBar'), link = bar.querySelector('a');
+      if (!('IntersectionObserver' in window)) return;
+      let simIn = false, sumIn = false;
+      const sync = () => {
+        const show = simIn && !sumIn;
+        bar.classList.toggle('is-visible', show);
+        bar.setAttribute('aria-hidden', String(!show));
+        link.tabIndex = show ? 0 : -1;
+      };
+      new IntersectionObserver(e => { simIn = e[0].isIntersecting; sync(); }, { rootMargin: '0px 0px -30% 0px' }).observe(document.getElementById('simulateur'));
+      new IntersectionObserver(e => { sumIn = e[0].isIntersecting; sync(); }).observe(document.getElementById('simSummary'));
+    })();
+
     // Pré-sélection du type depuis un lien (?type=refonte|shopify|site)
     const preType = new URLSearchParams(location.search).get('type');
     if (['refonte', 'shopify', 'site'].includes(preType)) document.querySelector(`.sim-type-btn[data-type="${preType}"]`).click();
-
     window.addEventListener('pageshow', () => { syncOptions(); updateQuote(); });
-
-    // Navigation & Back to Top
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      const btn = document.getElementById('mobile-menu-btn');
-      const iconOpen = document.getElementById('menu-icon-open');
-      const iconClose = document.getElementById('menu-icon-close');
-      
-      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !isExpanded);
-      
-      menu.classList.toggle('hidden');
-      iconOpen.classList.toggle('hidden');
-      iconClose.classList.toggle('hidden');
-    }
-
-    window.addEventListener('scroll', () => {
-      const btt = document.getElementById('back-to-top');
-      if (window.scrollY > 300) {
-        btt.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
-        btt.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-        btt.tabIndex = 0;
-        btt.removeAttribute('aria-hidden');
-      } else {
-        btt.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
-        btt.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-        btt.tabIndex = -1;
-        btt.setAttribute('aria-hidden', 'true');
-      }
-    });
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        const menu = document.getElementById('mobile-menu');
-        if (menu && !menu.classList.contains('hidden')) {
-          toggleMobileMenu();
-          document.getElementById('mobile-menu-btn').focus();
-        }
-      }
-    });
   </script>
 </body>
 </html>

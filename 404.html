@@ -5,25 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page introuvable — Nolann Duchaussoy · Takuzo</title>
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#f2f2f2">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23121212'/%3E%3Cpath d='M30 32 H70 V42 H56 V74 H44 V42 H30 Z' fill='%23f2f2f2'/%3E%3Ccircle cx='70' cy='32' r='5' fill='%23d71921'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0b1019">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='c' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.48' stop-color='%23aab4c2'/%3E%3Cstop offset='.52' stop-color='%23435063'/%3E%3Cstop offset='1' stop-color='%23e9edf2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='18' fill='%230b1019'/%3E%3Cpath d='M28 30 H72 V41 H56 V76 H44 V41 H28 Z' fill='url(%23c)'/%3E%3Crect x='66' y='66' width='8' height='8' fill='%23ff653d'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/Vitrine/css/style.css">
 </head>
-<body class="bg-paper text-ink selection:bg-accent selection:text-white">
-  <main class="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 min-h-screen flex flex-col justify-center py-16">
-    <div class="font-mono-tag text-xs text-muted uppercase tracking-wider mb-2">Erreur 404</div>
-    <h1 class="text-4xl sm:text-6xl tracking-tight text-ink">Page introuvable.</h1>
-    <p class="text-base sm:text-lg text-muted mt-4 leading-relaxed max-w-xl">
+<body>
+  <main class="wrap notfound mood-orange">
+    <div class="chrome-stage" aria-hidden="true">
+      <canvas data-chrome="blob" data-tint-a="orange" data-tint-b="violet"></canvas>
+    </div>
+    <p class="eyebrow">Erreur 404</p>
+    <h1 class="title-l">Page introuvable.</h1>
+    <p class="lead">
       Cette page n'existe pas ou a été déplacée.
-      <span lang="en" class="block mt-1">This page doesn't exist or has moved.</span>
+      <span lang="en" style="display:block;margin-top:0.25rem">This page doesn't exist or has moved.</span>
     </p>
-    <div class="flex flex-wrap items-center gap-4 mt-10">
-      <a href="/Vitrine/" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-ink text-paper hover:bg-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">← Revenir à l'accueil</a>
-      <a href="/Vitrine/en/" lang="en" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-white border border-line text-ink hover:border-accent hover:text-accent transition-colors font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">← Back to home (English)</a>
+    <div class="actions" style="margin-top:1.5rem">
+      <a href="/Vitrine/" class="btn btn--primary">← Revenir à l'accueil</a>
+      <a href="/Vitrine/en/" lang="en" class="btn btn--ghost">← Back to home (English)</a>
     </div>
   </main>
+  <script src="/Vitrine/js/chrome.js" defer></script>
 </body>
 </html>
