@@ -410,7 +410,7 @@ KEEP = {
 "Ambleme", "Calciori", "Contact", "Design & code · HTML/CSS/JS · Vercel", "EN", "EN – English version", "English",
 "English version", "GitHub Inc.", "InfluLab IA", "Liquid, Shopify, React, Next.js, HTML/CSS, Tailwind, Vercel",
 "NOLANN DUCHAUSSOY", "Nolann Duchaussoy", "Nolann Duchaussoy · Takuzo", "Portfolio", "Services", "Shopify & code",
-"Sopra", "TAKUZO STUDIO", "Takuzo", "drops", "en_GB", "fr_FR", "github.com", "github.com/Nolanndch", "summary",
+"Sopra", "TAKUZO STUDIO", "Takuzo", "drops", "en_GB", "fr_FR", "github.com", "github.com/Nolanndch", "summary", "summary_large_image",
 "website", "width=device-width, initial-scale=1",
 }
 
