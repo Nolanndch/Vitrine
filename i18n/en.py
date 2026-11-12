@@ -1,4 +1,6 @@
 T = {
+"Devis": "Quote",
+"Voir l'étude →": "View case study →",
 "(1 à 2 semaines à partir de 3 options)": "(1 to 2 weeks with 3 or more options)",
 "(Shop Pay & Apple Pay) pour un passage en caisse rapide pendant les drops.": "(Shop Pay & Apple Pay) so buyers can pay in seconds during drops.",
 "(nouvel onglet)": "(new tab)",
