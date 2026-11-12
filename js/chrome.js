@@ -112,7 +112,18 @@
     }, { passive: true });
   }
 
-  Array.prototype.forEach.call(canvases, init);
+  // Le shader ne démarre qu'après le chargement, quand le navigateur est inactif : le premier rendu passe avant le GPU.
+  // Économie de données : on garde le poster CSS, sans shader.
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if (!saveData) {
+    var start = function () { Array.prototype.forEach.call(canvases, init); };
+    var idle = function (cb) {
+      if (window.requestIdleCallback) window.requestIdleCallback(cb, { timeout: 1500 });
+      else setTimeout(cb, 200);
+    };
+    if (document.readyState === 'complete') idle(start);
+    else window.addEventListener('load', function () { idle(start); });
+  }
 
   function init(cv) {
     var stage = cv.parentElement;
@@ -154,7 +165,7 @@
       gl.uniform1f(u.uTime, time);
       gl.uniform2f(u.uMouse, mouse.x, mouse.y);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
-      if (!ready) { ready = true; cv.classList.add('is-ready'); }
+      if (!ready) { ready = true; cv.classList.add('is-ready'); stage.classList.add('is-live'); }
     }
     function frame(now) {
       raf = requestAnimationFrame(frame);

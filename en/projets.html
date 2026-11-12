@@ -12,20 +12,22 @@
   <meta property="og:title" content="Work & case studies — Nolann Duchaussoy · Takuzo">
   <meta property="og:description" content="Case studies: Shopify stores for independent brands and hand-coded websites. 7venworld, Ambleme, Calciori, InfluLab IA.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nolanndch.github.io/Vitrine/images/og-takuzo.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://nolanndch.github.io/Vitrine/en/projets.html">
   <meta property="og:locale" content="en_GB">
   <meta property="og:locale:alternate" content="fr_FR">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nolanndch.github.io/Vitrine/images/og-takuzo.jpg">
   <link rel="canonical" href="https://nolanndch.github.io/Vitrine/en/projets.html">
   <link rel="alternate" hreflang="fr" href="https://nolanndch.github.io/Vitrine/projets.html">
   <link rel="alternate" hreflang="en" href="https://nolanndch.github.io/Vitrine/en/projets.html">
   <link rel="alternate" hreflang="x-default" href="https://nolanndch.github.io/Vitrine/en/projets.html">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='c' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.48' stop-color='%23aab4c2'/%3E%3Cstop offset='.52' stop-color='%23435063'/%3E%3Cstop offset='1' stop-color='%23e9edf2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='18' fill='%230b1019'/%3E%3Cpath d='M28 30 H72 V41 H56 V76 H44 V41 H28 Z' fill='url(%23c)'/%3E%3Crect x='66' y='66' width='8' height='8' fill='%23ff653d'/%3E%3C/svg%3E">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&text=%E6%8B%93&display=swap" rel="stylesheet">
+  <link rel="preload" href="../fonts/sora-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/style.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -49,6 +51,7 @@
         <a href="../projets.html" hreflang="fr" lang="fr" onclick="try{localStorage.setItem('takuzo_lang','fr')}catch(e){}" class="nav__lang" aria-label="FR – Version fran&ccedil;aise">FR</a>
         <a href="contact.html" class="btn btn--primary btn--sm">Contact</a>
       </nav>
+      <a href="contact.html" class="btn btn--primary btn--sm header-quote">Quote</a>
       <button type="button" id="mobile-menu-btn" class="menu-btn" onclick="toggleMobileMenu()" aria-label="Main menu" aria-controls="mobile-menu" aria-expanded="false">
         <span class="menu-btn__bars" aria-hidden="true"></span>
       </button>
@@ -102,7 +105,7 @@
         </div>
         <figure class="browser" data-reveal>
           <figcaption class="browser__bar"><span>7venworld online store</span><span>https://7venworld.com</span></figcaption>
-          <img src="../images/7venworld.webp" width="1440" height="729" alt="7venworld store screenshot" fetchpriority="high">
+          <img src="../images/7venworld.webp" srcset="../images/7venworld-640.webp 640w, ../images/7venworld-1024.webp 1024w, ../images/7venworld.webp 1440w" sizes="(min-width: 1320px) 1200px, calc(100vw - 2.5rem)" width="1440" height="729" alt="7venworld store screenshot" fetchpriority="high">
         </figure>
         <div class="case__cols">
           <div data-reveal>
@@ -138,7 +141,7 @@
           <div class="case__visual" data-reveal>
             <figure class="browser">
               <figcaption class="browser__bar"><span>Ambleme online store</span><span>https://ambleme.fr</span></figcaption>
-              <img src="../images/ambleme.webp" width="1440" height="900" alt="Ambleme store screenshot" loading="lazy">
+              <img src="../images/ambleme.webp" srcset="../images/ambleme-640.webp 640w, ../images/ambleme-1024.webp 1024w, ../images/ambleme.webp 1440w" sizes="(min-width: 1320px) 1200px, calc(100vw - 2.5rem)" width="1440" height="900" alt="Ambleme store screenshot" loading="lazy">
             </figure>
           </div>
           <div class="case__text">
@@ -181,7 +184,7 @@
         </div>
         <figure class="browser" data-reveal style="--mood:#8996a8">
           <figcaption class="browser__bar"><span>Calciori Sopra landing page</span><span>https://calciori.vercel.app</span></figcaption>
-          <img src="../images/calciori.webp" width="1440" height="900" alt="Calciori launch page screenshot" loading="lazy">
+          <img src="../images/calciori.webp" srcset="../images/calciori-640.webp 640w, ../images/calciori-1024.webp 1024w, ../images/calciori.webp 1440w" sizes="(min-width: 1320px) 1200px, calc(100vw - 2.5rem)" width="1440" height="900" alt="Calciori launch page screenshot" loading="lazy">
         </figure>
         <div class="case__cols">
           <div data-reveal>
@@ -219,7 +222,7 @@
         <div class="case__visual" data-reveal>
           <figure class="browser">
             <figcaption class="browser__bar"><span>InfluLab IA web app</span><span>https://influlabia.fr</span></figcaption>
-            <img src="../images/influlab.webp" width="1440" height="729" alt="InfluLab IA app screenshot" loading="lazy">
+            <img src="../images/influlab.webp" srcset="../images/influlab-640.webp 640w, ../images/influlab-1024.webp 1024w, ../images/influlab.webp 1440w" sizes="(min-width: 1320px) 1200px, calc(100vw - 2.5rem)" width="1440" height="729" alt="InfluLab IA app screenshot" loading="lazy">
           </figure>
         </div>
         <div class="case__cols">

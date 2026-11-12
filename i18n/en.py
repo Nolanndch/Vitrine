@@ -1,4 +1,6 @@
 T = {
+"Devis": "Quote",
+"Voir l'étude →": "View case study →",
 "(1 à 2 semaines à partir de 3 options)": "(1 to 2 weeks with 3 or more options)",
 "(Shop Pay & Apple Pay) pour un passage en caisse rapide pendant les drops.": "(Shop Pay & Apple Pay) so buyers can pay in seconds during drops.",
 "(nouvel onglet)": "(new tab)",
@@ -410,7 +412,7 @@ KEEP = {
 "Ambleme", "Calciori", "Contact", "Design & code · HTML/CSS/JS · Vercel", "EN", "EN – English version", "English",
 "English version", "GitHub Inc.", "InfluLab IA", "Liquid, Shopify, React, Next.js, HTML/CSS, Tailwind, Vercel",
 "NOLANN DUCHAUSSOY", "Nolann Duchaussoy", "Nolann Duchaussoy · Takuzo", "Portfolio", "Services", "Shopify & code",
-"Sopra", "TAKUZO STUDIO", "Takuzo", "drops", "en_GB", "fr_FR", "github.com", "github.com/Nolanndch", "summary",
+"Sopra", "TAKUZO STUDIO", "Takuzo", "drops", "en_GB", "fr_FR", "github.com", "github.com/Nolanndch", "summary", "summary_large_image",
 "website", "width=device-width, initial-scale=1",
 }
 
