@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projets & réalisations — Nolann Duchaussoy · Takuzo</title>
   <meta name="description" content="Découvrez les réalisations de Nolann Duchaussoy (Takuzo) : boutiques Shopify et sites web pour 7venworld, Ambleme et Calciori, ainsi que son propre produit, InfluLab IA.">
-  <meta name="theme-color" content="#0b1019">
+  <meta name="theme-color" content="#fafafa">
 
   <!-- Open Graph / Réseaux sociaux -->
   <meta property="og:site_name" content="Nolann Duchaussoy · Takuzo">
@@ -40,309 +40,169 @@
   <link rel="alternate" hreflang="fr" href="https://nolanndch.github.io/Vitrine/projets.html">
   <link rel="alternate" hreflang="en" href="https://nolanndch.github.io/Vitrine/en/projets.html">
   <link rel="alternate" hreflang="x-default" href="https://nolanndch.github.io/Vitrine/en/projets.html">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='c' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.48' stop-color='%23aab4c2'/%3E%3Cstop offset='.52' stop-color='%23435063'/%3E%3Cstop offset='1' stop-color='%23e9edf2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='18' fill='%230b1019'/%3E%3Cpath d='M28 30 H72 V41 H56 V76 H44 V41 H28 Z' fill='url(%23c)'/%3E%3Crect x='66' y='66' width='8' height='8' fill='%23ff653d'/%3E%3C/svg%3E">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
-  <link rel="preload" href="fonts/sora-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
-  <script>document.documentElement.classList.add('js')</script>
+
+
 </head>
-<body>
-
-  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-
-  <header class="site-header" id="site-header">
-    <div class="site-header__inner">
-      <a href="index.html" class="brand" translate="no">
-        <span class="brand__mark" aria-hidden="true">拓</span>
-        <span>Takuzo</span>
-      </a>
-      <nav class="nav" aria-label="Navigation principale">
-        <ul>
-          <li><a href="index.html" class="nav__link">Accueil</a></li>
-          <li><a href="projets.html" class="nav__link" aria-current="page">Projets <sup class="nav__count" aria-hidden="true">04</sup></a></li>
-          <li><a href="services.html" class="nav__link">Services</a></li>
-          <li><a href="tarifs.html" class="nav__link">Tarifs</a></li>
-        </ul>
-        <a href="en/projets.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav__lang" aria-label="EN – English version">EN</a>
-        <a href="contact.html" class="btn btn--primary btn--sm">Contact</a>
-      </nav>
-      <a href="contact.html" class="btn btn--primary btn--sm header-quote">Devis</a>
-      <button type="button" id="mobile-menu-btn" class="menu-btn" onclick="toggleMobileMenu()" aria-label="Menu principal" aria-controls="mobile-menu" aria-expanded="false">
-        <span class="menu-btn__bars" aria-hidden="true"></span>
-      </button>
-    </div>
-  </header>
-  <nav id="mobile-menu" class="mobile-menu" aria-label="Menu mobile">
-    <ol>
-        <li><a href="index.html"><span aria-hidden="true">01</span><span>Accueil</span></a></li>
-        <li><a href="projets.html" aria-current="page"><span aria-hidden="true">02</span><span>Projets</span></a></li>
-        <li><a href="services.html"><span aria-hidden="true">03</span><span>Services</span></a></li>
-        <li><a href="tarifs.html"><span aria-hidden="true">04</span><span>Tarifs</span></a></li>
-        <li><a href="contact.html"><span aria-hidden="true">05</span><span>Contact</span></a></li>
-    </ol>
-    <div class="mobile-menu__foot">
-      <span>Dès 150 €</span>
-      <a href="en/projets.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" aria-label="English version"><span class="lang-name">English</span> <span class="lang-code">EN</span></a>
-    </div>
-  </nav>
-
-  <main id="main-content">
-
-    <header class="page-head mood-violet">
-      <div class="halo" aria-hidden="true"></div>
-      <div class="wrap">
-        <nav aria-label="Fil d'Ariane" class="crumbs">
-          <a href="index.html">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Projets</span>
-        </nav>
-        <div class="page-head__body">
-          <p class="eyebrow" data-reveal>Portfolio & études de cas</p>
-          <h1 class="title-l" data-reveal><span class="line-mask"><span>Ce que j'ai construit.</span></span></h1>
-          <p class="lead" data-reveal style="--d:2">
-            Quatre projets en ligne, réalisés pour des marques clientes et pour mon propre produit. Chaque site répond à une contrainte précise : des sorties de collection par drops, une page de lancement soignée pour un produit haut de gamme ou une application SaaS connectée à une IA.
-          </p>
-        </div>
-        <nav class="case-index" aria-label="Accès direct aux projets" data-reveal style="--d:3">
-          <a href="#7venworld"><span>01</span><span translate="no">7venworld</span></a>
-          <a href="#ambleme"><span>02</span><span translate="no">Ambleme</span></a>
-          <a href="#calciori"><span>03</span><span translate="no">Calciori</span></a>
-          <a href="#influlab"><span>04</span><span translate="no">InfluLab IA</span></a>
-        </nav>
-      </div>
+<body id="takuzo-glass"><div class="g-scene" aria-hidden="true"></div>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+    <header class="g-header">
+      <a href="index.html" class="g-brand g-glass" translate="no" aria-label="Takuzo — Accueil"><span class="g-mark" aria-hidden="true">拓</span><span>Takuzo</span></a>
+      <nav class="g-nav g-glass" aria-label="Navigation principale"><a href="services.html">Services</a><a href="projets.html" aria-current="page">Projets</a><a href="tarifs.html">Tarifs</a><a class="g-contact" href="contact.html">Contact</a></nav>
+      <a href="en/projets.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="g-lang g-glass" aria-label="EN – English version">EN</a>
     </header>
-
-    <!-- 01 · 7VENWORLD — image pleine largeur, ambiance orange -->
-    <article id="7venworld" class="section case mood-orange" aria-labelledby="h-7venworld">
-      <div class="halo" aria-hidden="true"></div>
-      <div class="wrap">
-        <div class="case__head" data-reveal>
-          <p class="case__tag"><span>01 / PROJET CLIENT</span><span>Shopify & drops streetwear</span></p>
-          <h2 id="h-7venworld" class="case__name" translate="no">7venworld</h2>
-        </div>
-        <figure class="browser" data-reveal>
-          <figcaption class="browser__bar"><span>Boutique en ligne 7venworld</span><span>https://7venworld.com</span></figcaption>
-          <img src="images/7venworld.webp" srcset="images/7venworld-640.webp 640w, images/7venworld-1024.webp 1024w, images/7venworld.webp 1440w" sizes="(min-width: 1320px) 1200px, calc(100vw - 2.5rem)" width="1440" height="729" alt="Capture d'écran de la boutique 7venworld" fetchpriority="high">
-        </figure>
-        <div class="case__cols">
-          <div data-reveal>
-            <h3>Le projet</h3>
-            <p class="case__intro">7venworld est une marque de streetwear parisienne indépendante. La boutique est pensée pour les lancements de collections éphémères (capsules, t-shirts graphiques, jeans flare, packs été) : drops annoncés clairement, catalogue facile à parcourir et paiement rapide.</p>
-          </div>
-          <div data-reveal style="--d:1">
-            <h3>Ce que j'ai réalisé</h3>
-            <ul class="prose-list">
-              <li><strong>Bandeau défilant dynamique</strong> pour communiquer les dates de drops et les offres.</li>
-              <li><strong>Catalogue filtrable</strong> par catégorie (t-shirts, packs été, casquettes, denim).</li>
-              <li><strong>Paiement express activé</strong> (Shop Pay & Apple Pay) pour un passage en caisse rapide pendant les drops.</li>
-              <li><strong>Code Liquid sur mesure</strong> pour ajouter les sections que les thèmes standards ne proposaient pas.</li>
-            </ul>
-          </div>
-          <div data-reveal style="--d:2">
-            <h3>Fiche projet</h3>
-            <dl class="spec">
-              <div><dt>Rôle :</dt><dd>Design, intégration, configuration</dd></div>
-              <div><dt>Statut :</dt><dd>En ligne · Actif</dd></div>
+<main id="main-content" class="page-wrap"><div class="page-heading"><p class="g-eyebrow">Portfolio / 04</p>
+<h1>Quatre projets. Quatre univers.</h1>
+<p class="page-lead">Choisissez une réalisation pour découvrir le site et ce que j’y ai conçu.</p>
+</div>
+<div class="g-panel g-workspace" data-gallery><nav class="g-selector" data-project-nav aria-label="Choisir un projet" hidden><button type="button" class="g-choice g-project-choice" data-project="7venworld" aria-pressed="true" aria-controls="7venworld"><img class="g-thumb" src="images/7venworld-640.webp" width="38" height="38" alt=""><span><strong translate="no">7venworld</strong><small>Shopify & drops streetwear</small></span></button><button type="button" class="g-choice g-project-choice" data-project="ambleme" aria-pressed="false" aria-controls="ambleme"><img class="g-thumb" src="images/ambleme-640.webp" width="38" height="38" alt=""><span><strong translate="no">Ambleme</strong><small>Shopify & prêt-à-porter</small></span></button><button type="button" class="g-choice g-project-choice" data-project="calciori" aria-pressed="false" aria-controls="calciori"><img class="g-thumb" src="images/calciori-640.webp" width="38" height="38" alt=""><span><strong translate="no">Calciori</strong><small>Landing page & montres</small></span></button><button type="button" class="g-choice g-project-choice" data-project="influlab" aria-pressed="false" aria-controls="influlab"><img class="g-thumb" src="images/influlab-640.webp" width="38" height="38" alt=""><span><strong translate="no">InfluLab IA</strong><small>Application web & IA</small></span></button></nav>
+<div data-project-stage><article class="project-case" id="7venworld" data-project-case>
+      <div class="g-browser"><div class="g-browser-bar"><span class="g-window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>7venworld.com</span><span>Aperçu</span></div>
+<a href="images/7venworld.webp" class="g-image-button" data-zoom aria-label="Agrandir l’aperçu" aria-expanded="false"><img class="g-preview-image" src="images/7venworld-1024.webp" srcset="images/7venworld-640.webp 640w, images/7venworld-1024.webp 1024w, images/7venworld.webp 1440w" sizes="(min-width: 1000px) 800px, 90vw" width="1440" height="729" alt="Capture du site 7venworld" loading="eager"><span class="g-image-hint" data-zoom-label>Agrandir ↗</span></a></div>
+      <div class="g-project-bottom"><div><h2 translate="no">7venworld</h2>
+<p class="g-project-meta">Shopify & drops streetwear</p>
+<p class="g-project-meta">Projet client</p>
+</div>
+<div class="g-controls" data-project-controls hidden><span>1 / 4</span><button type="button" class="g-round" data-project-step="-1" aria-label="Projet précédent">←</button><button type="button" class="g-round" data-project-step="1" aria-label="Projet suivant">→</button></div>
+</div>
+      <div class="g-project-note">7venworld est une marque de streetwear parisienne indépendante. La boutique est pensée pour les lancements de collections éphémères (capsules, t-shirts graphiques, jeans flare, packs été) : drops annoncés clairement, catalogue facile à parcourir et paiement rapide.</div>
+      <div class="project-features"><h3>Ce que j’ai réalisé</h3>
+<details class="project-feature"><summary>Bandeau défilant dynamique</summary>
+<p>pour communiquer les dates de drops et les offres.</p>
+</details>
+<details class="project-feature"><summary>Catalogue filtrable</summary>
+<p>par catégorie (t-shirts, packs été, casquettes, denim).</p>
+</details>
+<details class="project-feature"><summary>Paiement express activé</summary>
+<p>(Shop Pay & Apple Pay) pour un passage en caisse rapide pendant les drops.</p>
+</details>
+<details class="project-feature"><summary>Code Liquid sur mesure</summary>
+<p>pour ajouter les sections que les thèmes standards ne proposaient pas.</p>
+</details>
+</div>
+      <div class="project-spec"><dl>
+              <div><dt>Rôle :</dt>
+<dd>Design, intégration, configuration</dd>
+</div>
+              <div><dt>Statut :</dt>
+<dd>Projet livré</dd>
+</div>
             </dl>
-            <a href="https://7venworld.com/" target="_blank" rel="noopener" class="btn btn--primary"><span>Visiter 7venworld.com</span><span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span></a>
-          </div>
-        </div>
-      </div>
+</div>
+      <a href="https://7venworld.com/" target="_blank" rel="noopener noreferrer" class="g-pill g-glass g-pill-dark"><span>Visiter le site</span><span aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span></a>
     </article>
-
-    <!-- 02 · AMBLEME — texte fixe à gauche, visuel débordant à droite, ambiance violette -->
-    <article id="ambleme" class="section section--deep case case--alt mood-violet" aria-labelledby="h-ambleme">
-      <div class="halo" aria-hidden="true" style="left:80%"></div>
-      <div class="wrap">
-        <div class="case__layout">
-          <div class="case__visual" data-reveal>
-            <figure class="browser">
-              <figcaption class="browser__bar"><span>Boutique en ligne Ambleme</span><span>https://ambleme.fr</span></figcaption>
-              <img src="images/ambleme.webp" srcset="images/ambleme-640.webp 640w, images/ambleme-1024.webp 1024w, images/ambleme.webp 1440w" sizes="(min-width: 1320px) 1200px, calc(100vw - 2.5rem)" width="1440" height="900" alt="Capture d'écran de la boutique Ambleme" loading="lazy">
-            </figure>
-          </div>
-          <div class="case__text">
-            <div class="case__head" data-reveal>
-              <p class="case__tag"><span>02 / PROJET CLIENT</span><span>Shopify & prêt-à-porter</span></p>
-              <h2 id="h-ambleme" class="case__name" translate="no">Ambleme</h2>
-            </div>
-            <div class="case__cols">
-              <div data-reveal>
-                <h3>Le projet</h3>
-                <p class="case__intro">Ambleme est une marque de vêtements au positionnement affirmé, qui en est à son troisième drop. L'objectif était de concevoir une boutique épurée qui valorise l'univers visuel de ses collections tout en levant les doutes des clients avant l'achat.</p>
-              </div>
-              <div data-reveal>
-                <h3>Ce que j'ai réalisé</h3>
-                <ul class="prose-list">
-                  <li><strong>Lookbook de collection</strong> pour mettre en scène les pièces (t-shirts à manches longues, accessoires, tatouages temporaires).</li>
-                  <li><strong>FAQ interactive</strong> intégrée à la fiche produit pour répondre aux questions avant même qu'elles ne soient posées : délais de livraison, suivi de colis, réassorts et conseils d'entretien.</li>
-                  <li><strong>Expérience mobile raffinée</strong> avec navigation intuitive et transitions fluides.</li>
-                </ul>
-              </div>
-              <div data-reveal>
-                <dl class="spec">
-                  <div><dt>Rôle :</dt><dd>Design, intégration, configuration</dd></div>
-                  <div><dt>Statut :</dt><dd>En ligne · Actif</dd></div>
+<article class="project-case" id="ambleme" data-project-case>
+      <div class="g-browser"><div class="g-browser-bar"><span class="g-window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>ambleme.fr</span><span>Aperçu</span></div>
+<a href="images/ambleme.webp" class="g-image-button" data-zoom aria-label="Agrandir l’aperçu" aria-expanded="false"><img class="g-preview-image" src="images/ambleme-1024.webp" srcset="images/ambleme-640.webp 640w, images/ambleme-1024.webp 1024w, images/ambleme.webp 1440w" sizes="(min-width: 1000px) 800px, 90vw" width="1440" height="900" alt="Capture du site Ambleme" loading="lazy"><span class="g-image-hint" data-zoom-label>Agrandir ↗</span></a></div>
+      <div class="g-project-bottom"><div><h2 translate="no">Ambleme</h2>
+<p class="g-project-meta">Shopify & prêt-à-porter</p>
+<p class="g-project-meta">Projet client</p>
+</div>
+<div class="g-controls" data-project-controls hidden><span>2 / 4</span><button type="button" class="g-round" data-project-step="-1" aria-label="Projet précédent">←</button><button type="button" class="g-round" data-project-step="1" aria-label="Projet suivant">→</button></div>
+</div>
+      <div class="g-project-note">Ambleme est une marque de vêtements au positionnement affirmé, qui en est à son troisième drop. L'objectif était de concevoir une boutique épurée qui valorise l'univers visuel de ses collections tout en levant les doutes des clients avant l'achat.</div>
+      <div class="project-features"><h3>Ce que j’ai réalisé</h3>
+<details class="project-feature"><summary>Lookbook de collection</summary>
+<p>pour mettre en scène les pièces (t-shirts à manches longues, accessoires, tatouages temporaires).</p>
+</details>
+<details class="project-feature"><summary>FAQ interactive</summary>
+<p>intégrée à la fiche produit pour répondre aux questions avant même qu'elles ne soient posées : délais de livraison, suivi de colis, réassorts et conseils d'entretien.</p>
+</details>
+<details class="project-feature"><summary>Expérience mobile raffinée</summary>
+<p>avec navigation intuitive et transitions fluides.</p>
+</details>
+</div>
+      <div class="project-spec"><dl>
+                  <div><dt>Rôle :</dt>
+<dd>Design, intégration, configuration</dd>
+</div>
+                  <div><dt>Statut :</dt>
+<dd>Projet livré</dd>
+</div>
                 </dl>
-                <a href="https://ambleme.fr/" target="_blank" rel="noopener" class="btn btn--primary"><span>Visiter ambleme.fr</span><span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+</div>
+      <a href="https://ambleme.fr/" target="_blank" rel="noopener noreferrer" class="g-pill g-glass g-pill-dark"><span>Visiter le site</span><span aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span></a>
     </article>
-
-    <!-- 03 · CALCIORI — section claire, acier brossé -->
-    <article id="calciori" class="section case is-light" aria-labelledby="h-calciori">
-      <div class="wrap">
-        <div class="case__head" data-reveal>
-          <p class="case__tag"><span>03 / SUR MESURE</span><span>Landing page & montres</span></p>
-          <h2 id="h-calciori" class="case__name" translate="no">Calciori</h2>
-        </div>
-        <figure class="browser" data-reveal style="--mood:#8996a8">
-          <figcaption class="browser__bar"><span>Landing page Calciori Sopra</span><span>https://calciori.vercel.app</span></figcaption>
-          <img src="images/calciori.webp" srcset="images/calciori-640.webp 640w, images/calciori-1024.webp 1024w, images/calciori.webp 1440w" sizes="(min-width: 1320px) 1200px, calc(100vw - 2.5rem)" width="1440" height="900" alt="Capture d'écran de la page de lancement Calciori" loading="lazy">
-        </figure>
-        <div class="case__cols">
-          <div data-reveal>
-            <h3>Le projet</h3>
-            <p class="case__intro">Page de lancement sur mesure pour la <strong translate="no">Sopra</strong>, le tout premier modèle d'une marque de montres contemporaine. Tout tient sur une seule page, rapide à charger, pour capter l'attention et créer de l'attente avant le drop.</p>
-          </div>
-          <div data-reveal style="--d:1">
-            <h3>Ce que j'ai réalisé</h3>
-            <ul class="prose-list">
-              <li><strong>Fiche technique détaillée</strong> : acier inoxydable 316L brossé, boîtier 41 mm, verre saphir, fond gravé.</li>
-              <li><strong>Page légère et rapide</strong> : codée en HTML, CSS et JavaScript, sans dépendance lourde.</li>
-              <li><strong>Compte à rebours de drop</strong> et formulaire d'inscription en avant-première.</li>
-            </ul>
-          </div>
-          <div data-reveal style="--d:2">
-            <h3>Fiche projet</h3>
-            <dl class="spec">
-              <div><dt>Rôle & technologies :</dt><dd>Design & code · HTML/CSS/JS · Vercel</dd></div>
-              <div><dt>Statut :</dt><dd>En ligne · Actif</dd></div>
+<article class="project-case" id="calciori" data-project-case>
+      <div class="g-browser"><div class="g-browser-bar"><span class="g-window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>calciori.vercel.app</span><span>Aperçu</span></div>
+<a href="images/calciori.webp" class="g-image-button" data-zoom aria-label="Agrandir l’aperçu" aria-expanded="false"><img class="g-preview-image" src="images/calciori-1024.webp" srcset="images/calciori-640.webp 640w, images/calciori-1024.webp 1024w, images/calciori.webp 1440w" sizes="(min-width: 1000px) 800px, 90vw" width="1440" height="900" alt="Capture du site Calciori" loading="lazy"><span class="g-image-hint" data-zoom-label>Agrandir ↗</span></a></div>
+      <div class="g-project-bottom"><div><h2 translate="no">Calciori</h2>
+<p class="g-project-meta">Landing page & montres</p>
+<p class="g-project-meta">Projet client</p>
+</div>
+<div class="g-controls" data-project-controls hidden><span>3 / 4</span><button type="button" class="g-round" data-project-step="-1" aria-label="Projet précédent">←</button><button type="button" class="g-round" data-project-step="1" aria-label="Projet suivant">→</button></div>
+</div>
+      <div class="g-project-note">Page de lancement sur mesure pour la <strong translate="no">Sopra</strong>, le tout premier modèle d'une marque de montres contemporaine. Tout tient sur une seule page, rapide à charger, pour capter l'attention et créer de l'attente avant le drop.</div>
+      <div class="project-features"><h3>Ce que j’ai réalisé</h3>
+<details class="project-feature"><summary>Fiche technique détaillée</summary>
+<p>acier inoxydable 316L brossé, boîtier 41 mm, verre saphir, fond gravé.</p>
+</details>
+<details class="project-feature"><summary>Page légère et rapide</summary>
+<p>codée en HTML, CSS et JavaScript, sans dépendance lourde.</p>
+</details>
+<details class="project-feature"><summary>Compte à rebours de drop</summary>
+<p>et formulaire d'inscription en avant-première.</p>
+</details>
+</div>
+      <div class="project-spec"><dl>
+              <div><dt>Rôle & technologies :</dt>
+<dd>Design & code · HTML/CSS/JS · Vercel</dd>
+</div>
+              <div><dt>Statut :</dt>
+<dd>Projet livré</dd>
+</div>
             </dl>
-            <a href="https://calciori.vercel.app/" target="_blank" rel="noopener" class="btn btn--primary"><span>Visiter calciori.vercel.app</span><span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span></a>
-          </div>
-        </div>
-      </div>
+</div>
+      <a href="https://calciori.vercel.app/" target="_blank" rel="noopener noreferrer" class="g-pill g-glass g-pill-dark"><span>Visiter le site</span><span aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span></a>
     </article>
-
-    <!-- 04 · INFLULAB IA — visuel débordant à gauche, ambiance cyan -->
-    <article id="influlab" class="section case case--left mood-cyan" aria-labelledby="h-influlab">
-      <div class="halo" aria-hidden="true"></div>
-      <div class="wrap">
-        <div class="case__head" data-reveal>
-          <p class="case__tag"><span>04 / PRODUIT PERSONNEL</span><span>Application web & IA</span></p>
-          <h2 id="h-influlab" class="case__name" translate="no">InfluLab IA</h2>
-        </div>
-        <div class="case__visual" data-reveal>
-          <figure class="browser">
-            <figcaption class="browser__bar"><span>Application web InfluLab IA</span><span>https://influlabia.fr</span></figcaption>
-            <img src="images/influlab.webp" srcset="images/influlab-640.webp 640w, images/influlab-1024.webp 1024w, images/influlab.webp 1440w" sizes="(min-width: 1320px) 1200px, calc(100vw - 2.5rem)" width="1440" height="729" alt="Capture d'écran de l'application InfluLab IA" loading="lazy">
-          </figure>
-        </div>
-        <div class="case__cols">
-          <div data-reveal>
-            <h3>Le projet</h3>
-            <p class="case__intro">Mon propre produit SaaS : une application web qui analyse les statistiques des créateurs de contenu sur TikTok, YouTube, Instagram et Twitch. L'utilisateur dépose l'export de ses statistiques et l'IA en tire un rapport concret : ce qui marche, ce qui bloque et quoi publier ensuite.</p>
-          </div>
-          <div data-reveal style="--d:1">
-            <h3>Ce que j'ai réalisé</h3>
-            <ul class="prose-list">
-              <li><strong>Analyse des exports CSV dans le navigateur</strong> : les colonnes de chaque plateforme sont reconnues automatiquement, et seul un résumé chiffré (moyennes, médianes, meilleurs titres) est envoyé à l'IA.</li>
-              <li><strong>Rapport IA détaillé</strong> : vidéo phare, points forts, point faible, plan d'action sur 5 jours et export PDF.</li>
-              <li><strong>Générateur de scripts vidéo</strong> (accroche, corps, appel à l'action) à partir d'une simple idée.</li>
-              <li><strong>Offres Gratuit, Pro et Créateur</strong>, mensuelles ou annuelles, avec historique des analyses.</li>
-              <li><strong>Site bilingue FR / EN</strong>, blog de guides et outils gratuits optimisés pour le référencement naturel (SEO).</li>
-            </ul>
-          </div>
-          <div data-reveal style="--d:2">
-            <h3>Fiche projet</h3>
-            <dl class="spec">
-              <div><dt>Technologies :</dt><dd>React, Next.js, API IA, Stripe, Vercel</dd></div>
-              <div><dt>Statut :</dt><dd>En ligne · Actif</dd></div>
+<article class="project-case" id="influlab" data-project-case>
+      <div class="g-browser"><div class="g-browser-bar"><span class="g-window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>influlabia.fr</span><span>Aperçu</span></div>
+<a href="images/influlab.webp" class="g-image-button" data-zoom aria-label="Agrandir l’aperçu" aria-expanded="false"><img class="g-preview-image" src="images/influlab-1024.webp" srcset="images/influlab-640.webp 640w, images/influlab-1024.webp 1024w, images/influlab.webp 1440w" sizes="(min-width: 1000px) 800px, 90vw" width="1440" height="729" alt="Capture du site InfluLab IA" loading="lazy"><span class="g-image-hint" data-zoom-label>Agrandir ↗</span></a></div>
+      <div class="g-project-bottom"><div><h2 translate="no">InfluLab IA</h2>
+<p class="g-project-meta">Application web & IA</p>
+<p class="g-project-meta">Produit personnel</p>
+</div>
+<div class="g-controls" data-project-controls hidden><span>4 / 4</span><button type="button" class="g-round" data-project-step="-1" aria-label="Projet précédent">←</button><button type="button" class="g-round" data-project-step="1" aria-label="Projet suivant">→</button></div>
+</div>
+      <div class="g-project-note">Mon propre produit SaaS : une application web qui analyse les statistiques des créateurs de contenu sur TikTok, YouTube, Instagram et Twitch. L'utilisateur dépose l'export de ses statistiques et l'IA en tire un rapport concret : ce qui marche, ce qui bloque et quoi publier ensuite.</div>
+      <div class="project-features"><h3>Ce que j’ai réalisé</h3>
+<details class="project-feature"><summary>Analyse des exports CSV dans le navigateur</summary>
+<p>les colonnes de chaque plateforme sont reconnues automatiquement, et seul un résumé chiffré (moyennes, médianes, meilleurs titres) est envoyé à l'IA.</p>
+</details>
+<details class="project-feature"><summary>Rapport IA détaillé</summary>
+<p>vidéo phare, points forts, point faible, plan d'action sur 5 jours et export PDF.</p>
+</details>
+<details class="project-feature"><summary>Générateur de scripts vidéo</summary>
+<p>(accroche, corps, appel à l'action) à partir d'une simple idée.</p>
+</details>
+<details class="project-feature"><summary>Offres Gratuit, Pro et Créateur</summary>
+<p>, mensuelles ou annuelles, avec historique des analyses.</p>
+</details>
+<details class="project-feature"><summary>Site bilingue FR / EN</summary>
+<p>, blog de guides et outils gratuits optimisés pour le référencement naturel (SEO).</p>
+</details>
+</div>
+      <div class="project-spec"><dl>
+              <div><dt>Technologies :</dt>
+<dd>React, Next.js, API IA, Stripe, Vercel</dd>
+</div>
+              <div><dt>Statut :</dt>
+<dd>Projet livré</dd>
+</div>
             </dl>
-            <a href="https://influlabia.fr/" target="_blank" rel="noopener" class="btn btn--primary"><span>Visiter influlabia.fr</span><span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span></a>
-          </div>
-        </div>
-      </div>
+</div>
+      <a href="https://influlabia.fr/" target="_blank" rel="noopener noreferrer" class="g-pill g-glass g-pill-dark"><span>Visiter le site</span><span aria-hidden="true">↗</span><span class="sr-only"> (nouvel onglet)</span></a>
     </article>
-
-    <!-- REMERCIEMENTS CLIENTS -->
-    <section class="section is-light thanks" aria-labelledby="heading-merci">
-      <div class="wrap thanks__grid">
-        <div data-reveal>
-          <p class="eyebrow">Merci</p>
-          <h2 id="heading-merci" class="title-l thanks__title" style="margin-top:1.25rem">Ils m'ont fait confiance.</h2>
-        </div>
-        <div class="thanks__body" data-reveal style="--d:1">
-          <p>Merci à <strong translate="no">7venworld</strong>, <strong translate="no">Ambleme</strong> et <strong translate="no">Calciori</strong> de m'avoir confié leur boutique ou leur lancement. Chaque projet est parti d'une vraie contrainte : une date de drop à tenir, une collection à mettre en valeur, un tout premier produit à présenter.</p>
-          <p>C'est en travaillant main dans la main avec ces marques que <strong translate="no">Takuzo</strong> a pris forme. Leur confiance, leurs retours et leur exigence ont façonné ma manière de travailler : des échanges directs, des délais tenus et des sites qui leur appartiennent à 100 %.</p>
-        </div>
-        <ul class="thanks__clients" data-reveal style="--d:2">
-          <li><a href="https://7venworld.com" target="_blank" rel="noopener"><span class="thanks__name" translate="no">7venworld</span><span class="thanks__meta">Streetwear · Paris</span><span class="thanks__url">7venworld.com ↗</span><span class="sr-only"> (nouvel onglet)</span></a></li>
-          <li><a href="https://ambleme.fr" target="_blank" rel="noopener"><span class="thanks__name" translate="no">Ambleme</span><span class="thanks__meta">Prêt-à-porter</span><span class="thanks__url">ambleme.fr ↗</span><span class="sr-only"> (nouvel onglet)</span></a></li>
-          <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener"><span class="thanks__name" translate="no">Calciori</span><span class="thanks__meta">Montres</span><span class="thanks__url">calciori.vercel.app ↗</span><span class="sr-only"> (nouvel onglet)</span></a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PROCHAINE ÉTAPE -->
-    <section class="section cta section--deep mood-orange" aria-labelledby="heading-transition">
-      <div class="halo" aria-hidden="true"></div>
-      <div class="wrap">
-        <p class="eyebrow" data-reveal>Prochaine étape</p>
-        <h2 id="heading-transition" class="title-m" data-reveal style="margin-top:1.5rem">Envie d'un résultat similaire pour votre marque ?</h2>
-        <div class="cta__horizon" aria-hidden="true"></div>
-        <p data-reveal>Consultez le détail des prestations ou estimez le tarif de votre projet en quelques clics.</p>
-        <div class="actions" data-reveal style="--d:1">
-          <a href="tarifs.html#simulateur" class="btn btn--accent"><span>Simuler mon tarif</span><span class="arrow" aria-hidden="true">→</span></a>
-          <a href="services.html" class="btn btn--ghost">Voir les services & la méthode</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <h2>Démarrer votre projet</h2>
-          <a href="mailto:nolann.duchaussoy.pro@gmail.com" class="mail-big">nolann.duchaussoy.pro@gmail.com</a>
-          <p class="footer-avail">Takuzo est disponible pour de nouveaux projets · Livraison en 3 j à 2 sem.</p>
-        </div>
-        <div>
-          <h2>Références</h2>
-          <ul>
-            <li><a href="https://7venworld.com" target="_blank" rel="noopener">7venworld<span class="sr-only"> (nouvel onglet)</span></a></li>
-            <li><a href="https://ambleme.fr" target="_blank" rel="noopener">Ambleme<span class="sr-only"> (nouvel onglet)</span></a></li>
-            <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener">Calciori<span class="sr-only"> (nouvel onglet)</span></a></li>
-          </ul>
-        </div>
-        <nav aria-label="Pied de page">
-          <h2>Navigation</h2>
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="projets.html">Projets</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="tarifs.html">Tarifs</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <span class="footer-word" aria-hidden="true" translate="no">Takuzo</span>
-      <div class="footer-bottom">
-        <span>© 2026 Nolann Duchaussoy · <strong translate="no">Takuzo</strong> — Studio de création web & Shopify</span>
-        <a href="mentions-legales.html">Mentions légales</a>
-      </div>
-    </div>
-  </footer>
-
-  <button id="back-to-top" type="button" class="to-top" tabindex="-1" aria-hidden="true" aria-label="Revenir en haut de la page">
-    <svg width="16" height="16" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="2.25" stroke="currentColor"><path stroke-linecap="square" d="M4.5 15.75l7.5-7.5 7.5 7.5" /></svg>
-  </button>
-
-  <script src="js/site.js" defer></script>
+</div>
+</div>
+<p class="section-next"><a href="services.html">Quel accompagnement pour votre projet ? <span aria-hidden="true">↗</span></a></p>
+</main>
+<footer class="g-footer"><span>© 2026 Nolann Duchaussoy · Takuzo</span><nav aria-label="Pied de page"><a href="studio.html">Le studio</a><a href="contact.html">Contact</a><a href="mentions-legales.html">Mentions légales</a></nav>
+<span>Paris · Projets à distance</span></footer>
+<script src="js/site.js" defer></script>
+<script type="module" src="js/projects.js"></script>
 </body>
 </html>

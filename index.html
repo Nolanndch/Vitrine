@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nolann Duchaussoy · Takuzo — Boutiques Shopify & sites web</title>
   <meta name="description" content="Nolann Duchaussoy (Takuzo) crée des boutiques Shopify et des sites web sur mesure pour les marques indépendantes qui vendent par drops. Dès 150 €.">
-  <meta name="theme-color" content="#0b1019">
+  <meta name="theme-color" content="#fafafa">
 
   <!-- Open Graph / Réseaux sociaux -->
   <meta property="og:site_name" content="Nolann Duchaussoy · Takuzo">
@@ -40,12 +40,11 @@
   <link rel="alternate" hreflang="fr" href="https://nolanndch.github.io/Vitrine/">
   <link rel="alternate" hreflang="en" href="https://nolanndch.github.io/Vitrine/en/">
   <link rel="alternate" hreflang="x-default" href="https://nolanndch.github.io/Vitrine/en/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='c' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.48' stop-color='%23aab4c2'/%3E%3Cstop offset='.52' stop-color='%23435063'/%3E%3Cstop offset='1' stop-color='%23e9edf2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='18' fill='%230b1019'/%3E%3Cpath d='M28 30 H72 V41 H56 V76 H44 V41 H28 Z' fill='url(%23c)'/%3E%3Crect x='66' y='66' width='8' height='8' fill='%23ff653d'/%3E%3C/svg%3E">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
-  <link rel="preload" href="fonts/sora-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
-  <script>document.documentElement.classList.add('js')</script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -72,283 +71,26 @@
     ]
   }
   </script>
+
 </head>
-<body>
-
-  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-
-  <header class="site-header" id="site-header">
-    <div class="site-header__inner">
-      <a href="index.html" class="brand" translate="no">
-        <span class="brand__mark" aria-hidden="true">拓</span>
-        <span>Takuzo</span>
-      </a>
-      <nav class="nav" aria-label="Navigation principale">
-        <ul>
-          <li><a href="index.html" class="nav__link" aria-current="page">Accueil</a></li>
-          <li><a href="projets.html" class="nav__link">Projets <sup class="nav__count" aria-hidden="true">04</sup></a></li>
-          <li><a href="services.html" class="nav__link">Services</a></li>
-          <li><a href="tarifs.html" class="nav__link">Tarifs</a></li>
-        </ul>
-        <a href="en/index.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav__lang" aria-label="EN – English version">EN</a>
-        <a href="contact.html" class="btn btn--primary btn--sm">Contact</a>
-      </nav>
-      <a href="contact.html" class="btn btn--primary btn--sm header-quote">Devis</a>
-      <button type="button" id="mobile-menu-btn" class="menu-btn" onclick="toggleMobileMenu()" aria-label="Menu principal" aria-controls="mobile-menu" aria-expanded="false">
-        <span class="menu-btn__bars" aria-hidden="true"></span>
-      </button>
-    </div>
-  </header>
-  <nav id="mobile-menu" class="mobile-menu" aria-label="Menu mobile">
-    <ol>
-        <li><a href="index.html" aria-current="page"><span aria-hidden="true">01</span><span>Accueil</span></a></li>
-        <li><a href="projets.html"><span aria-hidden="true">02</span><span>Projets</span></a></li>
-        <li><a href="services.html"><span aria-hidden="true">03</span><span>Services</span></a></li>
-        <li><a href="tarifs.html"><span aria-hidden="true">04</span><span>Tarifs</span></a></li>
-        <li><a href="contact.html"><span aria-hidden="true">05</span><span>Contact</span></a></li>
-    </ol>
-    <div class="mobile-menu__foot">
-      <span>Dès 150 €</span>
-      <a href="en/index.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" aria-label="English version"><span class="lang-name">English</span> <span class="lang-code">EN</span></a>
-    </div>
-  </nav>
-
-  <main id="main-content">
-
-    <!-- HERO : la sculpture de chrome liquide est le sujet, le texte l'encadre -->
-    <section class="hero mood-cyan" aria-labelledby="heading-hero">
-      <div class="chrome-stage" aria-hidden="true">
-        <canvas data-chrome="blob" data-tint-a="cyan" data-tint-b="violet"></canvas>
-      </div>
-      <p class="hero__side hero__side--l" aria-hidden="true">Studio digital indépendant</p>
-      <p class="hero__side hero__side--r" aria-hidden="true">BASÉ À PARIS · PROJETS À DISTANCE</p>
-
-      <div class="wrap hero__meta">
-        <p class="hero__status">Takuzo est disponible pour de nouveaux projets</p>
-      </div>
-      <div></div>
-
-      <div class="wrap hero__foot">
-        <h1 id="heading-hero" class="hero__title" data-reveal>
-          <span class="line-mask"><span>Je crée des boutiques Shopify et des sites web</span></span>
-          <span class="line-mask" style="--d:1"><span class="dim">pour des marques qui veulent vendre en ligne.</span></span>
-        </h1>
-        <div class="hero__aside" data-reveal style="--d:3">
-          <ul class="hero__fields" aria-label="Domaines d'expertise">
-            <li><span aria-hidden="true">01</span><span>Boutiques Shopify</span></li>
-            <li><span aria-hidden="true">02</span><span>Sites web sur mesure</span></li>
-            <li><span aria-hidden="true">03</span><span>Création de SaaS & développement sur mesure</span></li>
-          </ul>
-          <p class="hero__lead">De la maquette à la mise en ligne : thème, pages produits, paiement, livraisons. Quand un thème standard ne suffit plus, je code ce qu'il vous manque.</p>
-          <div class="hero__actions">
-            <a href="tarifs.html#simulateur" class="btn btn--primary"><span>Simuler mon tarif</span><span class="arrow" aria-hidden="true">→</span></a>
-            <a href="projets.html" class="btn btn--ghost"><span>Voir les 4 projets réalisés</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LE STUDIO (section claire) -->
-    <section class="section is-light" aria-labelledby="heading-studio">
-      <div class="wrap studio__grid">
-        <div class="studio__head" data-reveal>
-          <p class="eyebrow">Le studio</p>
-          <h2 id="heading-studio" class="title-m">Un accompagnement clair, sans agence intermédiaire.</h2>
-        </div>
-        <div class="studio__body" data-reveal style="--d:1">
-          <p>
-            Je m'appelle <strong translate="no">Nolann Duchaussoy</strong>, fondateur de <strong translate="no">Takuzo</strong>. Je conçois des boutiques Shopify et des sites sur mesure pour les marques indépendantes et les créateurs qui sortent leurs collections par <strong>drops</strong>.
-          </p>
-          <p>
-            Vous échangez en direct avec celui qui conçoit et développe votre site. Pas de réunion inutile, des délais respectés et un résultat propre.
-          </p>
-          <p><a href="services.html" class="link"><span>Découvrir les services & la méthode complète</span><span class="arrow" aria-hidden="true">→</span></a></p>
-        </div>
-        <dl class="facts" data-reveal style="--d:2">
-          <div>
-            <dt>Spécialité</dt>
-            <dd>Boutiques Shopify, drops streetwear, sites sur mesure</dd>
-          </div>
-          <div>
-            <dt>Technologies</dt>
-            <dd>Liquid, Shopify, React, Next.js, HTML/CSS, Tailwind, Vercel</dd>
-          </div>
-          <div>
-            <dt>Délais indicatifs</dt>
-            <dd>3 jours à 2 semaines selon le projet</dd>
-          </div>
-          <div>
-            <dt>Interlocuteur</dt>
-            <dd>Une seule personne, du brief à la mise en ligne</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- PROJETS SÉLECTIONNÉS -->
-    <section class="section mood-violet" aria-labelledby="heading-projets">
-      <div class="halo" aria-hidden="true" style="top:20%;left:-25%"></div>
-      <div class="wrap">
-        <div class="sec-head" data-reveal>
-          <div>
-            <p class="eyebrow">Portfolio</p>
-            <h2 id="heading-projets" class="title-l" style="margin-top:1.25rem">Projets sélectionnés <sup aria-hidden="true">(04)</sup></h2>
-          </div>
-          <a href="projets.html" class="link"><span>Consulter les études détaillées</span><span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-
-        <div class="proj-list">
-          <a href="projets.html#7venworld" class="proj-row proj-row--orange" data-reveal>
-            <span class="proj-row__num">01</span>
-            <h3 translate="no">7venworld</h3>
-            <span class="proj-row__tag"><span>01 / SHOPIFY</span><span>Shopify & drops streetwear</span><span class="proj-row__cta">Voir l'étude →</span></span>
-            <img src="images/7venworld.webp" srcset="images/7venworld-640.webp 640w, images/7venworld-1024.webp 1024w, images/7venworld.webp 1440w" sizes="(min-width: 900px) 440px, calc(100vw - 2.5rem)" width="1440" height="729" alt="Boutique en ligne 7venworld" loading="lazy">
-          </a>
-          <a href="projets.html#ambleme" class="proj-row proj-row--violet" data-reveal>
-            <span class="proj-row__num">02</span>
-            <h3 translate="no">Ambleme</h3>
-            <span class="proj-row__tag"><span>02 / SHOPIFY</span><span>Shopify & prêt-à-porter</span><span class="proj-row__cta">Voir l'étude →</span></span>
-            <img src="images/ambleme.webp" srcset="images/ambleme-640.webp 640w, images/ambleme-1024.webp 1024w, images/ambleme.webp 1440w" sizes="(min-width: 900px) 440px, calc(100vw - 2.5rem)" width="1440" height="900" alt="Boutique de vêtements Ambleme" loading="lazy">
-          </a>
-          <a href="projets.html#calciori" class="proj-row proj-row--silver" data-reveal>
-            <span class="proj-row__num">03</span>
-            <h3 translate="no">Calciori</h3>
-            <span class="proj-row__tag"><span>03 / SUR MESURE</span><span>Landing page & montres</span><span class="proj-row__cta">Voir l'étude →</span></span>
-            <img src="images/calciori.webp" srcset="images/calciori-640.webp 640w, images/calciori-1024.webp 1024w, images/calciori.webp 1440w" sizes="(min-width: 900px) 440px, calc(100vw - 2.5rem)" width="1440" height="900" alt="Page de lancement de la montre Sopra de Calciori" loading="lazy">
-          </a>
-          <a href="projets.html#influlab" class="proj-row proj-row--cyan" data-reveal>
-            <span class="proj-row__num">04</span>
-            <h3 translate="no">InfluLab IA</h3>
-            <span class="proj-row__tag"><span>04 / SAAS IA</span><span>Application web & IA</span><span class="proj-row__cta">Voir l'étude →</span></span>
-            <img src="images/influlab.webp" srcset="images/influlab-640.webp 640w, images/influlab-1024.webp 1024w, images/influlab.webp 1440w" sizes="(min-width: 900px) 440px, calc(100vw - 2.5rem)" width="1440" height="729" alt="Application InfluLab IA" loading="lazy">
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- REMERCIEMENTS CLIENTS -->
-    <section class="section is-light thanks" aria-labelledby="heading-merci">
-      <div class="wrap thanks__grid">
-        <div data-reveal>
-          <p class="eyebrow">Merci</p>
-          <h2 id="heading-merci" class="title-l thanks__title" style="margin-top:1.25rem">Ils m'ont fait confiance.</h2>
-        </div>
-        <div class="thanks__body" data-reveal style="--d:1">
-          <p>Merci à <strong translate="no">7venworld</strong>, <strong translate="no">Ambleme</strong> et <strong translate="no">Calciori</strong> de m'avoir confié leur boutique ou leur lancement. Chaque projet est parti d'une vraie contrainte : une date de drop à tenir, une collection à mettre en valeur, un tout premier produit à présenter.</p>
-          <p>C'est en travaillant main dans la main avec ces marques que <strong translate="no">Takuzo</strong> a pris forme. Leur confiance, leurs retours et leur exigence ont façonné ma manière de travailler : des échanges directs, des délais tenus et des sites qui leur appartiennent à 100 %.</p>
-        </div>
-        <ul class="thanks__clients" data-reveal style="--d:2">
-          <li><a href="https://7venworld.com" target="_blank" rel="noopener"><span class="thanks__name" translate="no">7venworld</span><span class="thanks__meta">Streetwear · Paris</span><span class="thanks__url">7venworld.com ↗</span><span class="sr-only"> (nouvel onglet)</span></a></li>
-          <li><a href="https://ambleme.fr" target="_blank" rel="noopener"><span class="thanks__name" translate="no">Ambleme</span><span class="thanks__meta">Prêt-à-porter</span><span class="thanks__url">ambleme.fr ↗</span><span class="sr-only"> (nouvel onglet)</span></a></li>
-          <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener"><span class="thanks__name" translate="no">Calciori</span><span class="thanks__meta">Montres</span><span class="thanks__url">calciori.vercel.app ↗</span><span class="sr-only"> (nouvel onglet)</span></a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- SERVICES : quatre colonnes -->
-    <section class="section section--deep mood-cyan" aria-labelledby="heading-services">
-      <div class="wrap">
-        <div class="sec-head" data-reveal>
-          <div>
-            <p class="eyebrow">Ce que je propose</p>
-            <h2 id="heading-services" class="title-l" style="margin-top:1.25rem">Ce que je peux faire pour vous.</h2>
-          </div>
-          <a href="services.html" class="link"><span>Découvrir les services & la méthode complète</span><span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-        <ol class="svc-cols">
-          <li data-reveal style="--d:0">
-            <a href="services.html#refonte">
-              <span class="svc-cols__num" aria-hidden="true">01</span>
-              <h3>Retouches & refonte Shopify</h3>
-              <p>Amélioration de votre thème et nouvelles sections sur mesure en Liquid.</p>
-              <p class="svc-cols__meta">3 jours à 1 semaine<strong class="chrome-text">Dès 150 €</strong></p>
-            </a>
-          </li>
-          <li data-reveal style="--d:1">
-            <a href="services.html#boutique">
-              <span class="svc-cols__num" aria-hidden="true">02</span>
-              <h3>Boutique Shopify complète</h3>
-              <p>Créée de zéro, prête à vendre et pensée pour vos drops.</p>
-              <p class="svc-cols__meta">1 à 2 semaines<strong class="chrome-text">Dès 400 €</strong></p>
-            </a>
-          </li>
-          <li data-reveal style="--d:2">
-            <a href="services.html#site">
-              <span class="svc-cols__num" aria-hidden="true">03</span>
-              <h3>Site web sur mesure</h3>
-              <p>Landing page ou site vitrine codé sur mesure et rapide.</p>
-              <p class="svc-cols__meta">1 à 2 semaines<strong class="chrome-text">Dès 450 €</strong></p>
-            </a>
-          </li>
-          <li data-reveal style="--d:3">
-            <a href="services.html#developpement">
-              <span class="svc-cols__num" aria-hidden="true">04</span>
-              <h3>Création de SaaS & développement sur mesure</h3>
-              <p>SaaS par abonnement, application web ou projet connecté à une API (sur devis).</p>
-              <p class="svc-cols__meta">Délai selon le projet<strong class="chrome-text">Sur devis</strong></p>
-            </a>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- APPEL À L'ACTION -->
-    <section class="section cta mood-orange" aria-labelledby="heading-cta">
-      <div class="halo" aria-hidden="true"></div>
-      <div class="wrap">
-        <p class="eyebrow" data-reveal>Démarrer votre projet</p>
-        <h2 id="heading-cta" class="title-l" data-reveal style="margin-top:1.5rem">Vous avez une date de drop ou un projet de site ?</h2>
-        <div class="cta__horizon" aria-hidden="true"></div>
-        <p data-reveal>Obtenez une estimation claire en 2 minutes ou écrivez-moi directement pour en parler.</p>
-        <div class="actions" data-reveal style="--d:1">
-          <a href="tarifs.html#simulateur" class="btn btn--accent"><span>Simuler mon tarif</span><span class="arrow" aria-hidden="true">→</span></a>
-          <a href="contact.html" class="btn btn--ghost">Formulaire de contact</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <h2>Démarrer votre projet</h2>
-          <a href="mailto:nolann.duchaussoy.pro@gmail.com" class="mail-big">nolann.duchaussoy.pro@gmail.com</a>
-          <p class="footer-avail">Takuzo est disponible pour de nouveaux projets · Livraison en 3 j à 2 sem.</p>
-        </div>
-        <div>
-          <h2>Références</h2>
-          <ul>
-            <li><a href="https://7venworld.com" target="_blank" rel="noopener">7venworld<span class="sr-only"> (nouvel onglet)</span></a></li>
-            <li><a href="https://ambleme.fr" target="_blank" rel="noopener">Ambleme<span class="sr-only"> (nouvel onglet)</span></a></li>
-            <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener">Calciori<span class="sr-only"> (nouvel onglet)</span></a></li>
-          </ul>
-        </div>
-        <nav aria-label="Pied de page">
-          <h2>Navigation</h2>
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="projets.html">Projets</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="tarifs.html">Tarifs</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <span class="footer-word" aria-hidden="true" translate="no">Takuzo</span>
-      <div class="footer-bottom">
-        <span>© 2026 Nolann Duchaussoy · <strong translate="no">Takuzo</strong> — Studio de création web & Shopify</span>
-        <a href="mentions-legales.html">Mentions légales</a>
-      </div>
-    </div>
-  </footer>
-
-  <button id="back-to-top" type="button" class="to-top" tabindex="-1" aria-hidden="true" aria-label="Revenir en haut de la page">
-    <svg width="16" height="16" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="2.25" stroke="currentColor"><path stroke-linecap="square" d="M4.5 15.75l7.5-7.5 7.5 7.5" /></svg>
-  </button>
-
-  <script src="js/site.js" defer></script>
-  <script src="js/chrome.js" defer></script>
+<body id="takuzo-glass"><div class="g-scene" aria-hidden="true"></div>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+    <header class="g-header">
+      <a href="index.html" class="g-brand g-glass" translate="no" aria-label="Takuzo — Accueil"><span class="g-mark" aria-hidden="true">拓</span><span>Takuzo</span></a>
+      <nav class="g-nav g-glass" aria-label="Navigation principale"><a href="services.html">Services</a><a href="projets.html">Projets</a><a href="tarifs.html">Tarifs</a><a class="g-contact" href="contact.html">Contact</a></nav>
+      <a href="en/index.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="g-lang g-glass" aria-label="EN – English version">EN</a>
+    </header>
+<main id="main-content" class="g-home">
+  <div class="g-orbs"><button class="g-orb g-orb-a g-glass" type="button" aria-label="Faire rebondir la grande bulle de verre"></button><button class="g-orb g-orb-b g-glass" type="button" aria-label="Faire rebondir la bulle de droite"></button><button class="g-orb g-orb-c g-glass" type="button" aria-label="Faire rebondir la petite bulle de verre"></button><button class="g-orb g-orb-d g-glass" type="button" aria-label="Faire rebondir la bulle du haut"></button></div>
+  <span class="g-status g-glass">Disponible pour de nouveaux projets</span>
+  <h1>Je crée des boutiques Shopify et des sites web.</h1>
+  <p class="g-lead">Pour des marques qui veulent vendre en ligne.<br>De la maquette à la mise en ligne, un seul interlocuteur.</p>
+  <div class="g-actions"><a class="g-pill g-glass g-pill-dark" href="services.html">Découvrir les services <span aria-hidden="true">↗</span></a><a class="g-pill g-glass" href="tarifs.html">Consulter les tarifs <span aria-hidden="true">→</span></a></div>
+  <p class="g-byline">Nolann Duchaussoy · Studio indépendant</p>
+</main>
+<aside class="g-clients g-glass" aria-label="Références clients"><span>Ils m’ont fait confiance</span><a href="projets.html#7venworld" translate="no">7venworld</a><a href="projets.html#ambleme" translate="no">Ambleme</a><a href="projets.html#calciori" translate="no">Calciori</a></aside>
+<footer class="g-footer"><span>© 2026 Nolann Duchaussoy · Takuzo</span><nav aria-label="Pied de page"><a href="studio.html">Le studio</a><a href="contact.html">Contact</a><a href="mentions-legales.html">Mentions légales</a></nav>
+<span>Paris · Projets à distance</span></footer>
+<script src="js/site.js" defer></script>
 </body>
 </html>

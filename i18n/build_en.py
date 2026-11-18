@@ -45,7 +45,7 @@ for f in sorted(glob.glob('*.html')):
     s = s.replace('<meta property="og:url" content="' + BASE, '<meta property="og:url" content="' + BASE + 'en/')
     s = s.replace('<meta property="og:locale" content="fr_FR">', '<meta property="og:locale" content="en_GB">')
     s = s.replace('<meta property="og:locale:alternate" content="en_GB">', '<meta property="og:locale:alternate" content="fr_FR">')
-    s = s.replace('href="css/', 'href="../css/').replace('src="images/', 'src="../images/').replace('src="js/', 'src="../js/').replace('href="fonts/', 'href="../fonts/')
+    s = s.replace('href="css/', 'href="../css/').replace('src="images/', 'src="../images/').replace('href="images/', 'href="../images/').replace('src="js/', 'src="../js/').replace('href="fonts/', 'href="../fonts/')
     s = re.sub(r'href="en/([\w.-]+)" hreflang', r'href="../\1" hreflang', s)
     s = re.sub(r'srcset="([^"]*)"', lambda m: 'srcset="' + m.group(1).replace('images/', '../images/') + '"', s)
     open(os.path.join('en', f), 'w').write(s)

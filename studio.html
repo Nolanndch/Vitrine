@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <script id="lang-redirect">
+    // Visiteurs dont le navigateur n'est pas en français -> version anglaise (jamais les robots d'indexation)
+    (function () {
+      if (/bot|crawl|spider|slurp|lighthouse|inspectiontool|facebookexternalhit/i.test(navigator.userAgent)) return;
+      var pref = null;
+      try { pref = localStorage.getItem('takuzo_lang'); } catch (e) {}
+      if (pref === 'fr') return;
+      // Clic interne vers la version FR : ne pas renvoyer vers EN (utile si localStorage est bloqué)
+      if (pref !== 'en' && document.referrer.indexOf(location.href.replace(/[^\/]*([?#].*)?$/, '').replace(/\/$/, '')) === 0) return;
+      var l = (navigator.languages && navigator.languages[0]) || navigator.language || 'fr';
+      if (pref === 'en' || !/^fr\b/i.test(l)) {
+        var page = location.pathname.split('/').pop() || 'index.html';
+        location.replace('en/' + page + location.search + location.hash);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le studio — Nolann Duchaussoy · Takuzo</title>
+  <meta name="description" content="Nolann Duchaussoy (Takuzo) crée des boutiques Shopify et des sites web sur mesure pour les marques indépendantes qui vendent par drops. Dès 150 €.">
+  <meta name="theme-color" content="#fafafa">
+
+  <!-- Open Graph / Réseaux sociaux -->
+  <meta property="og:site_name" content="Nolann Duchaussoy · Takuzo">
+  <meta property="og:title" content="Takuzo — Studio de création Shopify & sites web">
+  <meta property="og:description" content="Boutiques Shopify et sites web sur mesure pour les marques indépendantes et les créateurs qui vendent par drops.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://nolanndch.github.io/Vitrine/images/og-takuzo.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://nolanndch.github.io/Vitrine/studio.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nolanndch.github.io/Vitrine/images/og-takuzo.jpg">
+  <link rel="canonical" href="https://nolanndch.github.io/Vitrine/studio.html">
+  <link rel="alternate" hreflang="fr" href="https://nolanndch.github.io/Vitrine/studio.html">
+  <link rel="alternate" hreflang="en" href="https://nolanndch.github.io/Vitrine/en/studio.html">
+  <link rel="alternate" hreflang="x-default" href="https://nolanndch.github.io/Vitrine/en/studio.html">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preload" href="fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://nolanndch.github.io/Vitrine/#takuzo",
+    "name": "Takuzo",
+    "url": "https://nolanndch.github.io/Vitrine/",
+    "email": "nolann.duchaussoy.pro@gmail.com",
+    "description": "Studio de création de boutiques Shopify et de sites web sur mesure pour les marques indépendantes qui vendent par drops.",
+    "founder": { "@type": "Person", "name": "Nolann Duchaussoy", "sameAs": ["https://github.com/Nolanndch"], "knowsAbout": ["Shopify", "Liquid", "React", "Next.js", "Tailwind CSS"] },
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Retouches & refonte Shopify" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 150, "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Boutique Shopify complète" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 400, "priceCurrency": "EUR" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site web sur mesure" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 450, "priceCurrency": "EUR" } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebSite", "@id": "https://nolanndch.github.io/Vitrine/#website", "url": "https://nolanndch.github.io/Vitrine/", "name": "Takuzo", "inLanguage": ["fr", "en"], "publisher": { "@id": "https://nolanndch.github.io/Vitrine/#takuzo" } },
+      { "@type": "Person", "@id": "https://nolanndch.github.io/Vitrine/#nolann", "name": "Nolann Duchaussoy", "jobTitle": "Fondateur de Takuzo", "url": "https://nolanndch.github.io/Vitrine/", "worksFor": { "@id": "https://nolanndch.github.io/Vitrine/#takuzo" }, "sameAs": ["https://github.com/Nolanndch"] }
+    ]
+  }
+  </script>
+
+</head>
+<body id="takuzo-glass"><div class="g-scene" aria-hidden="true"></div>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+    <header class="g-header">
+      <a href="index.html" class="g-brand g-glass" translate="no" aria-label="Takuzo — Accueil"><span class="g-mark" aria-hidden="true">拓</span><span>Takuzo</span></a>
+      <nav class="g-nav g-glass" aria-label="Navigation principale"><a href="services.html">Services</a><a href="projets.html">Projets</a><a href="tarifs.html">Tarifs</a><a class="g-contact" href="contact.html">Contact</a></nav>
+      <a href="en/studio.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="g-lang g-glass" aria-label="EN – English version">EN</a>
+    </header>
+<main id="main-content" class="page-wrap"><div class="page-heading"><p class="g-eyebrow">Le studio</p>
+<h1>Un accompagnement clair, sans agence intermédiaire.</h1>
+</div>
+<section class="g-panel studio-layout"><div class="studio-copy"><p>
+            Je m'appelle <strong translate="no">Nolann Duchaussoy</strong>, fondateur de <strong translate="no">Takuzo</strong>. Je conçois des boutiques Shopify et des sites sur mesure pour les marques indépendantes et les créateurs qui sortent leurs collections par <strong>drops</strong>.
+          </p>
+          <p>
+            Vous échangez en direct avec celui qui conçoit et développe votre site. Pas de réunion inutile, des délais respectés et un résultat propre.
+          </p>
+          <p><a href="services.html"><span>Découvrir les services & la méthode complète</span><span aria-hidden="true">→</span></a></p>
+</div>
+<div class="studio-facts"><dl data-reveal>
+          <div>
+            <dt>Spécialité</dt>
+            <dd>Boutiques Shopify, drops streetwear, sites sur mesure</dd>
+          </div>
+          <div>
+            <dt>Technologies</dt>
+            <dd>Liquid, Shopify, React, Next.js, HTML/CSS, Tailwind, Vercel</dd>
+          </div>
+          <div>
+            <dt>Délais indicatifs</dt>
+            <dd>3 jours à 2 semaines selon le projet</dd>
+          </div>
+          <div>
+            <dt>Interlocuteur</dt>
+            <dd>Une seule personne, du brief à la mise en ligne</dd>
+          </div>
+        </dl>
+</div>
+</section>
+<section class="studio-thanks"><h2>Ils m’ont fait confiance.</h2>
+<p>Merci à <strong translate="no">7venworld</strong>, <strong translate="no">Ambleme</strong> et <strong translate="no">Calciori</strong> de m'avoir confié leur boutique ou leur lancement. Chaque projet est parti d'une vraie contrainte : une date de drop à tenir, une collection à mettre en valeur, un tout premier produit à présenter.</p>
+          <p>C'est en travaillant main dans la main avec ces marques que <strong translate="no">Takuzo</strong> a pris forme. Leur confiance, leurs retours et leur exigence ont façonné ma manière de travailler : des échanges directs, des délais tenus et des sites qui leur appartiennent à 100 %.</p>
+</section>
+<aside class="g-clients g-glass" aria-label="Références clients"><span>Ils m’ont fait confiance</span><a href="projets.html#7venworld" translate="no">7venworld</a><a href="projets.html#ambleme" translate="no">Ambleme</a><a href="projets.html#calciori" translate="no">Calciori</a></aside>
+</main>
+<footer class="g-footer"><span>© 2026 Nolann Duchaussoy · Takuzo</span><nav aria-label="Pied de page"><a href="studio.html">Le studio</a><a href="contact.html">Contact</a><a href="mentions-legales.html">Mentions légales</a></nav>
+<span>Paris · Projets à distance</span></footer>
+<script src="js/site.js" defer></script>
+</body>
+</html>

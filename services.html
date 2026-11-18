@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services & méthode — Nolann Duchaussoy · Takuzo</title>
   <meta name="description" content="Ce que je peux faire pour vous : retouches & refonte Shopify, boutiques Shopify complètes et sites web sur mesure pour les marques indépendantes.">
-  <meta name="theme-color" content="#0b1019">
+  <meta name="theme-color" content="#fafafa">
 
   <!-- Open Graph / Réseaux sociaux -->
   <meta property="og:site_name" content="Nolann Duchaussoy · Takuzo">
@@ -40,115 +40,67 @@
   <link rel="alternate" hreflang="fr" href="https://nolanndch.github.io/Vitrine/services.html">
   <link rel="alternate" hreflang="en" href="https://nolanndch.github.io/Vitrine/en/services.html">
   <link rel="alternate" hreflang="x-default" href="https://nolanndch.github.io/Vitrine/en/services.html">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='c' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23fff'/%3E%3Cstop offset='.48' stop-color='%23aab4c2'/%3E%3Cstop offset='.52' stop-color='%23435063'/%3E%3Cstop offset='1' stop-color='%23e9edf2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='18' fill='%230b1019'/%3E%3Cpath d='M28 30 H72 V41 H56 V76 H44 V41 H28 Z' fill='url(%23c)'/%3E%3Crect x='66' y='66' width='8' height='8' fill='%23ff653d'/%3E%3C/svg%3E">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
-  <link rel="preload" href="fonts/sora-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
-  <script>document.documentElement.classList.add('js')</script>
+
+
 </head>
-<body>
-
-  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-
-  <header class="site-header" id="site-header">
-    <div class="site-header__inner">
-      <a href="index.html" class="brand" translate="no">
-        <span class="brand__mark" aria-hidden="true">拓</span>
-        <span>Takuzo</span>
-      </a>
-      <nav class="nav" aria-label="Navigation principale">
-        <ul>
-          <li><a href="index.html" class="nav__link">Accueil</a></li>
-          <li><a href="projets.html" class="nav__link">Projets <sup class="nav__count" aria-hidden="true">04</sup></a></li>
-          <li><a href="services.html" class="nav__link" aria-current="page">Services</a></li>
-          <li><a href="tarifs.html" class="nav__link">Tarifs</a></li>
-        </ul>
-        <a href="en/services.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="nav__lang" aria-label="EN – English version">EN</a>
-        <a href="contact.html" class="btn btn--primary btn--sm">Contact</a>
-      </nav>
-      <a href="contact.html" class="btn btn--primary btn--sm header-quote">Devis</a>
-      <button type="button" id="mobile-menu-btn" class="menu-btn" onclick="toggleMobileMenu()" aria-label="Menu principal" aria-controls="mobile-menu" aria-expanded="false">
-        <span class="menu-btn__bars" aria-hidden="true"></span>
-      </button>
-    </div>
-  </header>
-  <nav id="mobile-menu" class="mobile-menu" aria-label="Menu mobile">
-    <ol>
-        <li><a href="index.html"><span aria-hidden="true">01</span><span>Accueil</span></a></li>
-        <li><a href="projets.html"><span aria-hidden="true">02</span><span>Projets</span></a></li>
-        <li><a href="services.html" aria-current="page"><span aria-hidden="true">03</span><span>Services</span></a></li>
-        <li><a href="tarifs.html"><span aria-hidden="true">04</span><span>Tarifs</span></a></li>
-        <li><a href="contact.html"><span aria-hidden="true">05</span><span>Contact</span></a></li>
-    </ol>
-    <div class="mobile-menu__foot">
-      <span>Dès 150 €</span>
-      <a href="en/services.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" aria-label="English version"><span class="lang-name">English</span> <span class="lang-code">EN</span></a>
-    </div>
-  </nav>
-
-  <main id="main-content">
-
-    <header class="page-head mood-lime" style="min-height:min(92svh,58rem);display:grid;align-content:space-between">
-      <div class="chrome-stage" aria-hidden="true" style="top:2%;right:-14%;width:min(95vw,860px);aspect-ratio:1">
-        <canvas data-chrome="twist" data-tint-a="lime" data-tint-b="cyan"></canvas>
-      </div>
-      <div class="halo" aria-hidden="true"></div>
-      <div class="wrap">
-        <nav aria-label="Fil d'Ariane" class="crumbs">
-          <a href="index.html">Accueil</a><span aria-hidden="true">/</span><span aria-current="page">Services</span>
-        </nav>
-      </div>
-      <div class="wrap page-head__body">
-        <p class="eyebrow" data-reveal>Expertise & savoir-faire</p>
-        <h1 class="title-l" data-reveal style="max-width:12ch"><span class="line-mask"><span>Ce que je peux faire pour vous.</span></span></h1>
-        <p class="lead" data-reveal style="--d:2">
-          Trois niveaux d'accompagnement selon l'état actuel de votre marque : de la simple amélioration technique d'un thème existant jusqu'à la création intégrale d'une boutique Shopify ou d'un site sur mesure.
-        </p>
-      </div>
+<body id="takuzo-glass"><div class="g-scene" aria-hidden="true"></div>
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+    <header class="g-header">
+      <a href="index.html" class="g-brand g-glass" translate="no" aria-label="Takuzo — Accueil"><span class="g-mark" aria-hidden="true">拓</span><span>Takuzo</span></a>
+      <nav class="g-nav g-glass" aria-label="Navigation principale"><a href="services.html" aria-current="page">Services</a><a href="projets.html">Projets</a><a href="tarifs.html">Tarifs</a><a class="g-contact" href="contact.html">Contact</a></nav>
+      <a href="en/services.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('takuzo_lang','en')}catch(e){}" class="g-lang g-glass" aria-label="EN – English version">EN</a>
     </header>
-
-    <!-- PRESTATIONS -->
-    <section class="section section--tight" aria-labelledby="heading-prestations" style="padding-top:0">
-      <div class="wrap">
-        <h2 id="heading-prestations" class="sr-only">Prestations de création et de développement</h2>
-
-        <div id="refonte" class="service mood-cyan">
-          <div class="service__id" data-reveal>
-            <p class="service__tag"><span>PRESTATION 01</span><span>Amélioration ciblée</span></p>
-            <h3 class="title-s">Retouches & refonte Shopify</h3>
-          </div>
-          <div class="service__body" data-reveal style="--d:1">
-            <p>Votre boutique existe déjà mais manque de professionnalisme ou ne correspond plus à l'image de vos nouvelles collections ? J'interviens directement sur votre thème pour le remettre à neuf, nettoyer le code, améliorer l'ergonomie mobile et ajouter les éléments manquants.</p>
+<main id="main-content" class="page-wrap"><div class="page-heading"><p class="g-eyebrow">Les services</p>
+<h1>Un accompagnement adapté à votre projet.</h1>
+<p class="page-lead">Découvrez ce que je peux réaliser, ce que vous recevez et comment préparer la suite.</p>
+</div>
+<section class="g-panel guide" id="questionnaire" data-guide hidden aria-labelledby="guide-heading">
+ <div class="guide-top"><p class="g-eyebrow">Trouvons le bon point de départ</p>
+<span class="guide-count" data-guide-count>1 / 3</span></div>
+ <h2 id="guide-heading">Quelques questions pour vous orienter.</h2>
+<p class="guide-intro">Vous hésitez entre une refonte, une boutique, un site ou une application ? Ce parcours vous aide à préciser votre besoin.</p>
+ <div data-guide-content></div>
+ <div class="guide-actions"><button type="button" class="g-pill g-glass" data-guide-back hidden>← Précédent</button><button type="button" class="g-pill g-glass g-pill-dark" data-guide-next disabled>Continuer →</button><button type="button" class="text-button" data-guide-reset hidden>Recommencer</button></div>
+ <p class="g-cost-note">Vos réponses restent dans cette page. Rien n’est envoyé.</p>
+</section>
+<nav class="service-index" aria-label="Accès direct aux prestations"><a href="#refonte" class="g-glass"><span>01</span><strong>Améliorer ma boutique</strong><span aria-hidden="true">↗</span></a><a href="#boutique" class="g-glass"><span>02</span><strong>Lancer ma boutique</strong><span aria-hidden="true">↗</span></a><a href="#site" class="g-glass"><span>03</span><strong>Présenter ma marque</strong><span aria-hidden="true">↗</span></a><a href="#developpement" class="g-glass"><span>04</span><strong>Créer mon application</strong><span aria-hidden="true">↗</span></a></nav>
+<article id="refonte" class="service-detail"><header><p class="g-eyebrow">01 / Améliorer ma boutique</p>
+<h2>Retouches & refonte Shopify</h2>
+<p class="service-delay">3 jours à 1 semaine</p>
+</header>
+<div class="service-copy"><p>Votre boutique existe déjà mais manque de professionnalisme ou ne correspond plus à l'image de vos nouvelles collections ? J'interviens directement sur votre thème pour le remettre à neuf, nettoyer le code, améliorer l'ergonomie mobile et ajouter les éléments manquants.</p>
             <div>
-              <h4>Exemples d'interventions :</h4>
-              <ul class="prose-list">
+              <h3>Exemples d'interventions :</h3>
+              <ul>
                 <li>Ajout d'un bandeau défilant d'annonce de drop</li>
                 <li>Nouvelles sections de lookbook ou de FAQ</li>
                 <li>Refonte de la fiche produit pour vendre davantage</li>
                 <li>Amélioration de la vitesse de chargement</li>
               </ul>
             </div>
-            <p class="service__note">Inclus : corrections visuelles, ajustements mobile et nettoyage du thème existant, hero, bandeau d'annonce, guide des tailles, filtres de catalogue, lookbook et FAQ. Compte à rebours, boutique bilingue et optimisation vitesse & SEO en option.</p>
-          </div>
-          <div class="price-plate" data-reveal style="--d:2">
-            <p class="price-plate__label">Tarif indicatif :</p>
-            <p class="price-plate__price">Dès 150 €</p>
-            <p class="price-plate__delay">Délai de réalisation : <br><strong>3 jours à 1 semaine</strong><br><span>(1 à 2 semaines à partir de 3 options)</span></p>
-            <a href="tarifs.html?type=refonte#simulateur" class="btn btn--primary btn--block"><span>Simuler mon tarif</span><span class="arrow" aria-hidden="true">→</span></a>
-          </div>
-        </div>
-
-        <div id="boutique" class="service service--featured">
-          <div class="service__id" data-reveal>
-            <p class="service__tag"><span>PRESTATION 02 · RECOMMANDÉE POUR LES DROPS</span><span>Boutique complète prête à vendre</span></p>
-            <h3 class="title-s">Boutique Shopify complète</h3>
-          </div>
-          <div class="service__body" data-reveal style="--d:1">
-            <p>Pour les marques indépendantes, labels streetwear et créateurs qui lancent leur activité ou préparent un drop important. Je conçois et configure votre boutique de A à Z. Vous repartez avec une boutique opérationnelle, prête à encaisser les paiements et à gérer les expéditions.</p>
+            <p>Inclus : corrections visuelles, ajustements mobile et nettoyage du thème existant, hero, bandeau d'annonce, guide des tailles, filtres de catalogue, lookbook et FAQ. Compte à rebours, boutique bilingue et optimisation vitesse & SEO en option.</p>
+<div class="service-prepare"><h3>Ce que vous pouvez préparer</h3>
+<ul><li>Le lien de votre boutique et les accès nécessaires</li>
+<li>Les points à corriger et quelques références visuelles</li>
+<li>Les contenus et la date de lancement souhaitée</li>
+</ul>
+</div>
+<p class="service-clarify">La refonte s’appuie sur votre boutique Shopify existante. Si vous partez de zéro ou changez de plateforme, le périmètre sera étudié avant le devis.</p>
+<div class="g-service-actions"><a href="tarifs.html?type=refonte#simulateur" class="g-pill g-glass g-pill-dark"><span>Estimer ce projet</span><span aria-hidden="true">↗</span></a><a href="projets.html#ambleme" class="text-link">Voir un exemple concret <span aria-hidden="true">↗</span></a></div>
+</div>
+</article>
+<article id="boutique" class="service-detail"><header><p class="g-eyebrow">02 / Lancer ma boutique</p>
+<h2>Boutique Shopify complète</h2>
+<p class="service-delay">1 à 2 semaines</p>
+</header>
+<div class="service-copy"><p>Pour les marques indépendantes, labels streetwear et créateurs qui lancent leur activité ou préparent un drop important. Je conçois et configure votre boutique de A à Z. Vous repartez avec une boutique opérationnelle, prête à encaisser les paiements et à gérer les expéditions.</p>
             <div>
-              <h4>Ce qui est inclus :</h4>
-              <ul class="prose-list">
+              <h3>Ce qui est inclus :</h3>
+              <ul>
                 <li>Maquette et personnalisation de thème</li>
                 <li>Structure des collections & fiches produits</li>
                 <li>Paiements Shopify activés : CB, Apple Pay, Shop Pay, PayPal</li>
@@ -157,177 +109,120 @@
                 <li>Toutes les sections et options incluses : hero, bandeau d'annonce, guide des tailles, filtres, lookbook, FAQ, compte à rebours, boutique bilingue, vitesse & SEO</li>
               </ul>
             </div>
-            <p class="service__note">L'abonnement Shopify, l'achat du nom de domaine et les éventuelles applications payantes restent à votre charge.</p>
-          </div>
-          <div class="price-plate" data-reveal style="--d:2">
-            <p class="price-plate__label">Tarif indicatif :</p>
-            <p class="price-plate__price">Dès 400 €</p>
-            <p class="price-plate__delay">Délai de réalisation : <br><strong>1 à 2 semaines</strong></p>
-            <a href="tarifs.html?type=shopify#simulateur" class="btn btn--primary btn--block"><span>Simuler mon tarif</span><span class="arrow" aria-hidden="true">→</span></a>
-          </div>
-        </div>
-
-        <div id="site" class="service mood-violet">
-          <div class="service__id" data-reveal>
-            <p class="service__tag"><span>PRESTATION 03</span><span>Code sur mesure</span></p>
-            <h3 class="title-s">Site web sur mesure / Landing page</h3>
-          </div>
-          <div class="service__body" data-reveal style="--d:1">
-            <p>Pour lancer un produit d'exception (comme la montre Sopra de <em translate="no">Calciori</em>), présenter votre studio ou bâtir une expérience de marque unique que les CMS traditionnels ne permettent pas. Votre site est codé en HTML/CSS/JS, React ou Next.js : il se charge vite et son design reste fidèle à votre marque.</p>
+            <p>L'abonnement Shopify, l'achat du nom de domaine et les éventuelles applications payantes restent à votre charge.</p>
+<div class="service-prepare"><h3>Ce que vous pouvez préparer</h3>
+<ul><li>Votre identité visuelle, vos photos et vos textes</li>
+<li>Votre catalogue : produits, prix, variantes et stocks</li>
+<li>Vos modes de livraison et les informations de votre entreprise</li>
+</ul>
+</div>
+<p class="service-clarify">Vous gérez ensuite vos produits, vos commandes et vos stocks depuis Shopify. L’abonnement de la plateforme reste distinct de ma prestation.</p>
+<div class="g-service-actions"><a href="tarifs.html?type=shopify#simulateur" class="g-pill g-glass g-pill-dark"><span>Estimer ce projet</span><span aria-hidden="true">↗</span></a><a href="projets.html#7venworld" class="text-link">Voir un exemple concret <span aria-hidden="true">↗</span></a></div>
+</div>
+</article>
+<article id="site" class="service-detail"><header><p class="g-eyebrow">03 / Présenter ma marque</p>
+<h2>Site web sur mesure / Landing page</h2>
+<p class="service-delay">1 à 2 semaines</p>
+</header>
+<div class="service-copy"><p>Pour lancer un produit d'exception (comme la montre Sopra de <em translate="no">Calciori</em>), présenter votre studio ou bâtir une expérience de marque unique que les CMS traditionnels ne permettent pas. Votre site est codé en HTML/CSS/JS, React ou Next.js : il se charge vite et son design reste fidèle à votre marque.</p>
             <div>
-              <h4>Idéal pour :</h4>
-              <ul class="prose-list">
+              <h3>Idéal pour :</h3>
+              <ul>
                 <li>Landing page de lancement de produit / drop exclusif</li>
                 <li>Site vitrine de marque de créateur / studio</li>
                 <li>Page d'annonce avant un drop</li>
               </ul>
             </div>
-            <p class="service__note">Inclus : design sur mesure adapté à tous les écrans, page d'accueil complète et mise en ligne. Référencement SEO avancé et nom de domaine en option.</p>
-            <p class="service__note">L'achat du nom de domaine, l'éventuel abonnement d'hébergement et les services tiers (boîtes mail) restent à votre charge.</p>
-          </div>
-          <div class="price-plate" data-reveal style="--d:2">
-            <p class="price-plate__label">Tarif indicatif :</p>
-            <p class="price-plate__price">Dès 450 €</p>
-            <p class="price-plate__delay">Délai de réalisation : <br><strong>1 à 2 semaines</strong></p>
-            <a href="tarifs.html?type=site#simulateur" class="btn btn--primary btn--block"><span>Simuler mon tarif</span><span class="arrow" aria-hidden="true">→</span></a>
-          </div>
-        </div>
-
-        <div id="developpement" class="service mood-lime">
-          <div class="service__id" data-reveal>
-            <p class="service__tag"><span>PRESTATION 04</span><span>Sur devis</span></p>
-            <h3 class="title-s">Création de SaaS & développement sur mesure</h3>
-          </div>
-          <div class="service__body" data-reveal style="--d:1">
-            <p>Vous avez une idée de produit en ligne ? Je conçois et développe des applications SaaS complètes : comptes utilisateurs, abonnements, intégration d'IA ou d'API et site de présentation optimisé pour le référencement. C'est exactement ce que j'ai construit pour mon propre produit.</p>
+            <p>Inclus : design sur mesure adapté à tous les écrans, page d'accueil complète et mise en ligne. Référencement SEO avancé et nom de domaine en option.</p>
+            <p>L'achat du nom de domaine, l'éventuel abonnement d'hébergement et les services tiers (boîtes mail) restent à votre charge.</p>
+<div class="service-prepare"><h3>Ce que vous pouvez préparer</h3>
+<ul><li>L’objectif de la page et l’action attendue du visiteur</li>
+<li>Votre logo, vos textes et vos visuels</li>
+<li>Les pages souhaitées et vos références de sites</li>
+</ul>
+</div>
+<p class="service-clarify">Un site vitrine présente votre activité. Pour un panier, des paiements et un catalogue de vente, nous étudierons plutôt une boutique en ligne.</p>
+<div class="g-service-actions"><a href="tarifs.html?type=site#simulateur" class="g-pill g-glass g-pill-dark"><span>Estimer ce projet</span><span aria-hidden="true">↗</span></a><a href="projets.html#calciori" class="text-link">Voir un exemple concret <span aria-hidden="true">↗</span></a></div>
+</div>
+</article>
+<article id="developpement" class="service-detail"><header><p class="g-eyebrow">04 / Créer mon application</p>
+<h2>Création de SaaS & développement sur mesure</h2>
+<p class="service-delay">Délai selon le projet</p>
+</header>
+<div class="service-copy"><p>Vous avez une idée de produit en ligne ? Je conçois et développe des applications SaaS complètes : comptes utilisateurs, abonnements, intégration d'IA ou d'API et site de présentation optimisé pour le référencement. C'est exactement ce que j'ai construit pour mon propre produit.</p>
             <div>
-              <h4>Idéal pour :</h4>
-              <ul class="prose-list">
+              <h3>Idéal pour :</h3>
+              <ul>
                 <li>SaaS par abonnement</li>
                 <li>Application web connectée à une IA ou à une API</li>
                 <li>Outil sur mesure pour votre activité</li>
               </ul>
             </div>
             <div>
-              <h4>Exemple :</h4>
-              <ul class="prose-list">
-                <li><a href="projets.html#influlab" class="text-link" translate="no">InfluLab IA</a> · React, Next.js, API IA, Stripe, Vercel</li>
+              <h3>Exemple :</h3>
+              <ul>
+                <li><a href="projets.html#influlab" translate="no">InfluLab IA</a> · React, Next.js, API IA, Stripe, Vercel</li>
               </ul>
             </div>
-          </div>
-          <div class="price-plate" data-reveal style="--d:2">
-            <p class="price-plate__label">Tarif indicatif :</p>
-            <p class="price-plate__price">Sur devis</p>
-            <p class="price-plate__delay">Délai de réalisation : <br><strong>Délai selon le projet</strong></p>
-            <a href="contact.html" class="btn btn--primary btn--block"><span>Poser une question en direct</span><span class="arrow" aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="service-prepare"><h3>Ce que vous pouvez préparer</h3>
+<ul><li>Le problème à résoudre et les utilisateurs visés</li>
+<li>Les fonctionnalités essentielles pour la première version</li>
+<li>Les services à connecter et les contraintes du projet</li>
+</ul>
+</div>
+<p class="service-clarify">Le fonctionnement, les intégrations et les coûts récurrents sont définis avec vous avant de confirmer le devis et le calendrier.</p>
+<div class="g-service-actions"><a href="contact.html?besoin=saas" class="g-pill g-glass g-pill-dark"><span>Discuter du périmètre</span><span aria-hidden="true">↗</span></a><a href="projets.html#influlab" class="text-link">Voir un exemple concret <span aria-hidden="true">↗</span></a></div>
+</div>
+</article>
+<section class="g-panel ownership"><p class="g-eyebrow">Propriété totale & autonomie</p>
+<p aria-hidden="true">100%</p>
+        <div>
 
-    <!-- PROPRIÉTÉ TOTALE (section claire) -->
-    <section class="section is-light" aria-labelledby="heading-propriete">
-      <div class="wrap ownership">
-        <p class="ownership__num chrome-text" data-reveal style="background-image:linear-gradient(180deg,#0b1019 0%,#3a4556 48%,#8996a8 52%,#0b1019 100%)" aria-hidden="true">100%</p>
-        <div data-reveal style="--d:1">
-          <p class="eyebrow">Propriété totale & autonomie</p>
-          <h2 id="heading-propriete" class="title-m" style="margin-block:1.25rem 1.5rem">Vous êtes 100% propriétaire de votre boutique ou de votre site</h2>
-          <p class="lead">Dès la livraison, vous détenez votre boutique Shopify ou le code de votre site sur mesure, vos accès et votre nom de domaine. Sur Shopify, l'interface est simple : vous ajoutez vos produits et gérez vos stocks vous-même. Je reste disponible pour vous accompagner lors du lancement de votre premier drop.</p>
+          <h2 id="heading-propriete">Vous êtes 100% propriétaire de votre boutique ou de votre site</h2>
+          <p>Dès la livraison, vous détenez votre boutique Shopify ou le code de votre site sur mesure, vos accès et votre nom de domaine. Sur Shopify, l'interface est simple : vous ajoutez vos produits et gérez vos stocks vous-même. Je reste disponible pour vous accompagner lors du lancement de votre premier drop.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- MÉTHODE -->
-    <section class="section section--deep" aria-labelledby="heading-methode">
-      <div class="wrap">
-        <div class="sec-head" data-reveal>
-          <div>
-            <p class="eyebrow">Méthode de travail</p>
-            <h2 id="heading-methode" class="title-m" style="margin-top:1.25rem">Un déroulement simple et transparent.</h2>
-          </div>
-        </div>
-        <ol class="steps">
-          <li class="step" data-reveal>
-            <span class="step__num">01</span>
+</section>
+<section class="method-section"><h2>Un déroulement simple et transparent.</h2>
+<ol>
+          <li>
+            <span>01</span>
             <h3>Cadrage & devis</h3>
             <p>Nous échangeons sur vos besoins, vos produits et votre date de drop. Je vous transmets ensuite un devis ferme, clair et sans frais cachés.</p>
           </li>
-          <li class="step" data-reveal style="--d:1">
-            <span class="step__num">02</span>
+          <li>
+            <span>02</span>
             <h3>Maquette & validation</h3>
             <p>Je prépare les maquettes et la disposition des pages. Vous validez le rendu visuel avant le développement.</p>
           </li>
-          <li class="step" data-reveal style="--d:2">
-            <span class="step__num">03</span>
+          <li>
+            <span>03</span>
             <h3>Intégration & code</h3>
             <p>Développement du thème Shopify ou du site, intégration des sections et options choisies, activation des paiements si prévus et tests sur mobile.</p>
           </li>
-          <li class="step" data-reveal style="--d:3">
-            <span class="step__num">04</span>
+          <li>
+            <span>04</span>
             <h3>Mise en ligne & livraison</h3>
             <p>Connexion de votre nom de domaine, remise de tous les accès et vérification finale avant votre lancement.</p>
           </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- PROCHAINE ÉTAPE -->
-    <section class="section cta mood-orange" aria-labelledby="heading-transition">
-      <div class="halo" aria-hidden="true"></div>
-      <div class="wrap">
-        <p class="eyebrow" data-reveal>Simulation instantanée</p>
-        <h2 id="heading-transition" class="title-m" data-reveal style="margin-top:1.5rem">Estimez le tarif de votre projet</h2>
-        <div class="cta__horizon" aria-hidden="true"></div>
-        <p data-reveal>Choisissez vos options pour obtenir une estimation immédiate, puis recevez un devis ferme après un court échange.</p>
-        <div class="actions" data-reveal style="--d:1">
-          <a href="tarifs.html#simulateur" class="btn btn--accent"><span>Simuler mon tarif</span><span class="arrow" aria-hidden="true">→</span></a>
-          <a href="contact.html" class="btn btn--ghost">Poser une question en direct</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <h2>Démarrer votre projet</h2>
-          <a href="mailto:nolann.duchaussoy.pro@gmail.com" class="mail-big">nolann.duchaussoy.pro@gmail.com</a>
-          <p class="footer-avail">Takuzo est disponible pour de nouveaux projets · Livraison en 3 j à 2 sem.</p>
-        </div>
-        <div>
-          <h2>Références</h2>
-          <ul>
-            <li><a href="https://7venworld.com" target="_blank" rel="noopener">7venworld<span class="sr-only"> (nouvel onglet)</span></a></li>
-            <li><a href="https://ambleme.fr" target="_blank" rel="noopener">Ambleme<span class="sr-only"> (nouvel onglet)</span></a></li>
-            <li><a href="https://calciori.vercel.app" target="_blank" rel="noopener">Calciori<span class="sr-only"> (nouvel onglet)</span></a></li>
-          </ul>
-        </div>
-        <nav aria-label="Pied de page">
-          <h2>Navigation</h2>
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="projets.html">Projets</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="tarifs.html">Tarifs</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-      <span class="footer-word" aria-hidden="true" translate="no">Takuzo</span>
-      <div class="footer-bottom">
-        <span>© 2026 Nolann Duchaussoy · <strong translate="no">Takuzo</strong> — Studio de création web & Shopify</span>
-        <a href="mentions-legales.html">Mentions légales</a>
-      </div>
-    </div>
-  </footer>
-
-  <button id="back-to-top" type="button" class="to-top" tabindex="-1" aria-hidden="true" aria-label="Revenir en haut de la page">
-    <svg width="16" height="16" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke-width="2.25" stroke="currentColor"><path stroke-linecap="square" d="M4.5 15.75l7.5-7.5 7.5 7.5" /></svg>
-  </button>
-
-  <script src="js/site.js" defer></script>
-  <script src="js/chrome.js" defer></script>
+        </ol></section>
+<section class="g-panel service-faq"><h2>Avant de vous lancer</h2>
+<details><summary>Quel service choisir si je ne suis pas sûr de mon besoin ?</summary>
+<p>Commencez par le questionnaire ou décrivez simplement votre objectif. Nous préciserons ensemble les fonctionnalités utiles, la solution et le périmètre avant tout engagement.</p>
+</details>
+<details><summary>Faut-il déjà avoir les textes et les photos ?</summary>
+<p>Vous pouvez me contacter avant de tout avoir. Pour avancer sur la maquette et l’intégration, nous identifierons les contenus à fournir : identité visuelle, textes, photos et informations produits.</p>
+</details>
+<details><summary>Que se passe-t-il si le projet évolue ?</summary>
+<p>Le devis fixe le périmètre et le calendrier avant le démarrage. Un besoin supplémentaire est discuté avant sa réalisation pour confirmer son impact sur le budget et le délai.</p>
+</details>
+<details><summary>Que faire si j’ai besoin d’aide après la livraison ?</summary>
+<p>Vous recevez les accès à votre boutique ou le code de votre site. Je reste joignable pour les questions techniques et l’accompagnement au lancement ; les interventions supplémentaires sont à définir ensemble.</p>
+</details>
+</section>
+</main>
+<footer class="g-footer"><span>© 2026 Nolann Duchaussoy · Takuzo</span><nav aria-label="Pied de page"><a href="studio.html">Le studio</a><a href="contact.html">Contact</a><a href="mentions-legales.html">Mentions légales</a></nav>
+<span>Paris · Projets à distance</span></footer>
+<script src="js/site.js" defer></script>
+<script type="module" src="js/guide.js"></script>
 </body>
 </html>

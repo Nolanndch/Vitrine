@@ -1,52 +1,66 @@
-/* TAKUZO — comportements communs à toutes les pages : menu mobile, en-tête, retour en haut, apparitions au scroll. */
-
-// Menu mobile (appelé par le bouton #mobile-menu-btn)
-function toggleMobileMenu(force) {
-  var menu = document.getElementById('mobile-menu');
-  var btn = document.getElementById('mobile-menu-btn');
-  if (!menu || !btn) return;
-  var open = typeof force === 'boolean' ? force : btn.getAttribute('aria-expanded') !== 'true';
-  btn.setAttribute('aria-expanded', String(open));
-  menu.classList.toggle('is-open', open);
-  document.body.classList.toggle('menu-open', open);
-  if (open) { var first = menu.querySelector('a'); if (first) first.focus({ preventScroll: true }); }
-}
-
-(function () {
-  var header = document.getElementById('site-header');
-  var btt = document.getElementById('back-to-top');
-
-  function onScroll() {
-    var y = window.scrollY;
-    if (header) header.classList.toggle('is-scrolled', y > 24);
-    if (btt) {
-      var show = y > 600;
-      btt.classList.toggle('is-visible', show);
-      btt.tabIndex = show ? 0 : -1;
-      if (show) btt.removeAttribute('aria-hidden'); else btt.setAttribute('aria-hidden', 'true');
-    }
+/* Shared, local-only glass interactions. No animation runs until the visitor interacts. */
+(() => {
+  const root = document.getElementById('takuzo-glass');
+  if (!root) return;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const wired = new WeakSet();
+  function enhance(scope = root) {
+    scope.querySelectorAll('.g-glass').forEach(element => {
+      if (wired.has(element)) return;
+      wired.add(element);
+      let frame = 0, pointer = null;
+      element.addEventListener('pointermove', event => {
+        if (reducedMotion.matches || event.pointerType === 'touch') return;
+        pointer = { x: event.clientX, y: event.clientY };
+        if (frame) return;
+        frame = requestAnimationFrame(() => {
+          frame = 0;
+          if (!pointer) return;
+          const rect = element.getBoundingClientRect();
+          const x = Math.max(0, Math.min(1, (pointer.x - rect.left) / rect.width));
+          const y = Math.max(0, Math.min(1, (pointer.y - rect.top) / rect.height));
+          const orb = element.classList.contains('g-orb');
+          element.style.setProperty('--gx', `${x * 100}%`);
+          element.style.setProperty('--gy', `${y * 100}%`);
+          element.style.setProperty('--rx', `${(.5 - y) * (orb ? 20 : 5)}deg`);
+          element.style.setProperty('--ry', `${(x - .5) * (orb ? 20 : 5)}deg`);
+          element.style.setProperty('--tx', `${(x - .5) * (orb ? 18 : 4)}px`);
+          element.style.setProperty('--ty', `${(y - .5) * (orb ? 18 : 4)}px`);
+        });
+      });
+      element.addEventListener('pointerleave', () => {
+        pointer = null; cancelAnimationFrame(frame); frame = 0;
+        ['--gx', '--gy', '--rx', '--ry', '--tx', '--ty'].forEach(key => element.style.removeProperty(key));
+      });
+    });
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  if (btt) btt.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  root.addEventListener('click', event => {
+    const orb = event.target.closest('.g-orb');
+    if (orb && !reducedMotion.matches && orb.animate) {
+      orb.getAnimations().forEach(animation => animation.cancel());
+      orb.animate([
+        { transform: 'scale(1)' },
+        { transform: 'scale(1.2,.82)', offset: .18 },
+        { transform: 'translateY(-18px) scale(.91,1.11)', offset: .44 },
+        { transform: 'translateY(3px) scale(1.04,.96)', offset: .76 },
+        { transform: 'scale(1)' }
+      ], { duration: 700, easing: 'cubic-bezier(.25,.5,.3,1)' });
+    }
+    const glass = event.target.closest('a.g-glass, button.g-glass');
+    if (!glass || reducedMotion.matches || orb) return;
+    const rect = glass.getBoundingClientRect(), ripple = document.createElement('span');
+    ripple.className = 'g-ripple'; ripple.setAttribute('aria-hidden', 'true');
+    ripple.style.left = (event.detail ? event.clientX - rect.left : rect.width / 2) + 'px';
+    ripple.style.top = (event.detail ? event.clientY - rect.top : rect.height / 2) + 'px';
+    glass.append(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
   });
-
-  window.addEventListener('keydown', function (e) {
-    var btn = document.getElementById('mobile-menu-btn');
-    if (e.key === 'Escape' && btn && btn.getAttribute('aria-expanded') === 'true') { toggleMobileMenu(false); btn.focus(); }
+  document.querySelectorAll('a[hreflang]').forEach(link => {
+    link.href = link.href.split(/[?#]/)[0] + location.search + location.hash;
+    link.addEventListener('click', () => {
+      try { localStorage.setItem('takuzo_lang', link.hreflang); } catch (_) { /* Optional preference only. */ }
+    });
   });
-  // Un lien du menu vers une ancre de la page courante referme le menu
-  var menu = document.getElementById('mobile-menu');
-  if (menu) menu.addEventListener('click', function (e) { if (e.target.closest('a')) toggleMobileMenu(false); });
-  window.matchMedia('(min-width: 900px)').addEventListener('change', function (m) { if (m.matches) toggleMobileMenu(false); });
-
-  // Apparitions progressives
-  var items = document.querySelectorAll('[data-reveal]');
-  if (!('IntersectionObserver' in window)) { items.forEach(function (el) { el.classList.add('is-in'); }); return; }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
-  }, { rootMargin: '0px 0px -4% 0px', threshold: 0.02 });
-  items.forEach(function (el) { io.observe(el); });
+  window.TakuzoGlass = { enhance };
+  enhance();
 })();

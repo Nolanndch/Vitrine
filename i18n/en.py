@@ -417,6 +417,10 @@ KEEP = {
 }
 
 # Chaînes dans le JavaScript et les attributs onclick (remplacements exacts, appliqués à toute la page)
+from glass_en import T as GLASS_T, KEEP as GLASS_KEEP
+T.update(GLASS_T)
+KEEP.update(GLASS_KEEP)
+
 JS = [
 ("'3 jours à 1 semaine'", "'3 days to 1 week'"),
 ("'1 à 2 semaines'", "'1 to 2 weeks'"),
